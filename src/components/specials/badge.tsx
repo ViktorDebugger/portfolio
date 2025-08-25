@@ -1,3 +1,5 @@
+import { cn } from "../../utils/utils";
+
 interface BadgeProps {
   children: React.ReactNode;
   category: string;
@@ -5,50 +7,68 @@ interface BadgeProps {
 
 const categoryStyles: Record<string, { style: string }> = {
   "Frontend Core": {
-    style: "text-orange-800 bg-orange-50 ring-1 ring-orange-300",
+    style: "text-orange-600 ring-1 ring-orange-600 shadow-orange-600/20",
   },
   "React Ecosystem": {
-    style: "text-sky-800 bg-sky-50 ring-1 ring-sky-300",
+    style: "text-sky-600 ring-1 ring-sky-600 shadow-sky-600/20",
   },
   Backend: {
-    style: "text-green-800 bg-green-50 ring-1 ring-green-300",
+    style: "text-green-600 ring-1 ring-green-600 shadow-green-600/20",
   },
   "UI Libraries": {
-    style: "text-fuchsia-800 bg-fuchsia-50 ring-1 ring-fuchsia-300",
+    style: "text-fuchsia-600 ring-1 ring-fuchsia-600 shadow-fuchsia-600/20",
   },
   "Icons & Assets": {
-    style: "text-yellow-900 bg-yellow-50 ring-1 ring-yellow-300",
+    style: "text-yellow-600 ring-1 ring-yellow-600 shadow-yellow-600/20",
   },
   "Animation & Interaction": {
-    style: "text-pink-800 bg-pink-50 ring-1 ring-pink-300",
+    style: "text-pink-600 ring-1 ring-pink-600 shadow-pink-600/20",
   },
   "State Management": {
-    style: "text-purple-800 bg-purple-50 ring-1 ring-purple-300",
+    style: "text-purple-600 ring-1 ring-purple-600 shadow-purple-600/20",
   },
   Databases: {
-    style: "text-emerald-800 bg-emerald-50 ring-1 ring-emerald-300",
+    style: "text-emerald-600 ring-1 ring-emerald-600 shadow-emerald-600/20",
   },
   "Backend Services": {
-    style: "text-cyan-800 bg-cyan-50 ring-1 ring-cyan-300",
+    style: "text-cyan-600 ring-1 ring-cyan-600 shadow-cyan-600/20",
   },
   Authentication: {
-    style: "text-red-800 bg-red-50 ring-1 ring-red-300",
+    style: "text-red-600 ring-1 ring-red-600 shadow-red-600/20",
   },
   Communication: {
-    style: "text-blue-800 bg-blue-50 ring-1 ring-blue-300",
+    style: "text-blue-600 ring-1 ring-blue-600 shadow-blue-600/20",
   },
   "Development Tools": {
-    style: "text-indigo-700 bg-indigo-50 ring-1 ring-indigo-300",
+    style: "text-indigo-600 ring-1 ring-indigo-600 shadow-indigo-600/20",
   },
   "E-commerce": {
-    style: "text-lime-800 bg-lime-50 ring-1 ring-lime-300",
+    style: "text-lime-600 ring-1 ring-lime-600 shadow-lime-600/20",
+  },
+  "APIs & Services": {
+    style: "text-teal-600 ring-1 ring-teal-600 shadow-teal-600/20",
+  },
+  Forms: {
+    style: "text-amber-600 ring-1 ring-amber-600 shadow-amber-600/20",
+  },
+  "Content Management": {
+    style: "text-rose-600 ring-1 ring-rose-600 shadow-rose-600/20",
+  },
+  Media: {
+    style: "text-violet-600 ring-1 ring-violet-600 shadow-violet-600/20",
+  },
+  "JavaScript Libraries": {
+    style: "text-slate-600 ring-1 ring-slate-600 shadow-slate-600/20",
   },
 };
 
 const Badge = ({ children, category }: BadgeProps) => {
   return (
     <span
-      className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${categoryStyles[category]?.style ?? ""}`}
+      className={cn(
+        "inline-flex items-center rounded-md bg-white/60 px-2 py-1 text-sm font-bold shadow-lg ring-1 ring-inset",
+        categoryStyles[category]?.style ?? "",
+      )}
     >
       {children}
     </span>

@@ -1,65 +1,15 @@
-import BriefCase from "../icons/brief-case";
 import blue from "../../assets/hero-images/blue-image.jpg";
-import { Link } from "react-router-dom";
-
-import javascript from "../../assets/stack-images/javascript.png";
-import typescript from "../../assets/stack-images/typescript.png";
-import tailwindcss from "../../assets/stack-images/tailwindcss.png";
-import node from "../../assets/stack-images/node-js.png";
-import react from "../../assets/stack-images/react.png";
-import nest from "../../assets/stack-images/nest-js.png";
-import prisma from "../../assets/stack-images/prisma-orm.png";
-import firebase from "../../assets/stack-images/firebase.png";
-import ArrowLongRight from "../icons/arrow-long-right";
 import User from "../icons/user";
 
 import GitHub from "../icons/socials/github";
 import LinkedIn from "../icons/socials/linkedin";
-import Telegram from "../icons/socials/telegram";
+import { useEffect, useRef } from "react";
 
-const stack = [
-  {
-    id: 1,
-    name: "Tailwindcss",
-    image: tailwindcss,
-  },
-  {
-    id: 2,
-    name: "JavaScript",
-    image: javascript,
-  },
-  {
-    id: 3,
-    name: "React",
-    image: react,
-  },
-  {
-    id: 4,
-    name: "TypeScript",
-    image: typescript,
-  },
-  {
-    id: 5,
-    name: "Node.js",
-    image: node,
-  },
-  {
-    id: 6,
-    name: "Nest.js",
-    image: nest,
-  },
-  {
-    id: 7,
-    name: "Prisma ORM",
-    image: prisma,
-  },
-  {
-    id: 8,
-    name: "Firebase",
-    image: firebase,
-  },
-];
-
+import { heroStack } from "../../utils/data-hero";
+import ArrowDownTray from "../icons/arrow-down-tray";
+import { cn } from "../../utils/utils";
+import { useTheme } from "../../context/theme-context";
+import { useScroll } from "../../context/scroll-context";
 const icons = [
   {
     id: 1,
@@ -71,93 +21,107 @@ const icons = [
     icon: GitHub,
     link: "https://github.com/ViktorDebugger",
   },
-  {
-    id: 3,
-    icon: Telegram,
-    link: "https://t.me//Luka_Victor",
-  }
 ];
 
 const HeroSection = () => {
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const { scrollToSection } = useScroll();
+
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    let i = 0;
+    let speed = 50;
+    let timeout: NodeJS.Timeout;
+
+    const typeWriter = (text: string) => {
+      if (textRef.current) {
+        textRef.current.textContent = text.slice(0, i + 1);
+      }
+      if (i < text.length - 1) {
+        i++;
+        timeout = setTimeout(typeWriter, speed, text);
+      }
+    };
+
+    typeWriter("Hello! I am Viktor Luka. Welcome to my portfolio!");
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <section className="mx-auto w-full max-w-[1440px] py-16">
-      <div className="flex h-full flex-col justify-center">
-        <h1 className="font-montserrat mb-6 max-w-4xl text-6xl font-bold">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <section className="flex h-auto w-full items-center justify-center">
+      <div className="glass-effect glass-main 3xl:mx-0 mx-5 max-w-[1550px] rounded-4xl p-16 px-4 sm:px-8 2xl:px-16">
+        <h1 className="animate-gradient gradient-text-blue text-glow-blue mb-6 text-[28px] xs:text-4xl sm:text-5xl lg:text-6xl font-bold">
+          FullStack Developer
         </h1>
-        <div className="flex justify-between">
-          <div className="max-w-[50%]">
-            <p className="font-roboto mb-10 text-2xl text-gray-700">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
-              Qui irure qui lorem cupidatat commodo.
+        <p className="mb-4 h-[55px] w-full text-xl text-black md:w-[720px] md:text-2xl dark:text-white">
+          <span ref={textRef}></span>
+          <div className="animate-typewriter relative -bottom-0.5 inline-block h-6 w-0.5 bg-black dark:bg-white"></div>
+        </p>
+        <div className="flex flex-col-reverse justify-between gap-2 md:flex-row">
+          <div className="w-full md:w-1/2">
+            <p className="mb-10 text-xl text-black lg:text-2xl dark:text-white">
+              I am a Full-Stack developer with experience in building web
+              applications from concept to production. I have experience working
+              with popular frameworks, databases and cloud services to develop
+              solutions that meet business requirements and contribute to its
+              growth.
             </p>
-            <div className="my-10 flex items-center gap-8">
-              <Link
-                to="/projects"
-                className="transition-color flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 duration-300 ease-in-out hover:bg-indigo-600/80"
-              >
-                <BriefCase className="size-6 text-white" />
-                <p className="font-roboto text-lg font-semibold text-white">
-                  Projects
-                </p>
-              </Link>
 
-              <Link to="/about" className="group flex items-center gap-2">
-                <User className="size-6 transition-colors duration-300 ease-in-out group-hover:text-black/70" />
-                <p className="font-roboto text-lg font-semibold text-black! transition-colors duration-300 ease-in-out group-hover:text-black/70!">
-                  About Me
-                </p>
-              </Link>
-            </div>
-
-            <ul className="flex gap-8 mb-10">
-              {icons.map(({ id, link, icon: Icon }) => (
-                <li key={id} className="group">
-                  <Link to={link}>
-                    <Icon className="size-7 text-gray-600 transition-colors duration-300 ease-in-out group-hover:text-gray-950" />
-                  </Link>
+            <ul className="grid grid-cols-4 gap-2 rounded-lg lg:gap-4 xl:grid-cols-8">
+              {heroStack.map(({ id, name, image }) => (
+                <li
+                  key={id}
+                  className="item-gradient-blue size-16 rounded-lg p-1 lg:size-20"
+                >
+                  <img src={image} alt={name} />
                 </li>
               ))}
             </ul>
 
-            <div className="space-y-4">
-              <p className="font-roboto text-gray-600">
-                My technology stack and tools I use
-              </p>
-              <div className="flex items-center gap-8">
-                <ul className="inline-flex gap-2 rounded-lg bg-gray-100 p-2">
-                  {stack.map(({ id, name, image }) => (
-                    <li
-                      key={id}
-                      className="rounded-lg bg-gray-200 p-2 transition-colors duration-300 ease-in-out hover:bg-gray-300"
-                    >
-                      <figure>
-                        <img
-                          className="h-12 w-12 rounded-lg"
-                          src={image}
-                          alt={name}
-                        />
-                      </figure>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/stack"
-                  className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-200 p-2 transition-colors duration-300 ease-in-out hover:bg-gray-300"
-                >
-                  <ArrowLongRight className="size-6" />
-                </Link>
-              </div>
+            <div className="my-10 flex items-center gap-4 lg:gap-8">
+              <button
+                onClick={() => scrollToSection("about")}
+                className={cn(
+                  "button-colors-blue flex items-center gap-2 rounded-lg px-4 py-2 lg:px-8 lg:py-3",
+                  theme,
+                )}
+              >
+                <User className="size-4 sm:size-6" />
+                <p className="text-md font-semibold lg:text-lg">About Me</p>
+              </button>
+              <a
+                href="/Luka-Viktor.pdf"
+                download
+                className={cn(
+                  "button-colors-blue flex items-center gap-2 rounded-lg px-4 py-2 lg:px-8 lg:py-3",
+                  theme,
+                )}
+              >
+                <ArrowDownTray className="size-4 sm:size-6" />
+                <p className="text-md font-semibold lg:text-lg">Download CV</p>
+              </a>
             </div>
+
+            <ul className="mb-10 flex gap-10">
+              {icons.map(({ id, link, icon: Icon }) => (
+                <li
+                  key={id}
+                  className={cn("icon-colors-blue rounded-lg p-2", theme)}
+                >
+                  <a href={link} target="_blank">
+                    <Icon className="size-10" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <figure className="flex w-[50%] items-center justify-center">
+          <figure className="mx-auto my-10 w-8/10 sm:w-6/10 md:my-0 md:w-1/2 lg:w-1/3">
             <img
-              className="h-[420px] w-[80%] rounded-2xl object-cover"
+              className="gradient-border-blue animate-gradient gradient-glow-bluemy-10 rounded-2xl object-cover p-2"
               src={blue}
-              alt="Jero picture"
+              alt="Hero picture"
             />
           </figure>
         </div>

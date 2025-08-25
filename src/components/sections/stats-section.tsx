@@ -2,61 +2,45 @@ import templateImage from "../../assets/template-images/template-image-6.jpg";
 
 const StatsSection = () => {
   return (
-    <section className="mx-auto w-full max-w-[1440px] py-16">
-      <div className="relative flex h-[90vh] w-full flex-col justify-center gap-20 overflow-hidden rounded-4xl p-12">
+    <section className="flex h-auto w-full items-center justify-center">
+      <div className="gradient-glow-blue relative h-[720px] max-w-[1550px] overflow-hidden rounded-4xl mx-8 p-8 after:absolute after:inset-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-b after:from-indigo-700/30 after:to-purple-700/30">
         <img
-          className="absolute inset-0 z-0 h-auto w-full object-cover blur-xs"
+          className="absolute inset-0 z-0 object-cover blur-xs"
           src={templateImage}
           alt="Stats image"
         />
-        <div className="absolute inset-0 z-0 h-auto w-full bg-linear-to-b from-black/50 to-blue-700/50"></div>
-        <div className="relative z-10 w-6/10">
-          <p className="font-roboto mb-4 text-xl text-indigo-600">
-            Our track record
-          </p>
-          <h1 className="font-montserrat mb-6 text-6xl font-bold text-white">
-            Trusted by thousands of creators worldwide
-          </h1>
-          <p className="font-roboto mb-6 text-2xl text-gray-400">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-            impedit perferendis suscipit eaque, iste dolor cupiditate
-            blanditiis.
-          </p>
+        <div className="relative z-20 flex h-full flex-col justify-center 2xl:p-8 p-0">
+          <div className="mb-16">
+            <h1 className="mb-6 text-6xl font-bold text-white">
+              My Experience And Statistics
+            </h1>
+            <p className="mb-6 w-7/10 text-2xl text-white">
+              Here you can see my experience and statistics. I have worked with
+              many technologies and frameworks. I have a lot of experience in
+              creating web applications.
+            </p>
+          </div>
+          <ul className="relative z-20 grid grid-cols-4 w-full">
+            <li className="border-l border-gray-300 px-6 py-1">
+              <h2 className="mb-4 text-4xl font-bold text-white">2</h2>
+              <p className="text-xl text-gray-200">Years of experience in IT</p>
+            </li>
+            <li className="border-l border-gray-300 px-6 py-1">
+              <h2 className="mb-4 text-4xl font-bold text-white">2</h2>
+              <p className="text-xl text-gray-200">Created projects</p>
+            </li>
+            <li className="border-l border-gray-300 px-6 py-1">
+              <h2 className="mb-4 text-4xl font-bold text-white">2</h2>
+              <p className="text-xl text-gray-200">
+                Months of commercial experience in web development
+              </p>
+            </li>
+            <li className="border-l border-gray-300 px-6 py-1">
+              <h2 className="mb-4 text-4xl font-bold text-white">6</h2>
+              <p className="text-xl text-gray-200">Practical projects</p>
+            </li>
+          </ul>
         </div>
-        <ul className="relative z-10 grid grid-cols-4">
-          <li className="border-l border-gray-300 px-6 py-1">
-            <h2 className="font-montserrat mb-4 text-4xl font-bold text-white">
-              8,000+
-            </h2>
-            <p className="font-roboto text-xl text-gray-200">
-              Creators on the platform
-            </p>
-          </li>
-          <li className="border-l border-gray-300 px-6 py-1">
-            <h2 className="font-montserrat mb-4 text-4xl font-bold text-white">
-              3%
-            </h2>
-            <p className="font-roboto text-xl text-gray-200">
-              Flat platform fee
-            </p>
-          </li>
-          <li className="border-l border-gray-300 px-6 py-1">
-            <h2 className="font-montserrat mb-4 text-4xl font-bold text-white">
-              99.9%
-            </h2>
-            <p className="font-roboto text-xl text-gray-200">
-              Uptime guarantee
-            </p>
-          </li>
-          <li className="border-l border-gray-300 px-6 py-1">
-            <h2 className="font-montserrat mb-4 text-4xl font-bold text-white">
-              $70M
-            </h2>
-            <p className="font-roboto text-xl text-gray-200">
-              Paid out to creators
-            </p>
-          </li>
-        </ul>
       </div>
     </section>
   );

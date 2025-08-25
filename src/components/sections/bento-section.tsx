@@ -1,91 +1,68 @@
 import image01 from "./../../assets/template-images/template-image-5.jpg";
-import image02 from "./../../assets/template-images/template-image-6.jpg";
-import image03 from "./../../assets/template-images/template-image-3.jpg";
-import image04 from "./../../assets/template-images/template-image-1.jpg";
 
 const BentoSection = () => {
   return (
-    <section className="mx-auto w-full max-w-[1440px] py-16">
-      <div className="flex flex-col items-center text-center">
-        <p className="font-roboto mb-4 text-lg text-indigo-600!">
-          Deploy faster
-        </p>
-        <h1 className="font-montserrat mb-10 max-w-1/2 text-5xl! font-bold text-gray-900!">
-          Everything you need to deploy your app
+    <section className="my-16 flex w-full items-center justify-center">
+      <div className="flex max-w-[1550px] flex-col justify-center px-8">
+        <h1 className="animate-gradient gradient-text-red text-glow-red xs:text-3xl mb-10 text-center text-2xl leading-[1.2] font-bold! sm:text-4xl md:text-5xl">
+          My Learning Workflow And Tools
         </h1>
 
-        <div className="grid w-full grid-cols-3 gap-5 text-left">
-          <div className="col-span-1 row-span-2 flex max-h-full flex-col justify-between gap-5 rounded-l-4xl rounded-r-xl border border-gray-400 p-10">
-            <div className="h-2/10">
-              <h3 className="font-montserrat mb-2 font-bold">
-                Mobile friendly
-              </h3>
-              <p className="font-roboto text-lg text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit.
-              </p>
-            </div>
-            <figure className="h-8/10 w-full overflow-hidden rounded-2xl">
+        <div className="frid-rows-4 grid w-full grid-cols-1 gap-5 text-left md:grid-cols-2 md:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2">
+          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 row-span-1 rounded-tl-4xl! rounded-tr-4xl! rounded-br-xl! rounded-bl-xl! border-l-0! p-8 md:col-span-2 xl:col-span-1 xl:row-span-2 xl:rounded-tr-xl! xl:rounded-bl-4xl!">
+            <figure className="w-full overflow-hidden rounded-2xl">
               <img
-                className="h-full w-full object-cover object-left"
+                className="h-[350px] w-full object-cover object-left xl:h-[600px]"
                 src={image01}
                 alt="Image 1"
               />
             </figure>
           </div>
-          <div className="col-span-1 row-span-2 flex flex-col gap-5">
-            <div className="flex flex-col justify-between gap-5 rounded-xl border border-gray-400 p-8">
-              <div className="h-4/10">
-                <h3 className="font-montserrat mb-2 font-bold">Performance</h3>
-                <p className="font-roboto text-lg text-gray-600">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                  maiores impedit. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit.
-                </p>
-              </div>
-              <figure className="h-7/10 w-full overflow-hidden rounded-2xl">
-                <img
-                  className="h-full w-full object-cover object-left"
-                  src={image02}
-                  alt="Image 2"
-                />
-              </figure>
-            </div>
-            <div className="flex flex-col justify-between gap-5 rounded-xl border border-gray-400 p-8">
-              <div className="h-4/10">
-                <h3 className="font-montserrat mb-2 font-bold">Security</h3>
-                <p className="font-roboto text-lg text-gray-600">
-                  Morbi viverra dui mi arcu sed. Tellus semper adipiscing
-                  suspendisse semper morbi. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit.
-                </p>
-              </div>
-              <figure className="h-7/10 w-full overflow-hidden rounded-2xl">
-                <img
-                  className="h-full w-full object-cover object-left"
-                  src={image03}
-                  alt="Image 3"
-                />
-              </figure>
-            </div>
+
+          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 row-span-1 row-start-2 flex flex-col gap-5 rounded-xl! border-l-0! p-8 text-black xl:col-start-2 xl:row-start-1 dark:text-white">
+            <h3 className="text-2xl font-bold">Documentation</h3>
+            <p className="text-base sm:text-xl">
+              The main source of knowledge for me is official documentation. It
+              allows me to work with up-to-date information and better
+              understand the tools I use. Documentation also helps me develop
+              the skill of finding solutions on my own.
+            </p>
           </div>
-          <div className="col-span-1 row-span-2 flex flex-col justify-between gap-5 rounded-l-xl rounded-r-4xl border border-gray-400 p-8">
-            <div className="h-2/10">
-              <h3 className="font-montserrat mb-2 font-bold">Powerful APIs</h3>
-              <p className="font-roboto text-lg text-gray-600">
-                Sit quis amet rutrum tellus ullamcorper ultricies libero dolor
-                eget sem sodales gravida. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Morbi viverra dui mi arcu sed.
-              </p>
-            </div>
-            <figure className="h-8/10 w-full overflow-hidden rounded-2xl">
-              <img
-                className="h-full w-full object-cover object-left"
-                src={image04}
-                alt="Image 4"
-              />
-            </figure>
+
+          <div className="glass-effect glass-main gradient-border-left-red col-span-1 row-span-1 row-start-3 hidden flex-col gap-5 rounded-xl rounded-tr-xl border-l-0! p-8 text-black md:row-start-2 md:flex xl:col-start-3 xl:row-start-1 xl:rounded-tr-4xl dark:text-white">
+            <h3 className="text-2xl font-bold">Tutorials and real projects</h3>
+            <p className="text-base sm:text-xl">
+              In addition, I actively use tutorials based on real projects. This
+              gives me the opportunity to see the practical application of
+              technologies and learn from examples from a real environment. This
+              approach helps me consolidate knowledge faster and implement it in
+              my own projects.
+            </p>
+          </div>
+
+          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 row-span-1 row-start-3 flex flex-col gap-5 rounded-xl rounded-tr-xl border-l-0! p-8 text-black md:row-start-2 md:hidden xl:col-start-3 xl:row-start-1 xl:rounded-tr-4xl dark:text-white">
+            <h3 className="text-2xl font-bold">Tutorials and real projects</h3>
+            <p className="text-base sm:text-xl">
+              In addition, I actively use tutorials based on real projects. This
+              gives me the opportunity to see the practical application of
+              technologies and learn from examples from a real environment. This
+              approach helps me consolidate knowledge faster and implement it in
+              my own projects.
+            </p>
+          </div>
+
+          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 col-start-1 flex flex-col gap-5 rounded-xl rounded-br-4xl rounded-bl-4xl border-l-0! p-8 text-black md:col-span-2 xl:col-start-2 xl:rounded-bl-xl dark:text-white">
+            <h3 className="text-2xl font-bold">Artificial Intelligence</h3>
+            <p className="text-base sm:text-xl">
+              I use AI in my teaching, particularly the Cursor environment. I
+              set up the context to get relevant data, which makes the teaching
+              more flexible and accurate. This allows me to not only speed up
+              the process, but also integrate AI into my development. Thanks to
+              this, I can understand complex technologies faster and test
+              different approaches to solving problems. In addition, using AI
+              helps me optimize workflows and make projects more modern and
+              innovative.
+            </p>
           </div>
         </div>
       </div>

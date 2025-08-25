@@ -1,7 +1,6 @@
 import StackGrid from "../../components/sections/stack-grid";
 import ProjectsGrid from "../../components/sections/projects-grid";
 import CertificatesGrid from "../../components/sections/certificates-grid";
-import HeadingSection from "../../components/sections/heading-section";
 import { useState } from "react";
 
 const buttons = [
@@ -28,33 +27,33 @@ const ShowcaseSection = () => {
   const sectionComponents: Record<string, React.ReactNode> = {
     stack: (
       <div>
-        <HeadingSection title="Stack" />
         <StackGrid />
       </div>
     ),
     projects: (
       <div>
-        <HeadingSection title="Projects" />
         <ProjectsGrid />
       </div>
     ),
     certificates: (
       <div>
-        <HeadingSection title="Certificates" />
         <CertificatesGrid />
       </div>
     ),
   };
 
   return (
-    <div>
-      <ul className="grid grid-cols-3 gap-6">
+    <section className="mx-auto max-w-[1550px]">
+      <h1 className="animate-gradient gradient-text-blue text-glow-blue mb-6 text-center text-6xl font-bold">
+        Portfolio Gallery
+      </h1>
+      <ul className="grid grid-cols-3 gap-10">
         {buttons.map(({ id, name, state }) => (
           <li key={id}>
             <button
               disabled={active === state}
               onClick={() => setActive(state)}
-              className="h-48 w-full p-4 cursor-pointer"
+              className="glass-effect-button text-black dark:text-white glass-main h-48 w-full cursor-pointer overflow-hidden rounded-2xl p-4 text-3xl font-bold transition-all duration-300 ease-in-out hover:scale-105"
             >
               {name}
             </button>
@@ -63,7 +62,7 @@ const ShowcaseSection = () => {
       </ul>
 
       <div>{sectionComponents[active]}</div>
-    </div>
+    </section>
   );
 };
 

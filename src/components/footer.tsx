@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
 import GitHub from "./icons/socials/github";
 import Instagram from "./icons/socials/instagram";
 import LeetCode from "./icons/socials/leetcode";
 import LinkedIn from "./icons/socials/linkedin";
 import Telegram from "./icons/socials/telegram";
+import { cn } from "../utils/utils";
+import { useTheme } from "../context/theme-context";
 
 const icons = [
   {
@@ -35,19 +36,25 @@ const icons = [
 
 const Footer = () => {
   const year = () => new Date().getFullYear();
+  const { theme } = useTheme();
 
   return (
-    <footer className="mx-auto w-full max-w-[1440px]">
-      <div className="flex w-full items-center justify-between py-4">
-        <p className="font-roboto text-gray-600">
+    <footer className="glass-effect-footer glass-main mx-auto w-full max-w-[1440px] rounded-t-2xl px-6 py-3">
+      <div className="flex items-center justify-between">
+        <p className="text-lg text-black dark:text-white">
           &copy; {year()} Your Company, Inc. All rights reserved.
         </p>
         <ul className="flex gap-8">
           {icons.map(({ id, link, icon: Icon }) => (
             <li key={id} className="group">
-              <Link to={link}>
-                <Icon className="size-7 text-gray-600 transition-colors duration-300 ease-in-out group-hover:text-gray-950" />
-              </Link>
+              <a href={link} target="_blank">
+                <Icon
+                  className={cn(
+                    "icon-colors-red size-10 rounded-xl transition-colors duration-300 ease-in-out",
+                    theme,
+                  )}
+                />
+              </a>
             </li>
           ))}
         </ul>

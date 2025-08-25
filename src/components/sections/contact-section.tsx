@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useTransition } from "react";
+import { cn } from "../../utils/utils";
+import { useTheme } from "../../context/theme-context";
 
 const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY);
 
@@ -23,7 +25,8 @@ type ContactFormData = z.infer<typeof contactSchema>;
 const ContactSection = () => {
   const [error, setError] = useState<string | undefined>();
   const [success, setSuccess] = useState<string | undefined>();
-  const [isPending, startTransition] = useTransition(); 
+  const [isPending, startTransition] = useTransition();
+  const { theme } = useTheme();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -82,39 +85,38 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="mx-auto max-w-[1440px] pt-4 pb-16">
-      <div className="flex w-full items-center justify-between px-8">
-        <div className="w-1/3">
-          <h1 className="font-montserrat mb-6 text-5xl! font-bold text-gray-900">
-            Get in touch
+    <section className="flex h-screen w-full items-center justify-center">
+      <div className="flex w-full max-w-[1550px] items-center justify-between rounded-4xl p-16">
+        <div className="gradient-glow-red glass-effect glass-main gradient-border-left-red w-[550px] rounded-4xl border-l-0! p-16">
+          <h1 className="text-glow-red gradient-text-red animate-gradient mb-6 text-5xl! font-bold">
+            Contact Me
           </h1>
-          <p className="font-roboto mb-10 text-lg text-gray-600">
-            Proin volutpat consequat porttitor cras nullam gravida at. Orci
-            molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu
-            sed malesuada et magna.
+          <p className="mb-10 text-lg text-black dark:text-white">
+            I am always open to new opportunities and collaborations. If you
+            have any questions or want to work together, please contact me.
           </p>
 
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-black dark:text-white">
             <li className="flex gap-4">
-              <MapPin className="size-6 text-gray-600" />
-              <p className="font-roboto text-lg text-gray-600">
-                545 Mavis Island Chicago, IL 99191
+              <MapPin className="size-6" />
+              <p className="text-lg">
+                Ukraine, Lviv, Davydiv, Shevchenko street, 33
               </p>
             </li>
             <li className="group flex gap-4">
-              <Phone className="size-6 text-gray-600 group-hover:text-indigo-500!" />
+              <Phone className="size-6 group-hover:text-rose-500!" />
               <a
                 href="tel:+15552345678"
-                className="text-lg text-gray-600! group-hover:text-indigo-500!"
+                className="text-lg group-hover:text-rose-500!"
               >
                 +1 (555) 234-5678
               </a>
             </li>
             <li className="group flex gap-4">
-              <Envelope className="size-6 text-gray-600 group-hover:text-indigo-500!" />
+              <Envelope className="size-6 group-hover:text-rose-500!" />
               <a
                 href="mailto:hello@example.com"
-                className="text-lg! text-gray-600! group-hover:text-indigo-500!"
+                className="text-lg group-hover:text-rose-500!"
               >
                 viktor.luka.dev@gmail.com
               </a>
@@ -122,72 +124,76 @@ const ContactSection = () => {
           </ul>
         </div>
 
-        <div className="h-full w-1/2 rounded-xl border-2 border-gray-300 p-8">
-          <form className="space-y-6">
+        <div className="glass-effect glass-main gradient-border-left-red gradient-glow-red h-full w-1/2 rounded-4xl border-l-0! p-8">
+          <form className="space-y-6 text-black dark:text-white">
             <div className="flex gap-6">
               <div className="w-1/2">
                 <label htmlFor="first-name">
-                  <p className="font-roboto mb-2 text-gray-900">First name</p>
+                  <p className="mb-2">First name</p>
                 </label>
                 <Input
                   id="first-name"
                   name="first-name"
                   type="text"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none"
+                  className="w-full rounded-lg border-2 border-black/60 px-4 py-2 text-base focus:border-black focus:outline-none dark:border-white/60 dark:focus:border-white"
                 />
               </div>
               <div className="w-1/2">
                 <label htmlFor="last-name">
-                  <p className="font-roboto mb-2 text-gray-900">Last name</p>
+                  <p className="mb-2 text-black dark:text-white">Last name</p>
                 </label>
                 <Input
                   id="last-name"
                   name="last-name"
                   type="text"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none"
+                  className="w-full rounded-lg border-2 border-black/60 px-4 py-2 text-base focus:border-black focus:outline-none dark:border-white/60 dark:focus:border-white"
                 />
               </div>
             </div>
             <div>
               <label htmlFor="email">
-                <p className="font-roboto mb-2 text-gray-900">Email*</p>
+                <p className="mb-2 text-black dark:text-white">Email*</p>
               </label>
               <Input
                 id="email"
                 name="email"
                 type="email"
                 required
-                className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none"
+                className="w-full rounded-lg border-2 border-black/60 px-4 py-2 text-base focus:border-black focus:outline-none dark:border-white/60 dark:focus:border-white"
               />
             </div>
             <div>
               <label htmlFor="phone">
-                <p className="font-roboto mb-2 text-gray-900">Phone</p>
+                <p className="mb-2 text-black dark:text-white">Phone</p>
               </label>
               <Input
                 id="phone"
                 name="phone"
                 type="tel"
-                className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none"
+                className="w-full rounded-lg border-2 border-black/60 px-4 py-2 text-base focus:border-black focus:outline-none dark:border-white/60 dark:focus:border-white"
               />
             </div>
             <div>
               <label htmlFor="phone">
-                <p className="font-roboto mb-2 text-gray-900">Message*</p>
+                <p className="mb-2 text-black dark:text-white">Message*</p>
               </label>
               <Textarea
                 id="phone"
                 name="phone"
                 required
-                className="h-40 w-full resize-none rounded-lg border-2 border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none"
+                className="h-40 w-full resize-none rounded-lg border-2 border-black/60 px-4 py-2 text-base focus:border-black focus:outline-none dark:border-white/60 dark:focus:border-white"
               />
             </div>
             <div className="flex w-full justify-end">
               <button
                 type="submit"
-                className="cursor-pointer rounded-lg bg-indigo-600 px-4 py-2 text-white transition-colors duration-300 ease-in-out hover:bg-indigo-400"
+                className={cn(
+                  "button-colors-red flex cursor-pointer items-center gap-2 rounded-lg px-8 py-3",
+                  theme,
+                )}
               >
-                Send message
+                <Envelope className="size-6" />
+                <p className="text-lg font-semibold">Send message</p>
               </button>
             </div>
           </form>

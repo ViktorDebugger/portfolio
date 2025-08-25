@@ -1,72 +1,102 @@
-import templateImage from "../../assets/template-images/template-image-5.jpg";
-import Cloud from "../icons/stack/cloud";
-import LockClosed from "../icons/template/lock";
-import CircleStack from "../icons/stack/circle-stack";
+import image from "./../../assets/hero-images/red-image.jpg";
+import Bolt from "../icons/bolt";
+import BookOpen from "../icons/book-open";
+import Check from "../icons/check";
+import ArrowRightLeft from "../icons/arrow-right-left";
 
 const list = [
   {
     id: 1,
-    icon: Cloud,
-    title: "Push to deploy.",
+    icon: Check,
+    title: "Discipline.",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+      "Ability to organize one's own time and effectively complete tasks, adhering to deadlines and priorities.",
   },
   {
     id: 2,
-    icon: LockClosed,
-    title: "SSL certificates.",
+    icon: BookOpen,
+    title: "Learning.",
     description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+      "Continuous development and acquisition of new knowledge in the field of computer science, modern technologies and practical skills.",
   },
   {
     id: 3,
-    icon: CircleStack,
-    title: "Database backups.",
+    icon: ArrowRightLeft,
+    title: "Flexability.",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      "Rapid adaptation to new conditions, technologies and project requirements to achieve better results.",
   },
   {
     id: 4,
-    icon: LockClosed,
-    title: "SSL certificates.",
+    icon: Bolt,
+    title: "Activity.",
     description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+      "Participation in academic and extracurricular initiatives, project work, and professional development.",
   },
 ];
 
 const FeatureSection = () => {
   return (
-    <section className="mx-auto w-full max-w-[1440px] py-16">
-      <div className="flex items-center justify-between">
-        <figure className="w-[55%]">
+    <section className="flex h-auto w-full items-center justify-center">
+      <div className="mx-5 flex max-w-[1550px] items-end justify-between lg:mx-16">
+        <figure className="hidden w-6/10 xl:block xl:w-[48%]">
           <img
-            className="h-[750px] w-full rounded-2xl object-cover object-left"
-            src={templateImage}
-            alt="Template image"
+            className="gradient-border-red animate-gradient gradient-glow-red h-auto w-full rounded-2xl object-cover object-left p-2"
+            src={image}
+            alt="Feature image"
           />
         </figure>
-        <div className="w-[40%]">
-          <p className="font-roboto mb-4 text-lg text-indigo-600">
-            Deploy faster
-          </p>
-          <h1 className="font-montserrat mb-10 text-5xl font-bold">
-            A better workflow
+        <div className="relative left-0 w-full xl:-left-30">
+          <div className="flex flex-col gap-0 md:flex-row md:gap-10">
+            <div className="glass-effect glass-main gradient-border-left-red mb-10 rounded-4xl border-l-0! p-8 w-full xl:w-8/10">
+              <h1 className="gradient-text-red animate-gradient text-glow-red mb-4 text-3xl font-bold md:text-5xl">
+                About Me
+              </h1>
+              <span className="xs:text-lg space-y-2 text-base text-black lg:text-xl dark:text-white">
+                <p>
+                  I am Luka Viktor, a 3rd year student of Computer Science at
+                  the Lviv Polytechnic National University. In parallel with my
+                  studies, I am engaged in fullstack web development and work at
+                  Halwil as a Trainee Shopify Developer. Hallwil specializes in
+                  creating modern e-commerce solutions for businesses around the
+                  world, in particular online stores on the Shopify platform.
+                </p>
+                <p>
+                  Thanks to this, I gain practical experience in website
+                  development. I develop my own projects, where I learn to
+                  develop client and server parts using various technologies and
+                  integrate third-party services to increase the efficiency and
+                  stability of projects.
+                </p>
+              </span>
+            </div>
+
+            <figure className="mx-auto mb-10 block max-w-8/10 sm:max-w-6/10 md:max-w-4/10 xl:hidden">
+              <img
+                className="gradient-border-red animate-gradient gradient-glow-red h-auto w-full rounded-2xl object-cover object-left p-2"
+                src={image}
+                alt="Feature image"
+              />
+            </figure>
+          </div>
+
+          <h1 className="gradient-text-red animate-gradient text-glow-red mb-4 text-center text-3xl font-bold">
+            My main skills
           </h1>
-          <p className="font-roboto mb-10 text-[22px] text-gray-700">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-            impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis
-            ratione. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Maiores impedit perferendis suscipit eaque, iste dolor cupiditate
-            blanditiis ratione.
-          </p>
-          <ul className="space-y-6">
+          <ul className="space-y-2">
             {list.map(({ id, icon: Icon, title, description }) => (
-              <li key={id} className="flex gap-2">
-                <Icon className="size-6 text-indigo-600" />
-                <div className="w-9/10">
-                  <p className="font-roboto text-lg text-gray-950">
-                    <span className="font-bold text-black!">{title}</span>
-                    <span> {description}</span>
+              <li
+                key={id}
+                className="glass-effect glass-main gradient-border-left-red flex items-start gap-2 rounded-2xl! border-l-0! p-4"
+              >
+                <div className="glass-effect glass-main rounded-lg p-2 text-rose-600 sm:rounded-xl">
+                  <Icon className="relative -left-[1px] size-6 sm:size-8 md:-left-0" />
+                </div>
+
+                <div className="w-full lg:w-9/10">
+                  <p className="text-base text-black sm:text-lg lg:text-xl dark:text-white">
+                    <span className="pr-2 font-bold">{title}</span>
+                    <span>{description}</span>
                   </p>
                 </div>
               </li>

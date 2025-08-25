@@ -1,0 +1,79 @@
+.text-glow-red {
+  text-shadow:
+    0 0 25px rgb(220 38 38 / 0.6),
+    0 0 50px rgb(244 63 94 / 0.6),
+    0 0 75px rgb(249 115 22 / 0.6);
+}
+
+.gradient-text-red {
+  background-image: linear-gradient(to right, #dc2626, #f43f5e, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-border-red {
+  background-image: linear-gradient(45deg, #ef4444, #f97316, #ec4899);
+}
+
+.gradient-glow-red {
+  box-shadow:
+    0 0 20px rgba(220, 38, 38, 0.5),
+    0 0 40px rgba(244, 63, 94, 0.5),
+    0 0 60px rgba(236, 72, 153, 0.5);
+}
+
+.button-colors-red {
+  background-color: transparent;
+  color: #e22424;
+  border: 1px solid #ef4444;
+  box-shadow: 0 0 40px #ec4899;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-colors-red.dark {
+  color: #fff;
+}
+
+.button-colors-red:hover {
+  background-color: #ef4444;
+  color: #fff;
+  box-shadow: 0 0 80px #ec4899;
+}
+
+.gradient-border-left-red {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-border-left-red::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #dc2626, #f43f5e, #ec4899);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+}
+
+.icon-colors-red {
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+  padding: 4px;
+}
+
+.icon-colors-red.light {
+  color: #000;
+}
+
+.icon-colors-red.dark {
+  color: #fff;
+}
+
+.icon-colors-red:hover {
+  color: #d3265a;
+  border: 1px solid #d3265a;
+  box-shadow: 0 0 50px #d3265a;
+}

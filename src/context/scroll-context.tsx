@@ -10,8 +10,10 @@ import {
 interface ScrollContextType {
   refs: Record<string, React.RefObject<HTMLDivElement | null>>;
   scrollToSection: (section: string) => void;
-  registerSection: (section: string) => React.RefObject<HTMLDivElement | null>;
+  registerSection: (section: string, bodyClass?: string) => React.RefObject<HTMLDivElement | null>;
   activeSection: string;
+  setBodyClass: (bodyClass: string) => void;
+  currentBodyClass: string;
 }
 
 const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
@@ -21,35 +23,70 @@ interface ScrollProviderProps {
 }
 
 export const ScrollProvider = ({ children }: ScrollProviderProps) => {
-  const refsRef = useRef<Record<string, React.RefObject<HTMLDivElement | null>>>({});
+  const refsRef = useRef<
+    Record<string, React.RefObject<HTMLDivElement | null>>
+  >({});
+  const sectionBodyMap = useRef<Record<string, string>>({});
 
   const [activeSection, setActiveSection] = useState<string>("home");
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
+  const [currentBodyClass, setCurrentBodyClass] = useState<string>("");
 
-  const scrollToSection = useCallback((section: string) => {
-    setIsScrolling(true);
-    refsRef.current[section]?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+  const setBodyClass = useCallback(
+    (bodyClass: string) => {
+      // Видаляємо попередній клас
+      if (currentBodyClass) {
+        document.body.classList.remove(currentBodyClass);
+      }
 
-    setActiveSection(section);
+      // Додаємо новий клас
+      if (bodyClass) {
+        document.body.classList.add(bodyClass);
+      }
 
-    setTimeout(() => setIsScrolling(false), 1000);
-  }, []);
+      setCurrentBodyClass(bodyClass);
+    },
+    [currentBodyClass],
+  );
 
-  const registerSection = useCallback((section: string) => {
+  const registerSection = useCallback((section: string, bodyClass?: string) => {
     if (!refsRef.current[section]) {
       refsRef.current[section] = useRef<HTMLDivElement>(null);
     }
+
+    if (bodyClass) {
+      sectionBodyMap.current[section] = bodyClass;
+    }
+
     return refsRef.current[section];
   }, []);
+
+  const scrollToSection = useCallback(
+    (section: string) => {
+      setIsScrolling(true);
+      refsRef.current[section]?.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      setActiveSection(section);
+
+      // Встановлюємо body клас для секції
+      const bodyClass = sectionBodyMap.current[section];
+      if (bodyClass) {
+        setBodyClass(bodyClass);
+      }
+
+      setTimeout(() => setIsScrolling(false), 1000);
+    },
+    [setBodyClass],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
       if (isScrolling) return;
 
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 300;
       let newActiveSection = "home";
 
       Object.entries(refsRef.current).forEach(([sectionName, ref]) => {
@@ -57,7 +94,7 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
           const element = ref.current;
           const sectionStart = element.offsetTop;
           const sectionEnd = element.offsetTop + element.offsetHeight;
-          
+
           if (scrollPosition >= sectionStart && scrollPosition < sectionEnd) {
             newActiveSection = sectionName;
           }
@@ -66,6 +103,12 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
 
       if (newActiveSection !== activeSection) {
         setActiveSection(newActiveSection);
+
+        // Встановлюємо body клас для нової активной секції
+        const bodyClass = sectionBodyMap.current[newActiveSection];
+        if (bodyClass) {
+          setBodyClass(bodyClass);
+        }
       }
     };
 
@@ -75,7 +118,16 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [activeSection, isScrolling]);
+  }, [activeSection, isScrolling, setBodyClass]);
+
+  // Очищення при розмонтуванні
+  useEffect(() => {
+    return () => {
+      if (currentBodyClass) {
+        document.body.classList.remove(currentBodyClass);
+      }
+    };
+  }, [currentBodyClass]);
 
   return (
     <ScrollContext.Provider
@@ -84,6 +136,8 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
         scrollToSection,
         registerSection,
         activeSection,
+        setBodyClass,
+        currentBodyClass,
       }}
     >
       {children}

@@ -53,17 +53,17 @@ const StackItem = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <li className="w-[calc(12.5%-1.5rem)] flex-none rounded-xl border-2 border-gray-300 bg-gray-100 transition-colors duration-300 ease-in-out hover:bg-gray-200">
+    <li className="glass-effect-button glass-main w-[calc(12.5%-1.5rem)] overflow-hidden rounded-2xl border-1! border-indigo-300! shadow-2xl! shadow-indigo-900/80 transition-all duration-300 ease-in-out hover:scale-105">
       <button
         onClick={() => setOpen(true)}
-        className="group relative h-full w-full cursor-pointer p-4"
+        className="group relative h-full w-full cursor-pointer p-4 text-black dark:text-white dark:bg-white/10"
       >
         <img
-          className="h-auto w-full rounded-xl opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-50"
+          className="h-auto w-full rounded-xl opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-30"
           src={image}
           alt={name}
         />
-        <p className="font-roboto absolute top-1/2 left-1/2 w-32 -translate-x-1/2 -translate-y-1/2 text-lg! font-bold! text-gray-950! opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+        <p className="absolute top-1/2 left-1/2 w-32 -translate-x-1/2 -translate-y-1/2 text-lg! font-bold! opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
           {name}
         </p>
       </button>
@@ -72,10 +72,10 @@ const StackItem = ({
         onClose={() => setOpen(false)}
         className="relative z-50"
       >
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="w-5/6 space-y-4 rounded-lg border-2 border-gray-300 bg-white px-8 py-16">
+        <div className="fixed inset-0 flex w-screen items-center justify-center p-4 backdrop-blur-2xl">
+          <DialogPanel className="glass-effect glass-main gradient-border-left-blue w-5/6 space-y-4 rounded-2xl border-2 border-l-0! border-black bg-white/40! px-8 py-16 text-black shadow-2xl! shadow-indigo-500 dark:bg-black/40! dark:text-white">
             <div className="mb-12 flex items-center justify-between">
-              <figure className="flex h-96 w-96 items-center justify-center rounded-2xl border-2 border-gray-300 bg-gray-200 p-4">
+              <figure className="gradient-border-left-blue flex h-96 w-96 items-center justify-center rounded-2xl bg-black/20 p-4 dark:bg-white/20">
                 <img
                   className="h-auto w-full rounded-2xl"
                   src={image}
@@ -83,8 +83,10 @@ const StackItem = ({
                 />
               </figure>
               <div className="w-6/10">
-                <DialogTitle className="font-montserrat mb-4 text-4xl font-bold text-gray-900">
-                  <a href={documentation} target="_blank">{name}</a>
+                <DialogTitle className="mb-4 text-4xl font-bold">
+                  <a href={documentation} target="_blank">
+                    {name}
+                  </a>
                 </DialogTitle>
                 <ul className="mb-4 flex gap-2">
                   {categories.map((category) => (
@@ -93,22 +95,22 @@ const StackItem = ({
                     </li>
                   ))}
                 </ul>
-                <Description className="mb-8 text-xl font-normal text-gray-600">
+                <Description className="mb-8 text-xl font-normal">
                   {description}
                 </Description>
                 <ul className="grid grid-cols-2 gap-4">
                   {skills.map((skill) => (
                     <li key={skill} className="flex gap-3">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-black">
-                        <Check className="size-4 text-white" />
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-black dark:bg-white">
+                        <Check className="size-4 text-white dark:text-black" />
                       </div>
-                      <p className="font-roboto">{skill}</p>
+                      <p className="">{skill}</p>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <ul className="flex justify-between rounded-lg border border-gray-400 px-6 py-3">
+            <ul className="flex justify-between rounded-lg border border-black px-6 py-3 dark:border-white">
               {learningStages.map(({ id, title }) => (
                 <li
                   key={id}
@@ -117,31 +119,29 @@ const StackItem = ({
                   {id === learningLevel ? (
                     <>
                       <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-indigo-600 p-2">
-                        <p className="font-roboto text-lg font-semibold text-indigo-600">
+                        <p className="text-lg font-semibold text-indigo-600">
                           0{id}
                         </p>
                       </div>
-                      <p className="font-roboto text-indigo-600 transition-colors duration-300 ease-in-out">
+                      <p className="text-indigo-600 transition-colors duration-300 ease-in-out">
                         {title}
                       </p>
                       {id !== learningStages.length && (
-                        <div className="absolute -top-[3.35px] right-10 h-13 w-13 -rotate-45 border-r border-b border-gray-400"></div>
+                        <div className="absolute -top-[3.35px] right-10 h-13 w-13 -rotate-45 border-r border-b border-black dark:border-white"></div>
                       )}
                     </>
                   ) : (
                     <>
                       {id > learningLevel ? (
                         <>
-                          <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gray-400 p-2">
-                            <p className="font-roboto text-lg font-semibold text-gray-400">
-                              0{id}
-                            </p>
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-black p-2 text-black dark:border-white dark:text-white">
+                            <p className="text-lg font-semibold">0{id}</p>
                           </div>
-                          <p className="font-roboto text-gray-400 transition-colors duration-300 ease-in-out">
+                          <p className="text-black transition-colors duration-300 ease-in-out dark:text-white">
                             {title}
                           </p>
                           {id !== learningStages.length && (
-                            <div className="absolute -top-[3.35px] right-10 h-13 w-13 -rotate-45 border-r border-b border-gray-400"></div>
+                            <div className="absolute -top-[3.35px] right-10 h-13 w-13 -rotate-45 border-r border-b  dark:border-white border-black"></div>
                           )}
                         </>
                       ) : (
@@ -149,11 +149,11 @@ const StackItem = ({
                           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-600 p-2">
                             <Check className="size-6 text-white" />
                           </div>
-                          <p className="font-roboto text-black transition-colors duration-300 ease-in-out">
+                          <p className="text-black transition-colors duration-300 ease-in-out dark:text-white">
                             {title}
                           </p>
                           {id !== learningStages.length && (
-                            <div className="absolute -top-[3px] right-10 h-13 w-13 -rotate-45 border-r border-b border-gray-400"></div>
+                            <div className="absolute -top-[3px] right-10 h-13 w-13 -rotate-45 border-r border-b border-black dark:border-white"></div>
                           )}
                         </>
                       )}

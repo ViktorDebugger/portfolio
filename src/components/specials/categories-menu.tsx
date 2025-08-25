@@ -17,6 +17,11 @@ import Squares2X2 from "./../icons/squares2x2.tsx";
 import Plus from "../icons/plus.tsx";
 import Minus from "../icons/minus.tsx";
 import { useState } from "react";
+import BookOpen from "../icons/stack/book-open.tsx";
+import Bolt from "../icons/stack/bolt.tsx";
+import InformationCircle from "../icons/stack/information-circle.tsx";
+import BriefCase from "../icons/stack/brief-case.tsx";
+import Eye from "../icons/stack/eye.tsx";
 
 interface Category {
   id: number;
@@ -110,6 +115,36 @@ export const categories: Category[] = [
     description: "Online store platforms",
     icon: ShoppingCart,
   },
+  {
+    id: 15,
+    name: "APIs & Services",
+    description: "External APIs and service integrations",
+    icon: Bolt,
+  },
+  {
+    id: 16,
+    name: "Forms",
+    description: "Form handling and validation libraries",
+    icon: InformationCircle,
+  },
+  {
+    id: 17,
+    name: "Content Management",
+    description: "CMS and content management systems",
+    icon: BookOpen,
+  },
+  {
+    id: 18,
+    name: "Media",
+    description: "Media processing and streaming tools",
+    icon: Eye,
+  },
+  {
+    id: 19,
+    name: "JavaScript Libraries",
+    description: "Utility and helper JavaScript libraries",
+    icon: BriefCase,
+  },
 ];
 
 interface CategoriesMenuProps {
@@ -128,14 +163,14 @@ const CategoriesMenu = ({ category, handler }: CategoriesMenuProps) => {
   return (
     <>
       <button
-        className="flex cursor-pointer items-center gap-4 self-end p-4"
+        className="glass-effect-button text-black dark:text-white glass-main flex cursor-pointer items-center gap-4 self-end overflow-hidden rounded-2xl border-l-4! border-l-indigo-600! p-4 shadow-2xl! shadow-indigo-900/80 transition-all duration-300 ease-in-out hover:scale-105"
         onClick={() => setOpen(true)}
       >
-        <p className="font-roboto">{category}</p>
+        <p className="">{category}</p>
         {open ? (
-          <Minus className="size-4 text-gray-950" />
+          <Minus className="size-4" />
         ) : (
-          <Plus className="size-4 text-gray-950" />
+          <Plus className="size-4" />
         )}
       </button>
       <Dialog
@@ -143,9 +178,9 @@ const CategoriesMenu = ({ category, handler }: CategoriesMenuProps) => {
         onClose={() => setOpen(false)}
         className="relative z-50"
       >
-        <div className="fixed inset-0 flex w-screen items-center justify-center gap-4 text-left">
-          <DialogPanel className="max-w-6xl rounded-lg border-2 border-gray-400 bg-white p-6">
-            <DialogTitle className="font-montserrat text-light-heading-1 dark:text-dark-heading-1 mb-8 text-center text-4xl font-bold">
+        <div className="fixed inset-0 flex w-screen items-center justify-center gap-4 text-left backdrop-blur-lg">
+          <DialogPanel className="glass-effect glass-main gradient-border-left-blue max-w-5xl rounded-2xl border-l-0 p-6 shadow-2xl! shadow-indigo-500 text-black dark:text-white">
+            <DialogTitle className="text-light-heading-1 dark:text-dark-heading-1 mb-8 text-center text-4xl font-bold">
               Categories
             </DialogTitle>
 
@@ -154,18 +189,16 @@ const CategoriesMenu = ({ category, handler }: CategoriesMenuProps) => {
                 <li key={id} className="w-[calc(33.3%-0.5rem)] flex-none">
                   <button
                     onClick={() => handleCategory(name)}
-                    className="group flex w-full cursor-pointer items-center gap-4 rounded-lg p-2 transition-colors duration-300 ease-in-out hover:bg-gray-100"
+                    className="group flex w-full cursor-pointer items-center gap-4 rounded-lg p-2 transition-colors duration-300 ease-in-out hover:text-indigo-600"
                   >
-                    <div className="rounded-lg bg-gray-100 p-3 transition-colors duration-300 ease-in-out group-hover:bg-white">
-                      <Icon className="size-6 text-black transition-colors duration-300 ease-in-out group-hover:text-indigo-600" />
+                    <div className="rounded-lg">
+                      <Icon className="size-6" />
                     </div>
                     <div className="space-y-1 text-left">
-                      <p className="font-roboto transition-colors duration-300 ease-in-out group-hover:text-black">
+                      <p className="font-bold transition-colors duration-300 ease-in-out">
                         {name}
                       </p>
-                      <p className="text-md font-roboto text-gray-600">
-                        {description}
-                      </p>
+                      <p className="text-md">{description}</p>
                     </div>
                   </button>
                 </li>
