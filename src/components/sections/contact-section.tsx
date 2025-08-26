@@ -2,87 +2,87 @@ import Envelope from "../icons/envelope";
 import MapPin from "../icons/map-pin";
 import Phone from "../icons/phone";
 import { Input, Textarea } from "@headlessui/react";
-import { Resend } from "resend";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useState, useTransition } from "react";
+// import { Resend } from "resend";
+// import { useForm } from "react-hook-form";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import { z } from "zod";
+// import { useState, useTransition } from "react";
 import { cn } from "../../utils/utils";
 import { useTheme } from "../../context/theme-context";
 
-const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY);
+// const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY);
 
-const contactSchema = z.object({
-  firstName: z.string().optional(),
-  lastName: z.string().optional(),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters long"),
-});
+// const contactSchema = z.object({
+//   firstName: z.string().optional(),
+//   lastName: z.string().optional(),
+//   email: z.string().email("Please enter a valid email address"),
+//   phone: z.string().optional(),
+//   message: z.string().min(10, "Message must be at least 10 characters long"),
+// });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+// type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactSection = () => {
-  const [error, setError] = useState<string | undefined>();
-  const [success, setSuccess] = useState<string | undefined>();
-  const [isPending, startTransition] = useTransition();
+  // const [error, setError] = useState<string | undefined>();
+  // const [success, setSuccess] = useState<string | undefined>();
+  // const [isPending, startTransition] = useTransition();
   const { theme } = useTheme();
 
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      firstName: undefined,
-      lastName: undefined,
-      email: undefined,
-      phone: undefined,
-      message: undefined,
-    },
-  });
+  // const form = useForm<ContactFormData>({
+  //   resolver: zodResolver(contactSchema),
+  //   defaultValues: {
+  //     firstName: undefined,
+  //     lastName: undefined,
+  //     email: undefined,
+  //     phone: undefined,
+  //     message: undefined,
+  //   },
+  // });
 
-  const sendEmail = async (data: ContactFormData) => {
-    await resend.emails.send({
-      from: data.email,
-      to: "viktor.luka.dev@gmail.com",
-      subject: `New contact form submission from ${data.firstName} ${data.lastName}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Phone:</strong> ${data.phone || "Not provided"}</p>
-        <p><strong>Message:</strong></p>
-        <p>${data.message}</p>
-      `,
-    });
-  };
+  // const sendEmail = async (data: ContactFormData) => {
+  //   await resend.emails.send({
+  //     from: data.email,
+  //     to: "viktor.luka.dev@gmail.com",
+  //     subject: `New contact form submission from ${data.firstName} ${data.lastName}`,
+  //     html: `
+  //       <h2>New Contact Form Submission</h2>
+  //       <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
+  //       <p><strong>Email:</strong> ${data.email}</p>
+  //       <p><strong>Phone:</strong> ${data.phone || "Not provided"}</p>
+  //       <p><strong>Message:</strong></p>
+  //       <p>${data.message}</p>
+  //     `,
+  //   });
+  // };
 
-  const submit = async (values: ContactFormData) => {
-    const validatedFields = contactSchema.safeParse(values);
+  // const submit = async (values: ContactFormData) => {
+  //   const validatedFields = contactSchema.safeParse(values);
 
-    if (!validatedFields.success) {
-      return { error: "Invalid fields!" };
-    }
+  //   if (!validatedFields.success) {
+  //     return { error: "Invalid fields!" };
+  //   }
 
-    await sendEmail(values);
+  //   await sendEmail(values);
 
-    return { success: "Mail send!" };
-  };
+  //   return { success: "Mail send!" };
+  // };
 
-  const onSubmit = (values: ContactFormData) => {
-    setSuccess(undefined);
-    setError(undefined);
-    startTransition(() => {
-      submit(values)
-        .then((data) => {
-          if (data.error) {
-            setError(data.error);
-          }
-          if (data.success) {
-            setSuccess(data.success);
-          }
-        })
-        .catch(() => setError("Something went wrong!"));
-    });
-  };
+  // const onSubmit = (values: ContactFormData) => {
+  //   setSuccess(undefined);
+  //   setError(undefined);
+  //   startTransition(() => {
+  //     submit(values)
+  //       .then((data) => {
+  //         if (data.error) {
+  //           setError(data.error);
+  //         }
+  //         if (data.success) {
+  //           setSuccess(data.success);
+  //         }
+  //       })
+  //       .catch(() => setError("Something went wrong!"));
+  //   });
+  // };
 
   return (
     <section className="mb-12 flex h-auto w-full items-center justify-center">
