@@ -22,7 +22,7 @@ const CertificateItem = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <li className="glass-effect-button glass-main w-full max-w-[400px] flex-none overflow-hidden rounded-2xl border-1! border-indigo-300! shadow-2xl! shadow-indigo-900/80 transition-all duration-300 ease-in-out hover:scale-105 md:w-[calc(50%-2rem)] xl:w-[calc(33.3%-2rem)]">
+    <li className="glass-effect-button glass-main w-full max-w-[400px] flex-none overflow-hidden rounded-2xl border-1! border-indigo-300! shadow-2xl! shadow-indigo-900/80 backdrop-blur-xl backdrop-saturate-200 transition-all duration-300 ease-in-out hover:scale-105 md:w-[calc(50%-2rem)] xl:w-[calc(33.3%-2rem)]">
       <button
         onClick={() => setOpen(true)}
         className="relative h-full w-full cursor-pointer p-4 text-black md:p-8 dark:text-white"
@@ -36,7 +36,7 @@ const CertificateItem = ({
         className="relative z-50"
       >
         <div className="fixed inset-0 flex w-screen items-end justify-center p-4 backdrop-blur-md md:items-center">
-          <DialogPanel className="glass-effect glass-main gradient-border-left-blue absolute -bottom-10 max-h-[90vh] w-full overflow-y-auto rounded-2xl border-l-0 pb-16 text-black shadow-2xl! shadow-indigo-500 md:bottom-auto md:w-5/6 md:max-w-7xl md:pb-8 dark:text-white">
+          <DialogPanel className="glass-effect glass-main gradient-border-left-blue absolute -bottom-10 max-h-[90vh] w-full overflow-y-auto rounded-2xl border-l-0 pb-16 text-black shadow-2xl! shadow-indigo-500 backdrop-blur-xl backdrop-saturate-200 md:bottom-auto md:w-5/6 md:max-w-7xl md:pb-8 dark:text-white">
             <div className="absolute top-0 left-0 z-1 h-full w-full bg-black/30 dark:bg-black/50"></div>
             <div className="relative z-2 flex h-full max-h-[90vh] flex-col">
               <div className="scrollbar-hide flex-1 overflow-x-hidden overflow-y-auto">

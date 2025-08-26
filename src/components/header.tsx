@@ -1,10 +1,12 @@
-import Bolt from "./icons/bolt";
 import ThemeSwitch from "./specials/theme-switch";
 import { useScroll } from "../context/scroll-context";
 import { cn } from "../utils/utils";
 import { useTheme } from "../context/theme-context";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import Bars3 from "./icons/bars3";
+
+import logoWhite from "/logo-white.png?url";
+import logoBlack from "/logo-black.png?url";
 
 const pages = [
   {
@@ -34,14 +36,18 @@ const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <header className="fixed! top-0 right-0 left-0 z-30 px-6">
-      <div className="glass-effect-header glass-main mx-auto max-w-[1440px] rounded-b-2xl px-6 py-3">
+    <header className="fixed! top-0 right-0 left-0 z-30 px-2">
+      <div className="glass-effect-header glass-main backdrop-blur-xl backdrop-saturate-200 mx-auto max-w-[1440px] rounded-b-2xl px-6 py-3">
         <div className="flex w-full items-center justify-between">
           <button
             className="cursor-pointer"
             onClick={() => scrollToSection("home")}
           >
-            <Bolt className="size-6 md:size-8 text-black dark:text-white" />
+            <img
+              src={theme === "dark" ? logoWhite : logoBlack}
+              alt="Logo"
+              className="size-8 md:size-10"
+            />
           </button>
 
           <nav className="hidden md:block">
@@ -67,11 +73,11 @@ const Header = () => {
             <nav className="block md:hidden">
               <Menu>
                 <MenuButton>
-                  <Bars3 className="relative top-1 size-8 md:size-10 cursor-pointer text-black focus:outline-none dark:text-white" />
+                  <Bars3 className="relative top-1 size-8 cursor-pointer text-black focus:outline-none md:size-10 dark:text-white" />
                 </MenuButton>
                 <MenuItems
                   anchor="bottom end"
-                  className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 flex-col gap-4 rounded-2xl p-4 focus:outline-none"
+                  className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 z-20 mt-1 flex h-62 w-52 flex-col gap-4 rounded-2xl p-4 focus:outline-none"
                 >
                   {pages.map(({ id, name, section }) => (
                     <MenuItem key={id}>
@@ -87,7 +93,7 @@ const Header = () => {
               </Menu>
             </nav>
 
-            <div className="flex h-6 md:h-10 items-center">
+            <div className="flex h-6 items-center md:h-10">
               <ThemeSwitch />
             </div>
           </div>

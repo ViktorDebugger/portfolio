@@ -1,7 +1,5 @@
 .glass-main {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
   overflow: hidden;
   position: relative;
 }

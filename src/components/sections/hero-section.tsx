@@ -50,14 +50,14 @@ const HeroSection = () => {
 
   return (
     <section className="flex h-auto w-full items-center justify-center">
-      <div className="glass-effect glass-main 3xl:mx-0 mx-5 max-w-[1550px] rounded-2xl p-16 px-4 sm:px-8 2xl:px-16">
+      <div className="glass-effect glass-main 3xl:mx-0 mx-5 max-w-[1550px] rounded-2xl p-16 px-4 backdrop-blur-xl backdrop-saturate-200 sm:px-8 2xl:px-16">
         <h1 className="animate-gradient text-shadow-blue gradient-text-blue text-glow-blue xs:text-4xl mb-6 text-[28px] font-bold sm:text-5xl lg:text-6xl">
           FullStack Developer
         </h1>
-        <p className="mb-4 h-[55px] w-full text-xl text-black md:w-[720px] md:text-2xl dark:text-white">
+        <div className="mb-4 h-[55px] w-full text-xl text-black md:w-[720px] md:text-2xl dark:text-white">
           <span ref={textRef}></span>
-          <div className="animate-typewriter relative -bottom-0.5 inline-block h-6 w-0.5 bg-black dark:bg-white"></div>
-        </p>
+          <p className="animate-typewriter relative -bottom-0.5 inline-block h-6 w-0.5 bg-black dark:bg-white"></p>
+        </div>
         <div className="flex flex-col-reverse justify-between gap-2 md:flex-row">
           <div className="w-full md:w-1/2">
             <p className="mb-10 text-xl text-black lg:text-2xl dark:text-white">
@@ -85,7 +85,7 @@ const HeroSection = () => {
               <button
                 onClick={() => scrollToSection("about")}
                 className={cn(
-                  "button-colors-blue flex items-center gap-2 rounded-lg px-4 py-2 lg:px-8 lg:py-3",
+                  "button-colors-blue flex cursor-pointer items-center gap-2 rounded-lg px-4 py-2 lg:px-8 lg:py-3",
                   theme,
                 )}
               >

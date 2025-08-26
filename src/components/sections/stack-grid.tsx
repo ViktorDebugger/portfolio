@@ -45,7 +45,7 @@ const StackGrid = () => {
         {hasMoreItems && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="glass-effect-button glass-main mt-8 flex cursor-pointer items-center gap-2 rounded-2xl border-l-4! border-l-indigo-600! p-4 text-black shadow-2xl! shadow-indigo-900/80 transition-all duration-300 ease-in-out hover:scale-105 dark:text-white"
+            className="glass-effect-button glass-main mt-8 flex cursor-pointer items-center gap-2 rounded-2xl border-l-4! border-l-indigo-600! p-4 text-black shadow-2xl! shadow-indigo-900/80 backdrop-blur-xl backdrop-saturate-200 transition-all duration-300 ease-in-out hover:scale-105 dark:text-white"
           >
             <span className="text-lg font-semibold">
               {showAll

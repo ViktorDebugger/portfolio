@@ -87,7 +87,7 @@ const ContactSection = () => {
   return (
     <section className="mb-12 flex h-auto w-full items-center justify-center">
       <div className="mx-4 sm:mx-8 flex w-full max-w-[1550px] flex-col items-center justify-between gap-4 xl:flex-row">
-        <div className="gradient-glow-red glass-effect glass-main gradient-border-left-red w-full rounded-2xl border-l-0 px-6 py-8 md:p-16 xl:w-1/2 2xl:w-[550px]">
+        <div className="gradient-glow-red glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 gradient-border-left-red w-full rounded-2xl border-l-0 px-6 py-8 md:p-16 xl:w-1/2 2xl:w-[550px]">
           <h1 className="text-glow-red gradient-text-red animate-gradient mb-6 text-4xl md:text-5xl font-bold">
             Contact Me
           </h1>
@@ -124,7 +124,7 @@ const ContactSection = () => {
           </ul>
         </div>
 
-        <div className="glass-effect glass-main gradient-border-left-red gradient-glow-red h-full w-full rounded-2xl border-l-0 p-8 xl:w-1/2">
+        <div className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 gradient-border-left-red gradient-glow-red h-full w-full rounded-2xl border-l-0 p-8 xl:w-1/2">
           <form className="space-y-6 text-black dark:text-white">
             <div className="flex flex-col gap-6 sm:flex-row">
               <div className="w-full sm:w-1/2">

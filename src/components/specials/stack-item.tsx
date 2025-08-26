@@ -54,7 +54,7 @@ const StackItem = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <li className="glass-effect-button glass-main w-[calc(25%-0.5rem)] overflow-hidden rounded-xl border-1! border-indigo-300! shadow-2xl! shadow-indigo-900/80 transition-all duration-300 ease-in-out hover:scale-105 md:w-[calc(20%-1rem)] md:rounded-2xl lg:w-[calc(16.6666%-1rem)] xl:w-[calc(12.125%-1rem)] 2xl:w-[calc(10%-1rem)]">
+    <li className="glass-effect-button glass-main w-[calc(25%-0.5rem)] overflow-hidden rounded-xl border-1! border-indigo-300! shadow-2xl! shadow-indigo-900/80 backdrop-blur-xl backdrop-saturate-200 transition-all duration-300 ease-in-out hover:scale-105 md:w-[calc(20%-1rem)] md:rounded-2xl lg:w-[calc(16.6666%-1rem)] xl:w-[calc(12.125%-1rem)] 2xl:w-[calc(10%-1rem)]">
       <button
         onClick={() => setOpen(true)}
         className="group relative h-full w-full cursor-pointer p-1 text-black md:p-4 dark:bg-white/40 dark:text-white md:dark:bg-white/10"
@@ -72,7 +72,7 @@ const StackItem = ({
         className="relative z-50"
       >
         <div className="fixed inset-0 flex w-screen items-end justify-center p-4 backdrop-blur-2xl md:items-center">
-          <DialogPanel className="glass-effect glass-main gradient-border-left-blue absolute -bottom-10 max-h-[90vh] w-full space-y-4 rounded-2xl border-2 border-l-0! border-black bg-white/40! text-black shadow-2xl! shadow-indigo-500 md:w-5/6 dark:bg-black/40! dark:text-white">
+          <DialogPanel className="glass-effect glass-main gradient-border-left-blue absolute -bottom-10 max-h-[90vh] w-full space-y-4 rounded-2xl border-2 border-l-0! border-black bg-white/40! text-black shadow-2xl! shadow-indigo-500 backdrop-blur-xl backdrop-saturate-200 md:w-5/6 dark:bg-black/40! dark:text-white">
             <div className="absolute top-0 left-0 z-1 h-full w-full bg-black/30 dark:bg-black/20"></div>
             <div className="relative z-2 flex h-full max-h-[90vh] flex-col">
               <div className="scrollbar-hide flex-1 overflow-x-hidden overflow-y-auto p-4 pb-16 md:p-0 md:pb-8">
@@ -112,13 +112,14 @@ const StackItem = ({
                     </ul>
                   </div>
                 </div>
-                <ul className="lg:flex-row flex flex-col justify-between gap-4 overflow-hidden rounded-lg border-0 border-black bg-transparent px-0 md:px-6 py-3 lg:gap-4 lg:bg-black/10 2xl:border dark:border-white lg:dark:bg-white/10">
+                <ul className="flex flex-col justify-between gap-4 overflow-hidden rounded-lg border-0 border-black bg-transparent px-0 py-3 md:px-6 lg:flex-row lg:gap-4 lg:bg-black/10 2xl:border dark:border-white lg:dark:bg-white/10">
                   {learningStages.map(({ id, title }) => (
                     <li
                       key={id}
                       className={cn(
-                        "relative flex flex-1 items-center gap-3 bg-black/10 p-2 w-full lg:p-0 rounded-lg dark:bg-white/10 lg:bg-transparent lg:dark:bg-transparent",
-                        id === learningStages.length && "max-w-full lg:max-w-40",
+                        "relative flex w-full flex-1 items-center gap-3 rounded-lg bg-black/10 p-2 lg:bg-transparent lg:p-0 dark:bg-white/10 lg:dark:bg-transparent",
+                        id === learningStages.length &&
+                          "max-w-full lg:max-w-40",
                       )}
                     >
                       {id === learningLevel ? (

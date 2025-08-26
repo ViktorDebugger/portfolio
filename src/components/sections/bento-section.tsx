@@ -9,7 +9,7 @@ const BentoSection = () => {
         </h1>
 
         <div className="frid-rows-4 grid w-full grid-cols-1 gap-5 text-left md:grid-cols-2 md:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2">
-          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 row-span-1 rounded-tl-4xl! rounded-tr-4xl! rounded-br-xl! rounded-bl-xl! border-l-0! p-8 md:col-span-2 xl:col-span-1 xl:row-span-2 xl:rounded-tr-xl! xl:rounded-bl-4xl!">
+          <div className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 gradient-border-left-blue col-span-1 row-span-1 rounded-tl-4xl! rounded-tr-4xl! rounded-br-xl! rounded-bl-xl! border-l-0! p-8 md:col-span-2 xl:col-span-1 xl:row-span-2 xl:rounded-tr-xl! xl:rounded-bl-4xl!">
             <figure className="w-full overflow-hidden rounded-2xl">
               <img
                 className="h-[350px] w-full object-cover object-left xl:h-[600px]"
@@ -19,7 +19,7 @@ const BentoSection = () => {
             </figure>
           </div>
 
-          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 row-span-1 row-start-2 flex flex-col gap-5 rounded-xl! border-l-0! p-8 text-black xl:col-start-2 xl:row-start-1 dark:text-white">
+          <div className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 gradient-border-left-blue col-span-1 row-span-1 row-start-2 flex flex-col gap-5 rounded-xl! border-l-0! p-8 text-black xl:col-start-2 xl:row-start-1 dark:text-white">
             <h3 className="text-2xl font-bold">Documentation</h3>
             <p className="text-base sm:text-xl">
               The main source of knowledge for me is official documentation. It
@@ -29,7 +29,7 @@ const BentoSection = () => {
             </p>
           </div>
 
-          <div className="glass-effect glass-main gradient-border-left-red col-span-1 row-span-1 row-start-3 hidden flex-col gap-5 rounded-xl rounded-tr-xl border-l-0! p-8 text-black md:row-start-2 md:flex xl:col-start-3 xl:row-start-1 xl:rounded-tr-4xl dark:text-white">
+          <div className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 gradient-border-left-red col-span-1 row-span-1 row-start-3 hidden flex-col gap-5 rounded-xl rounded-tr-xl border-l-0! p-8 text-black md:row-start-2 md:flex xl:col-start-3 xl:row-start-1 xl:rounded-tr-4xl dark:text-white">
             <h3 className="text-2xl font-bold">Tutorials and real projects</h3>
             <p className="text-base sm:text-xl">
               In addition, I actively use tutorials based on real projects. This
@@ -40,7 +40,7 @@ const BentoSection = () => {
             </p>
           </div>
 
-          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 row-span-1 row-start-3 flex flex-col gap-5 rounded-xl rounded-tr-xl border-l-0! p-8 text-black md:row-start-2 md:hidden xl:col-start-3 xl:row-start-1 xl:rounded-tr-4xl dark:text-white">
+          <div className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 gradient-border-left-blue col-span-1 row-span-1 row-start-3 flex flex-col gap-5 rounded-xl rounded-tr-xl border-l-0! p-8 text-black md:row-start-2 md:hidden xl:col-start-3 xl:row-start-1 xl:rounded-tr-4xl dark:text-white">
             <h3 className="text-2xl font-bold">Tutorials and real projects</h3>
             <p className="text-base sm:text-xl">
               In addition, I actively use tutorials based on real projects. This
@@ -51,7 +51,7 @@ const BentoSection = () => {
             </p>
           </div>
 
-          <div className="glass-effect glass-main gradient-border-left-blue col-span-1 col-start-1 flex flex-col gap-5 rounded-xl rounded-br-4xl rounded-bl-4xl border-l-0! p-8 text-black md:col-span-2 xl:col-start-2 xl:rounded-bl-xl dark:text-white">
+          <div className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 gradient-border-left-blue col-span-1 col-start-1 flex flex-col gap-5 rounded-xl rounded-br-4xl rounded-bl-4xl border-l-0! p-8 text-black md:col-span-2 xl:col-start-2 xl:rounded-bl-xl dark:text-white">
             <h3 className="text-2xl font-bold">Artificial Intelligence</h3>
             <p className="text-base sm:text-xl">
               I use AI in my teaching, particularly the Cursor environment. I

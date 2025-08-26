@@ -8,7 +8,7 @@ const SmallGallery = () => {
   return (
     <section className="flex h-auto min-h-[800px]">
       <div className="relative mx-5 flex h-[1100px] max-w-[1550px] items-center justify-between sm:mx-8 sm:h-[800px] xl:items-center 2xl:mx-auto">
-        <div className="glass-effect glass-main gradient-border-left-blue z-10 w-full rounded-2xl border-l-0! p-4 lg:p-8 xl:w-2/3">
+        <div className="glass-effect glass-main gradient-border-left-blue z-10 w-full rounded-2xl border-l-0! p-4 backdrop-blur-xl backdrop-saturate-200 lg:p-8 xl:w-2/3">
           <h1 className="animate-gradient gradient-text-blue text-glow-blue xs:text-4xl mb-6 text-2xl leading-[1.2] font-bold md:text-5xl xl:text-6xl">
             Studying In University
           </h1>

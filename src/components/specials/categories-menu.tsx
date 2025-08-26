@@ -163,7 +163,7 @@ const CategoriesMenu = ({ category, handler }: CategoriesMenuProps) => {
   return (
     <>
       <button
-        className="glass-effect-button glass-main mx-4 flex cursor-pointer items-center gap-4 self-end overflow-hidden rounded-2xl border-l-4! border-l-indigo-600! p-4 text-black shadow-2xl! shadow-indigo-900/80 transition-all duration-300 ease-in-out hover:scale-105 md:mx-8 dark:text-white"
+        className="glass-effect-button glass-main mx-4 flex cursor-pointer items-center gap-4 self-end overflow-hidden rounded-2xl border-l-4! border-l-indigo-600! p-4 text-black shadow-2xl! shadow-indigo-900/80 backdrop-blur-xl backdrop-saturate-200 transition-all duration-300 ease-in-out hover:scale-105 md:mx-8 dark:text-white"
         onClick={() => setOpen(true)}
       >
         <p className="">{category}</p>
@@ -175,7 +175,7 @@ const CategoriesMenu = ({ category, handler }: CategoriesMenuProps) => {
         className="relative z-50"
       >
         <div className="fixed inset-0 flex w-screen items-center justify-center gap-4 text-left backdrop-blur-lg">
-          <DialogPanel className="glass-effect glass-main gradient-border-left-blue mx-4 max-w-5xl rounded-2xl absolute -bottom-10 border-l-0 text-black shadow-2xl! shadow-indigo-500 dark:text-white">
+          <DialogPanel className="glass-effect glass-main gradient-border-left-blue absolute -bottom-10 mx-4 max-w-5xl rounded-2xl border-l-0 text-black shadow-2xl! shadow-indigo-500 backdrop-blur-xl backdrop-saturate-200 dark:text-white">
             <div className="absolute top-0 left-0 z-0 h-full w-full bg-black/30 dark:bg-black/50"></div>
             <div className="relative z-2 flex h-full max-h-[90vh] flex-col">
               <div className="scrollbar-hide flex-1 overflow-x-hidden overflow-y-auto p-6">
@@ -185,7 +185,10 @@ const CategoriesMenu = ({ category, handler }: CategoriesMenuProps) => {
 
                 <ul className="flex flex-wrap items-center justify-center gap-y-4 md:gap-2">
                   {categories.map(({ id, name, description, icon: Icon }) => (
-                    <li key={id} className="w-[calc(50%-0.5rem)] md:w-[calc(33.3%-0.5rem)] flex-none">
+                    <li
+                      key={id}
+                      className="w-[calc(100%-0.5rem)] flex-none sm:w-[calc(50%-0.5rem)] md:w-[calc(33.3%-0.5rem)]"
+                    >
                       <button
                         onClick={() => handleCategory(name)}
                         className="group flex w-full cursor-pointer items-center gap-4 rounded-lg p-2 transition-colors duration-300 ease-in-out hover:text-indigo-600"

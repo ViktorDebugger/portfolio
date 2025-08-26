@@ -99,6 +99,33 @@ const Slider = () => {
                 </div>
               </SwiperSlide>
             ))}
+            {slides.map(({ id, image, title, description }) => (
+              <SwiperSlide key={id}>
+                <div
+                  className={cn(
+                    "relative h-[300px] w-[250px] overflow-hidden rounded-xl after:absolute after:inset-0 after:z-10 after:bg-gradient-to-tr after:opacity-50 sm:h-[500px] sm:w-[400px] xl:h-[800px] xl:w-[700px]",
+                    id % 2
+                      ? "after:from-indigo-500 after:via-transparent after:to-purple-500"
+                      : "after:from-red-500 after:via-transparent after:to-rose-500",
+                  )}
+                >
+                  <img
+                    className="absolute inset-0 h-full w-full object-cover"
+                    src={image}
+                    alt={title}
+                  />
+
+                  <div className="relative z-20 flex h-full flex-col justify-end rounded-2xl p-6 text-white backdrop-blur-sm">
+                    <h1 className="xs:text-2xl mb-2 text-lg font-bold md:text-3xl">
+                      {title}
+                    </h1>
+                    <p className="xs:text-xl text-xs leading-relaxed xl:text-2xl">
+                      {description}
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

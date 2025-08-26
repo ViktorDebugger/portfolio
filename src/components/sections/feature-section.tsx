@@ -46,9 +46,9 @@ const FeatureSection = () => {
             alt="Feature image"
           />
         </figure>
-        <div className="relative left-0 w-full 2xl:w-8/10 xl:-left-30">
+        <div className="relative left-0 w-full xl:-left-30 2xl:w-8/10">
           <div className="flex flex-col gap-0 md:flex-row md:gap-10">
-            <div className="glass-effect glass-main gradient-border-left-red mb-10 rounded-2xl border-l-0! p-8 w-full">
+            <div className="glass-effect glass-main gradient-border-left-red mb-10 w-full rounded-2xl border-l-0! p-8 backdrop-blur-xl backdrop-saturate-200">
               <h1 className="gradient-text-red animate-gradient text-glow-red mb-4 text-3xl font-bold md:text-5xl">
                 About Me
               </h1>
@@ -87,9 +87,9 @@ const FeatureSection = () => {
             {list.map(({ id, icon: Icon, title, description }) => (
               <li
                 key={id}
-                className="glass-effect glass-main gradient-border-left-red flex items-start gap-2 rounded-2xl! border-l-0! p-4"
+                className="glass-effect glass-main gradient-border-left-red flex items-start gap-2 rounded-2xl! border-l-0! p-4 backdrop-blur-xl backdrop-saturate-200"
               >
-                <div className="glass-effect glass-main rounded-lg p-2 text-rose-600 sm:rounded-xl">
+                <div className="glass-effect glass-main rounded-lg p-2 text-rose-600 backdrop-blur-xl backdrop-saturate-200 sm:rounded-xl">
                   <Icon className="relative -left-[1px] size-6 sm:size-8 md:-left-0" />
                 </div>
 

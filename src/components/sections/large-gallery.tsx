@@ -7,8 +7,8 @@ const LargeGallery = () => {
   return (
     <section className="flex flex-col gap-8 overflow-hidden px-4 pt-0 pb-16 md:px-8 md:pt-16">
       <div className="relative mx-auto flex max-w-[1550px] flex-col-reverse gap-6 lg:flex-row">
-        <div className="glass-effect glass-main gradient-border-left-blue relative z-20 w-full rounded-2xl border-l-0! p-4 md:p-8 lg:w-7/10">
-          <h1 className="text-glow-blue animate-gradient gradient-text-blue mb-8 text-6xl leading-[1.2] font-bold">
+        <div className="glass-effect glass-main gradient-border-left-blue relative z-20 w-full rounded-2xl border-l-0! p-4 backdrop-blur-xl backdrop-saturate-200 md:p-8 lg:w-7/10">
+          <h1 className="animate-gradient gradient-text-blue text-glow-blue xs:text-4xl mb-6 text-2xl leading-[1.2] font-bold md:text-5xl xl:text-6xl">
             My Work
           </h1>
           <span className="space-y-6 text-xl text-black dark:text-white">
