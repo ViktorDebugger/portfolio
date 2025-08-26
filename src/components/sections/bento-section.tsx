@@ -3,7 +3,7 @@ import image01 from "./../../assets/template-images/template-image-5.jpg";
 const BentoSection = () => {
   return (
     <section className="my-16 flex w-full items-center justify-center">
-      <div className="flex max-w-[1550px] flex-col justify-center px-8">
+      <div className="flex max-w-[1550px] flex-col justify-center px-4 md:px-8">
         <h1 className="animate-gradient gradient-text-red text-glow-red xs:text-3xl mb-10 text-center text-2xl leading-[1.2] font-bold! sm:text-4xl md:text-5xl">
           My Learning Workflow And Tools
         </h1>

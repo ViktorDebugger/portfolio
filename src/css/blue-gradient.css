@@ -31,10 +31,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.button-colors-blue.dark {
-  color: #fff;
-}
-
 .button-colors-blue:hover {
   background-color: #443bfd;
   color: #fff;
@@ -93,6 +89,10 @@
   border: 1px solid transparent;
   transition: all 0.3s ease-in-out;
   padding: 4px;
+}
+
+.button-colors-blue.dark {
+  color: #fff;
 }
 
 .icon-colors-blue.light {

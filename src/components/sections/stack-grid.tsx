@@ -1,14 +1,17 @@
 import { stack } from "../../utils/data-stack";
-import SkillItem from "../specials/stack-item";
+import StackItem from "../specials/stack-item";
 import CategoriesMenu from "../specials/categories-menu";
 import { useState } from "react";
 
 const StackGrid = () => {
   const [category, setCategory] = useState("All");
   const [list, setList] = useState(stack);
+  const [showAll, setShowAll] = useState(false);
+  const startItems = 12;
 
   const handleFilter = (name: string) => {
     setCategory(name);
+    setShowAll(false);
     let newList = stack;
     if (name !== "All") {
       newList = newList.filter(({ categories }) => categories.includes(name));
@@ -16,36 +19,41 @@ const StackGrid = () => {
     setList(newList);
   };
 
+  const displayedItems = showAll ? list : list.slice(0, startItems);
+  const hasMoreItems = list.length > startItems;
+
   return (
     <section className="mx-auto max-w-[1440px] py-16">
       <div className="flex flex-col items-center text-center">
         <CategoriesMenu category={category} handler={handleFilter} />
 
-        <ul className="mt-8 flex w-full flex-wrap justify-center gap-6">
-          {list.map(
-            ({
-              id,
-              name,
-              image,
-              categories,
-              description,
-              skills,
-              documentation,
-              learningLevel,
-            }) => (
-              <SkillItem
-                key={id}
-                name={name}
-                image={image}
-                categories={categories}
-                description={description}
-                skills={skills}
-                documentation={documentation}
-                learningLevel={learningLevel}
-              />
-            ),
-          )}
+        <ul className="mt-8 flex w-full flex-wrap justify-center gap-2 px-0 md:gap-6 md:px-4">
+          {displayedItems.map((item) => (
+            <StackItem
+              key={item.id}
+              name={item.name}
+              image={item.image}
+              categories={item.categories}
+              description={item.description}
+              skills={item.skills}
+              documentation={item.documentation}
+              learningLevel={item.learningLevel}
+            />
+          ))}
         </ul>
+
+        {hasMoreItems && (
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="glass-effect-button glass-main mt-8 flex cursor-pointer items-center gap-2 rounded-2xl border-l-4! border-l-indigo-600! p-4 text-black shadow-2xl! shadow-indigo-900/80 transition-all duration-300 ease-in-out hover:scale-105 dark:text-white"
+          >
+            <span className="text-lg font-semibold">
+              {showAll
+                ? "Show Less"
+                : `Show More (${list.length - startItems})`}
+            </span>
+          </button>
+        )}
       </div>
     </section>
   );

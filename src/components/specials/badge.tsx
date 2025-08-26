@@ -66,7 +66,7 @@ const Badge = ({ children, category }: BadgeProps) => {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-md bg-white/60 px-2 py-1 text-sm font-bold shadow-lg ring-1 ring-inset",
+        "inline-flex items-center rounded-md dark:bg-white/40 bg-black/30 px-2 py-1 text-xs md:text-sm font-bold shadow-lg ring-1 ring-inset",
         categoryStyles[category]?.style ?? "",
       )}
     >

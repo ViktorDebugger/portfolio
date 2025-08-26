@@ -85,10 +85,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="flex h-screen w-full items-center justify-center">
-      <div className="flex w-full max-w-[1550px] items-center justify-between rounded-4xl p-16">
-        <div className="gradient-glow-red glass-effect glass-main gradient-border-left-red w-[550px] rounded-4xl border-l-0! p-16">
-          <h1 className="text-glow-red gradient-text-red animate-gradient mb-6 text-5xl! font-bold">
+    <section className="mb-12 flex h-auto w-full items-center justify-center">
+      <div className="mx-4 sm:mx-8 flex w-full max-w-[1550px] flex-col items-center justify-between gap-4 xl:flex-row">
+        <div className="gradient-glow-red glass-effect glass-main gradient-border-left-red w-full rounded-2xl border-l-0 px-6 py-8 md:p-16 xl:w-1/2 2xl:w-[550px]">
+          <h1 className="text-glow-red gradient-text-red animate-gradient mb-6 text-4xl md:text-5xl font-bold">
             Contact Me
           </h1>
           <p className="mb-10 text-lg text-black dark:text-white">
@@ -100,23 +100,23 @@ const ContactSection = () => {
             <li className="flex gap-4">
               <MapPin className="size-6" />
               <p className="text-lg">
-                Ukraine, Lviv, Davydiv, Shevchenko street, 33
+                Ukraine, Lviv
               </p>
             </li>
             <li className="group flex gap-4">
-              <Phone className="size-6 group-hover:text-rose-500!" />
+              <Phone className="size-6 group-hover:text-rose-500" />
               <a
                 href="tel:+15552345678"
-                className="text-lg group-hover:text-rose-500!"
+                className="text-lg group-hover:text-rose-500"
               >
                 +1 (555) 234-5678
               </a>
             </li>
             <li className="group flex gap-4">
-              <Envelope className="size-6 group-hover:text-rose-500!" />
+              <Envelope className="size-6 group-hover:text-rose-500" />
               <a
                 href="mailto:hello@example.com"
-                className="text-lg group-hover:text-rose-500!"
+                className="text-lg group-hover:text-rose-500"
               >
                 viktor.luka.dev@gmail.com
               </a>
@@ -124,10 +124,10 @@ const ContactSection = () => {
           </ul>
         </div>
 
-        <div className="glass-effect glass-main gradient-border-left-red gradient-glow-red h-full w-1/2 rounded-4xl border-l-0! p-8">
+        <div className="glass-effect glass-main gradient-border-left-red gradient-glow-red h-full w-full rounded-2xl border-l-0 p-8 xl:w-1/2">
           <form className="space-y-6 text-black dark:text-white">
-            <div className="flex gap-6">
-              <div className="w-1/2">
+            <div className="flex flex-col gap-6 sm:flex-row">
+              <div className="w-full sm:w-1/2">
                 <label htmlFor="first-name">
                   <p className="mb-2">First name</p>
                 </label>
@@ -138,7 +138,7 @@ const ContactSection = () => {
                   className="w-full rounded-lg border-2 border-black/60 px-4 py-2 text-base focus:border-black focus:outline-none dark:border-white/60 dark:focus:border-white"
                 />
               </div>
-              <div className="w-1/2">
+              <div className="w-full sm:w-1/2">
                 <label htmlFor="last-name">
                   <p className="mb-2 text-black dark:text-white">Last name</p>
                 </label>
@@ -188,7 +188,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 className={cn(
-                  "button-colors-red flex cursor-pointer items-center gap-2 rounded-lg px-8 py-3",
+                  "button-colors-red flex cursor-pointer items-center justify-center gap-2 rounded-lg px-8 py-3 w-full sm:w-auto",
                   theme,
                 )}
               >

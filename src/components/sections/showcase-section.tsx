@@ -44,24 +44,26 @@ const ShowcaseSection = () => {
 
   return (
     <section className="mx-auto max-w-[1550px]">
-      <h1 className="animate-gradient gradient-text-blue text-glow-blue mb-6 text-center text-6xl font-bold">
+      <h1 className="animate-gradient gradient-text-blue text-glow-blue mb-6 px-4 text-center text-4xl leading-[1.2] font-bold md:px-8 lg:text-6xl">
         Portfolio Gallery
       </h1>
-      <ul className="grid grid-cols-3 gap-10">
+      <ul className="grid grid-cols-1 gap-2 px-4 sm:grid-cols-3 md:px-8 lg:gap-10">
         {buttons.map(({ id, name, state }) => (
-          <li key={id}>
+          <li key={id} className="flex justify-center">
             <button
               disabled={active === state}
               onClick={() => setActive(state)}
-              className="glass-effect-button text-black dark:text-white glass-main h-48 w-full cursor-pointer overflow-hidden rounded-2xl p-4 text-3xl font-bold transition-all duration-300 ease-in-out hover:scale-105"
+              className="glass-effect-button glass-main h-24 w-full cursor-pointer overflow-hidden rounded-2xl p-4 transition-all duration-300 ease-in-out hover:scale-105 lg:h-48"
             >
-              {name}
+              <span className="text-xl font-bold text-black lg:text-3xl dark:text-white">
+                {name}
+              </span>
             </button>
           </li>
         ))}
       </ul>
 
-      <div>{sectionComponents[active]}</div>
+      <div className="px-4 md:px-8">{sectionComponents[active]}</div>
     </section>
   );
 };

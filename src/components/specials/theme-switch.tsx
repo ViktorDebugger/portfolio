@@ -19,14 +19,14 @@ const ThemeSwitch = ({ className }: ThemeSwitchProps) => {
       onClick={switchTheme}
       className={cn(
         className,
-        "theme-switch-glow cursor-pointer rounded-2xl p-1",
+        "theme-switch-glow cursor-pointer rounded-lg md:rounded-2xl p-1",
         theme !== "light" ? "light" : "dark",
       )}
     >
       {theme === "light" ? (
-        <Moon className="size-8 text-white" />
+        <Moon className="size-6 md:size-8 text-white" />
       ) : (
-        <Sun className="size-8 text-black" />
+        <Sun className="size-6 md:size-8 text-black" />
       )}
     </button>
   );

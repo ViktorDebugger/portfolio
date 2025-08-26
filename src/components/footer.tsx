@@ -39,12 +39,12 @@ const Footer = () => {
   const { theme } = useTheme();
 
   return (
-    <footer className="glass-effect-footer glass-main mx-auto w-full max-w-[1440px] rounded-t-2xl px-6 py-3">
-      <div className="flex items-center justify-between">
-        <p className="text-lg text-black dark:text-white">
-          &copy; {year()} Your Company, Inc. All rights reserved.
+    <footer className="glass-effect-footer glass-main mx-4 2xl:mx-auto max-w-[1440px] rounded-t-2xl px-6 py-3">
+      <div className="flex items-center justify-between gap-6 flex-col-reverse md:flex-row mt-4 md:mt-0">
+        <p className="text-lg text-center md:text-left text-black dark:text-white">
+          &copy; {year()} Viktor Luka. All rights reserved.
         </p>
-        <ul className="flex gap-8">
+        <ul className="flex gap-4 xs:gap-6 md:gap-8">
           {icons.map(({ id, link, icon: Icon }) => (
             <li key={id} className="group">
               <a href={link} target="_blank">

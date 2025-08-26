@@ -6,6 +6,16 @@
   position: relative;
 }
 
+@media (max-width: 1280px) {
+  .dark .glass-main {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .light .glass-main {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+
 .glass-effect,
 .glass-effect-button {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
@@ -87,4 +97,10 @@
 .header-nav-link.dark:hover {
   opacity: 1;
   text-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }

@@ -50,8 +50,8 @@ const HeroSection = () => {
 
   return (
     <section className="flex h-auto w-full items-center justify-center">
-      <div className="glass-effect glass-main 3xl:mx-0 mx-5 max-w-[1550px] rounded-4xl p-16 px-4 sm:px-8 2xl:px-16">
-        <h1 className="animate-gradient gradient-text-blue text-glow-blue mb-6 text-[28px] xs:text-4xl sm:text-5xl lg:text-6xl font-bold">
+      <div className="glass-effect glass-main 3xl:mx-0 mx-5 max-w-[1550px] rounded-2xl p-16 px-4 sm:px-8 2xl:px-16">
+        <h1 className="animate-gradient text-shadow-blue gradient-text-blue text-glow-blue xs:text-4xl mb-6 text-[28px] font-bold sm:text-5xl lg:text-6xl">
           FullStack Developer
         </h1>
         <p className="mb-4 h-[55px] w-full text-xl text-black md:w-[720px] md:text-2xl dark:text-white">
@@ -72,9 +72,11 @@ const HeroSection = () => {
               {heroStack.map(({ id, name, image }) => (
                 <li
                   key={id}
-                  className="item-gradient-blue size-16 rounded-lg p-1 lg:size-20"
+                  className="item-gradient-blue flex w-full items-center justify-center rounded-lg p-1 lg:size-20"
                 >
-                  <img src={image} alt={name} />
+                  <figure className="size-16">
+                    <img src={image} alt={name} />
+                  </figure>
                 </li>
               ))}
             </ul>

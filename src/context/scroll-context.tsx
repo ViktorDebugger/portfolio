@@ -10,7 +10,10 @@ import {
 interface ScrollContextType {
   refs: Record<string, React.RefObject<HTMLDivElement | null>>;
   scrollToSection: (section: string) => void;
-  registerSection: (section: string, bodyClass?: string) => React.RefObject<HTMLDivElement | null>;
+  registerSection: (
+    section: string,
+    bodyClass?: string,
+  ) => React.RefObject<HTMLDivElement | null>;
   activeSection: string;
   setBodyClass: (bodyClass: string) => void;
   currentBodyClass: string;
@@ -64,10 +67,14 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
   const scrollToSection = useCallback(
     (section: string) => {
       setIsScrolling(true);
-      refsRef.current[section]?.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      const element = refsRef.current[section]?.current;
+      if (element) {
+        const elementPosition = element.offsetTop - 200;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth",
+        });
+      }
 
       setActiveSection(section);
 

@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div className="bg-white dark:bg-[#0a0a0a]">
-      <div className="relative z-10 flex min-h-screen flex-col justify-between overflow-hidden pt-16">
+      <div className="relative z-10 flex min-h-screen flex-col justify-between overflow-hidden pt-32">
         <Header />
         <main>
           <div ref={registerSection("home", "body-1")}>
@@ -42,9 +42,9 @@ const App = () => {
 
           <Divider />
 
-          {/* <div ref={registerSection("gallery-large", "body-4")}>
+          <div ref={registerSection("gallery-large", "body-4")}>
             <LargeGallery />
-          </div> */}
+          </div>
 
           <Divider />
 
@@ -60,9 +60,9 @@ const App = () => {
 
           <Divider />
 
-          {/* <div ref={registerSection("showcase", "body-7")}>
+          <div ref={registerSection("showcase", "body-7")}>
             <ShowcaseSection />
-          </div> */}
+          </div>
 
           <Divider />
 
@@ -70,16 +70,13 @@ const App = () => {
             <StatsSection />
           </div>
 
-          {/*
-
-
           <Divider />
 
           <div ref={registerSection("contact", "body-9")}>
             <ContactSection />
           </div>
-        
-        <Footer /> */}
+
+          <Footer />
         </main>
       </div>
     </div>

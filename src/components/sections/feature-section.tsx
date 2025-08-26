@@ -46,9 +46,9 @@ const FeatureSection = () => {
             alt="Feature image"
           />
         </figure>
-        <div className="relative left-0 w-full xl:-left-30">
+        <div className="relative left-0 w-full 2xl:w-8/10 xl:-left-30">
           <div className="flex flex-col gap-0 md:flex-row md:gap-10">
-            <div className="glass-effect glass-main gradient-border-left-red mb-10 rounded-4xl border-l-0! p-8 w-full xl:w-8/10">
+            <div className="glass-effect glass-main gradient-border-left-red mb-10 rounded-2xl border-l-0! p-8 w-full">
               <h1 className="gradient-text-red animate-gradient text-glow-red mb-4 text-3xl font-bold md:text-5xl">
                 About Me
               </h1>
