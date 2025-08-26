@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "homepage": "https://viktordebugger.github.io/portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,19 +8,21 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^5.2.1",
     "@tailwindcss/vite": "^4.1.11",
+    "gh-pages": "^6.3.0",
     "motion": "^12.23.6",
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.62.0",
-    "react-router-dom": "^7.7.1",
     "resend": "^4.7.0",
     "swiper": "^11.2.10",
     "tailwind-merge": "^3.3.1",
