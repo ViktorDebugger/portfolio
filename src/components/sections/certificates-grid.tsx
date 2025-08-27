@@ -1,4 +1,4 @@
-import { certificates } from "../../utils/data-certificates";
+import { certificates } from "../../data/certificates";
 import CertificateItem from "../specials/certificate-item";
 
 const CertificatesGrid = () => {
@@ -6,13 +6,13 @@ const CertificatesGrid = () => {
     <section className="mx-auto max-w-[1440px] py-16">
       <div className="flex flex-col items-center text-center">
         <ul className="mt-8 flex w-full flex-wrap justify-center gap-8">
-          {certificates.map(({ id, name, image, link, description }) => (
+          {certificates.map((certificate) => (
             <CertificateItem
-              key={id}
-              name={name}
-              image={image}
-              link={link}
-              description={description}
+              key={certificate.id}
+              name={certificate.name}
+              image={certificate.image}
+              link={certificate.link}
+              description={certificate.description}
             />
           ))}
         </ul>

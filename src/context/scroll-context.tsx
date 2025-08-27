@@ -37,12 +37,10 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
 
   const setBodyClass = useCallback(
     (bodyClass: string) => {
-      // Видаляємо попередній клас
       if (currentBodyClass) {
         document.body.classList.remove(currentBodyClass);
       }
 
-      // Додаємо новий клас
       if (bodyClass) {
         document.body.classList.add(bodyClass);
       }
@@ -78,7 +76,6 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
 
       setActiveSection(section);
 
-      // Встановлюємо body клас для секції
       const bodyClass = sectionBodyMap.current[section];
       if (bodyClass) {
         setBodyClass(bodyClass);
@@ -111,7 +108,6 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
       if (newActiveSection !== activeSection) {
         setActiveSection(newActiveSection);
 
-        // Встановлюємо body клас для нової активной секції
         const bodyClass = sectionBodyMap.current[newActiveSection];
         if (bodyClass) {
           setBodyClass(bodyClass);
@@ -127,7 +123,6 @@ export const ScrollProvider = ({ children }: ScrollProviderProps) => {
     };
   }, [activeSection, isScrolling, setBodyClass]);
 
-  // Очищення при розмонтуванні
   useEffect(() => {
     return () => {
       if (currentBodyClass) {

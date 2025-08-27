@@ -92,7 +92,7 @@ const StackItem = ({
                     </DialogTitle>
                     <ul className="mb-4 flex gap-2">
                       {categories.map((category) => (
-                        <li>
+                        <li key={category}>
                           <Badge category={category}>{category}</Badge>
                         </li>
                       ))}
@@ -112,7 +112,7 @@ const StackItem = ({
                     </ul>
                   </div>
                 </div>
-                <ul className="flex flex-col justify-between gap-4 overflow-hidden rounded-lg border-0 border-black bg-transparent px-0 py-3 md:px-6 lg:flex-row lg:gap-4 lg:bg-black/10 2xl:border dark:border-white lg:dark:bg-white/10">
+                <ul className="flex flex-col justify-between gap-4 overflow-hidden rounded-lg border-0 border-black bg-transparent mx-0 my-3 md:mx-6 px-0 py-3 md:px-6 lg:flex-row lg:gap-4 lg:bg-black/10 2xl:border dark:border-white lg:dark:bg-white/10">
                   {learningStages.map(({ id, title }) => (
                     <li
                       key={id}

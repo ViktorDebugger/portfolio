@@ -1,4 +1,4 @@
-import templateImage from "../../assets/template-images/template-image-6.jpg";
+import templateImage from "/template-images/template-image-6.jpg";
 
 const StatsSection = () => {
   return (

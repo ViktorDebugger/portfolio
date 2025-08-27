@@ -1,4 +1,4 @@
-import image01 from "./../../assets/template-images/template-image-5.jpg";
+import image01 from "/template-images/template-image-5.jpg";
 
 const BentoSection = () => {
   return (

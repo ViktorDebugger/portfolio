@@ -1,6 +1,6 @@
-import imageTemplate01 from "../../assets/template-images/template-image-1.jpg";
-import imageTemplate02 from "../../assets/template-images/template-image-3.jpg";
-import imageTemplate03 from "../../assets/template-images/template-image-4.jpg";
+import imageTemplate01 from "/template-images/template-image-1.jpg";
+import imageTemplate02 from "/template-images/template-image-3.jpg";
+import imageTemplate03 from "/template-images/template-image-4.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards, Autoplay } from "swiper/modules";

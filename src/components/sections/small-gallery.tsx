@@ -1,8 +1,8 @@
-import image01 from "../../assets/template-images/template-image-1.jpg";
-import image02 from "../../assets/template-images/template-image-2.jpg";
-import image03 from "../../assets/template-images/template-image-3.jpg";
-import image04 from "../../assets/template-images/template-image-4.jpg";
-import image05 from "../../assets/template-images/template-image-5.jpg";
+import image01 from "/template-images/template-image-1.jpg";
+import image02 from "/template-images/template-image-2.jpg";
+import image03 from "/template-images/template-image-3.jpg";
+import image04 from "/template-images/template-image-4.jpg";
+import image05 from "/template-images/template-image-5.jpg";
 
 const SmallGallery = () => {
   return (

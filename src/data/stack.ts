@@ -1,63 +1,63 @@
-import authjs from "../assets/stack-images/auth-js.png";
-import catalystui from "../assets/stack-images/catalyst-ui.png";
-import clerk from "../assets/stack-images/clerk.png";
-import css from "../assets/stack-images/css.png";
-import firebase from "../assets/stack-images/firebase.png";
-import git from "../assets/stack-images/git.png";
-import github from "../assets/stack-images/github.png";
-import headlessui from "../assets/stack-images/headless-ui.png";
-import heroicons from "../assets/stack-images/heroicons.png";
-import html from "../assets/stack-images/html.png";
-import javascript from "../assets/stack-images/javascript.png";
-import liquid from "../assets/stack-images/liquid.png";
-import lucide from "../assets/stack-images/lucide.png";
-import mongodb from "../assets/stack-images/mongodb.png";
-import motion from "../assets/stack-images/motion.png";
-import nest from "../assets/stack-images/nest-js.png";
-import next from "../assets/stack-images/next-js.png";
-import node from "../assets/stack-images/node-js.png";
-import postgresql from "../assets/stack-images/postgresql.png";
-import prisma from "../assets/stack-images/prisma-orm.png";
-import radixui from "../assets/stack-images/radix-ui.png";
-import react from "../assets/stack-images/react.png";
-import redux from "../assets/stack-images/redux-js.png";
-import resend from "../assets/stack-images/resend.png";
-import shadcnui from "../assets/stack-images/shadcn-ui.png";
-import shopify from "../assets/stack-images/shopify.png";
-import sql from "../assets/stack-images/SQL.png";
-import swiper from "../assets/stack-images/swiper.png";
-import tailwindcss from "../assets/stack-images/tailwindcss.png";
-import typescript from "../assets/stack-images/typescript.png";
-import vite from "../assets/stack-images/vite.png";
-import sass from "../assets/stack-images/sass.png";
-import express from "../assets/stack-images/express-js.png";
-import eslint from "../assets/stack-images/eslint.png";
-import bun from "../assets/stack-images/bun.png";
-import vercel from "../assets/stack-images/vercel.png";
-import zod from "../assets/stack-images/zod.png";
-import zustand from "../assets/stack-images/zustand.png";
-import upstash from "../assets/stack-images/upstash.png";
-import uploadthing from "../assets/stack-images/uploadthing.png";
-import unsplash from "../assets/stack-images/unsplash.png";
-import trpc from "../assets/stack-images/trpc.png";
-import tiptap from "../assets/stack-images/tiptap.png";
-import tanstack from "../assets/stack-images/tanstack.png";
-import stripe from "../assets/stack-images/stripe.png";
-import stream from "../assets/stack-images/stream.png";
-import reactHookForm from "../assets/stack-images/react-hook-form.png";
-import payload from "../assets/stack-images/payload.png";
-import nuqs from "../assets/stack-images/nuqs.png";
-import neon from "../assets/stack-images/neon.png";
-import mux from "../assets/stack-images/mux.png";
-import lodash from "../assets/stack-images/lodash.png";
-import jotai from "../assets/stack-images/jotai.png";
-import liveblocks from "../assets/stack-images/liveblocks.png";
-import convex from "../assets/stack-images/convex.png";
-import appwrite from "../assets/stack-images/appwrite.png";
-import drizzle from "../assets/stack-images/drizzle.png";
-import ngrok from "../assets/stack-images/ngrok.png";
-import webhook from "../assets/stack-images/webhook.png";
-import hono from "../assets/stack-images/hono.png";
+import authjs from "/stack/auth-js.png";
+import catalystui from "/stack/catalyst-ui.png";
+import clerk from "/stack/clerk.png";
+import css from "/stack/css.png";
+import firebase from "/stack/firebase.png";
+import git from "/stack/git.png";
+import github from "/stack/github.png";
+import headlessui from "/stack/headless-ui.png";
+import heroicons from "/stack/heroicons.png";
+import html from "/stack/html.png";
+import javascript from "/stack/javascript.png";
+import liquid from "/stack/liquid.png";
+import lucide from "/stack/lucide.png";
+import mongodb from "/stack/mongodb.png";
+import motion from "/stack/motion.png";
+import nest from "/stack/nest-js.png";
+import next from "/stack/next-js.png";
+import node from "/stack/node-js.png";
+import postgresql from "/stack/postgresql.png";
+import prisma from "/stack/prisma-orm.png";
+import radixui from "/stack/radix-ui.png";
+import react from "/stack/react.png";
+import redux from "/stack/redux-js.png";
+import resend from "/stack/resend.png";
+import shadcnui from "/stack/shadcn-ui.png";
+import shopify from "/stack/shopify.png";
+import sql from "/stack/SQL.png";
+import swiper from "/stack/swiper.png";
+import tailwindcss from "/stack/tailwindcss.png";
+import typescript from "/stack/typescript.png";
+import vite from "/stack/vite.png";
+import sass from "/stack/sass.png";
+import express from "/stack/express-js.png";
+import eslint from "/stack/eslint.png";
+import bun from "/stack/bun.png";
+import vercel from "/stack/vercel.png";
+import zod from "/stack/zod.png";
+import zustand from "/stack/zustand.png";
+import upstash from "/stack/upstash.png";
+import uploadthing from "/stack/uploadthing.png";
+import unsplash from "/stack/unsplash.png";
+import trpc from "/stack/trpc.png";
+import tiptap from "/stack/tiptap.png";
+import tanstack from "/stack/tanstack.png";
+import stripe from "/stack/stripe.png";
+import stream from "/stack/stream.png";
+import reactHookForm from "/stack/react-hook-form.png";
+import payload from "/stack/payload.png";
+import nuqs from "/stack/nuqs.png";
+import neon from "/stack/neon.png";
+import mux from "/stack/mux.png";
+import lodash from "/stack/lodash.png";
+import jotai from "/stack/jotai.png";
+import liveblocks from "/stack/liveblocks.png";
+import convex from "/stack/convex.png";
+import appwrite from "/stack/appwrite.png";
+import drizzle from "/stack/drizzle.png";
+import ngrok from "/stack/ngrok.png";
+import webhook from "/stack/webhook.png";
+import hono from "/stack/hono.png";
 
 export const stack = [
   {
@@ -85,7 +85,7 @@ export const stack = [
     name: "CSS",
     image: css,
     categories: ["Frontend Core"],
-    learningLevel: 4,
+    learningLevel: 5,
     documentation: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     description:
       "CSS allows me to create beautiful and responsive designs for web applications. I master modern technologies like Flexbox, Grid, animations and transitions. I use CSS variables, pseudo-classes and media queries for adaptive design. My approach includes mobile-first design and style performance optimization.",
@@ -365,7 +365,7 @@ export const stack = [
     name: "Lucide",
     image: lucide,
     categories: ["Icons & Assets"],
-    learningLevel: 3,
+    learningLevel: 5,
     documentation: "https://lucide.dev/",
     description:
       "Lucide is a modern icon set with beautiful and consistent design. I use Lucide icons to create intuitive interfaces with clear visual hierarchy. The library provides wide selection of icons for different categories and use cases. Lucide icons are easily customizable and integrate with any React projects.",
@@ -445,7 +445,7 @@ export const stack = [
     name: "MongoDB",
     image: mongodb,
     categories: ["Databases"],
-    learningLevel: 4,
+    learningLevel: 2,
     documentation: "https://www.mongodb.com/docs/",
     description:
       "MongoDB is a NoSQL database that I use for flexible and scalable data storage. I work with document-oriented data model through Mongoose ODM. I create efficient schemas, indexes and aggregation pipelines for optimal performance. MongoDB is perfect for rapid prototyping and applications with dynamic data structures.",
@@ -485,7 +485,7 @@ export const stack = [
     name: "SQL",
     image: sql,
     categories: ["Databases"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://www.w3schools.com/sql/",
     description:
       "SQL is the query language for working with relational databases that I master at expert level. I create complex queries with joins, subqueries, window functions and common table expressions. I optimize performance through proper indexing, query planning and database design principles. SQL knowledge allows me to work efficiently with any relational databases.",
@@ -505,7 +505,7 @@ export const stack = [
     name: "Prisma ORM",
     image: prisma,
     categories: ["Databases", "Development Tools"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://www.prisma.io/docs",
     description:
       "Prisma is a type-safe ORM that generates TypeScript client based on database schema. I use Prisma for database migrations, type-safe queries and excellent developer experience. Schema-first approach ensures consistency between database and application code. Prisma Studio provides convenient UI for database management and data visualization.",
@@ -565,7 +565,7 @@ export const stack = [
     name: "Clerk",
     image: clerk,
     categories: ["Authentication"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://clerk.com/docs",
     description:
       "Clerk provides modern authentication and user management for web applications. I use it for seamless sign-up/sign-in flows with social providers and passwordless authentication. Clerk UI components are easily customizable and integrate with any design system. The platform ensures compliance, security and excellent developer experience for auth workflows.",
@@ -685,7 +685,7 @@ export const stack = [
     name: "Sass",
     image: sass,
     categories: ["Frontend Core", "Development Tools"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://sass-lang.com/documentation/",
     description:
       "Sass (Syntactically Awesome Style Sheets) is a CSS preprocessor that extends CSS with features like variables, nesting, and mixins. I use Sass to write more maintainable and organized stylesheets for complex projects. With features like partials, imports, and functions, Sass helps me create scalable design systems. It compiles to clean, standard CSS that works across all browsers.",
@@ -705,7 +705,7 @@ export const stack = [
     name: "Express.js",
     image: express,
     categories: ["Backend"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://expressjs.com/",
     description:
       "Express.js is a minimal and flexible Node.js web framework that provides robust features for web and mobile applications. I use Express to build RESTful APIs, handle middleware, and create server-side logic efficiently. It's my go-to framework for backend development with its simple yet powerful architecture. Express allows rapid development while maintaining scalability and performance.",
@@ -725,7 +725,7 @@ export const stack = [
     name: "ESLint",
     image: eslint,
     categories: ["Development Tools"],
-    learningLevel: 4,
+    learningLevel: 2,
     documentation: "https://eslint.org/docs/latest/",
     description:
       "ESLint is a static code analysis tool for identifying and reporting patterns in JavaScript and TypeScript code. I use ESLint to maintain code quality, enforce coding standards, and catch potential bugs before they reach production. With custom rules and configurations, ESLint helps maintain consistent code style across team projects. It's essential for professional development workflows.",
@@ -765,7 +765,7 @@ export const stack = [
     name: "Vercel",
     image: vercel,
     categories: ["Development Tools", "Backend Services"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://vercel.com/docs",
     description:
       "Vercel is a cloud platform for static sites and serverless functions that I use for deploying Next.js applications. It provides instant deployments, automatic scaling, and edge network optimization. I leverage Vercel's seamless integration with GitHub for continuous deployment and preview environments. The platform offers excellent developer experience with zero-config deployments and real-time collaboration features.",
@@ -785,7 +785,7 @@ export const stack = [
     name: "Zod",
     image: zod,
     categories: ["Development Tools"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://zod.dev/",
     description:
       "Zod is a TypeScript-first schema validation library that I use for runtime type checking and data validation. It provides excellent TypeScript inference and helps catch errors at both compile-time and runtime. I use Zod for form validation, API response validation, and environment variable parsing. Its declarative API makes complex validation logic readable and maintainable.",
@@ -845,7 +845,7 @@ export const stack = [
     name: "UploadThing",
     image: uploadthing,
     categories: ["Backend Services"],
-    learningLevel: 3,
+    learningLevel: 2,
     documentation: "https://docs.uploadthing.com/",
     description:
       "UploadThing is a file upload service built for Next.js applications with type-safe APIs and excellent developer experience. I use it for handling image uploads, file validation, and storage management. It provides React hooks, TypeScript support, and seamless integration with modern web frameworks. UploadThing simplifies file handling with built-in security and optimization.",
@@ -865,7 +865,7 @@ export const stack = [
     name: "Unsplash",
     image: unsplash,
     categories: ["APIs & Services"],
-    learningLevel: 4,
+    learningLevel: 2,
     documentation: "https://unsplash.com/documentation",
     description:
       "Unsplash provides a powerful API for accessing high-quality stock photos and images for web applications. I integrate Unsplash API to dynamically fetch beautiful images for prototypes, galleries, and content creation. The service offers search functionality, collections, and user data with generous rate limits. Unsplash images enhance visual appeal of applications without copyright concerns.",
@@ -925,7 +925,7 @@ export const stack = [
     name: "TanStack Query",
     image: tanstack,
     categories: ["State Management", "Development Tools"],
-    learningLevel: 4,
+    learningLevel: 2,
     documentation: "https://tanstack.com/query/latest",
     description:
       "TanStack Query (formerly React Query) is a powerful data-fetching library that manages server state with caching, synchronization, and background updates. I use it for efficient API data management, optimistic updates, and offline support. It provides automatic background refetching, stale-while-revalidate patterns, and excellent DevTools for debugging data flow.",
@@ -985,7 +985,7 @@ export const stack = [
     name: "React Hook Form",
     image: reactHookForm,
     categories: ["React Ecosystem", "Forms"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://react-hook-form.com/",
     description:
       "React Hook Form is a performant library for managing forms in React with minimal re-renders and excellent developer experience. I use it for complex form validation, field arrays, and integration with UI libraries. It provides uncontrolled components approach, built-in validation, and TypeScript support. React Hook Form reduces boilerplate while maintaining flexibility and performance.",
@@ -1025,7 +1025,7 @@ export const stack = [
     name: "nuqs",
     image: nuqs,
     categories: ["State Management", "React Ecosystem"],
-    learningLevel: 3,
+    learningLevel: 2,
     documentation: "https://nuqs.47ng.com/",
     description:
       "nuqs is a type-safe library for managing URL search parameters as state in Next.js applications. I use it for creating shareable URLs, maintaining filter states, and browser navigation handling. It provides React hooks for URL state synchronization with TypeScript support and excellent developer experience. nuqs makes URL state management elegant and predictable.",
@@ -1085,7 +1085,7 @@ export const stack = [
     name: "Lodash",
     image: lodash,
     categories: ["Development Tools", "JavaScript Libraries"],
-    learningLevel: 4,
+    learningLevel: 2,
     documentation: "https://lodash.com/docs",
     description:
       "Lodash is a modern JavaScript utility library providing consistent, modular, and performant functions for common programming tasks. I use Lodash for data manipulation, array operations, object transformations, and functional programming patterns. It offers tree-shaking support, TypeScript definitions, and battle-tested utility functions that improve code reliability and readability.",
@@ -1105,7 +1105,7 @@ export const stack = [
     name: "Jotai",
     image: jotai,
     categories: ["State Management"],
-    learningLevel: 3,
+    learningLevel: 2,
     documentation: "https://jotai.org/docs/introduction",
     description:
       "Jotai is a primitive and flexible state management library for React based on atomic approach. I use Jotai for bottom-up state management with excellent TypeScript support and minimal boilerplate. It provides fine-grained reactivity, async support, and composable atoms for complex state logic. Jotai eliminates prop drilling while maintaining predictable state updates.",
@@ -1205,7 +1205,7 @@ export const stack = [
     name: "ngrok",
     image: ngrok,
     categories: ["Development Tools", "Backend Services"],
-    learningLevel: 4,
+    learningLevel: 2,
     documentation: "https://ngrok.com/docs",
     description:
       "ngrok is a secure tunneling service that exposes local servers to the internet for testing webhooks, APIs, and mobile applications. I use ngrok for local development when working with third-party services that require public URLs. It provides HTTPS tunnels, custom domains, and traffic inspection tools. ngrok is essential for testing webhook integrations and sharing local development environments.",
@@ -1225,7 +1225,7 @@ export const stack = [
     name: "Webhooks",
     image: webhook,
     categories: ["Backend Services", "APIs & Services"],
-    learningLevel: 4,
+    learningLevel: 3,
     documentation: "https://webhooks.fyi/",
     description:
       "Webhooks are HTTP callbacks that enable real-time communication between applications by sending data when specific events occur. I implement and consume webhooks for payment processing, user notifications, and system integrations. They provide efficient event-driven architecture for connecting different services. Webhooks eliminate the need for constant polling and enable instant data synchronization.",

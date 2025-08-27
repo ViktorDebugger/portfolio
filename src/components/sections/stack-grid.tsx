@@ -1,4 +1,4 @@
-import { stack } from "../../utils/data-stack";
+import { stack } from "../../data/stack";
 import StackItem from "../specials/stack-item";
 import CategoriesMenu from "../specials/categories-menu";
 import { useState } from "react";

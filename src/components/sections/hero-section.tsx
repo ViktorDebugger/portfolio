@@ -1,11 +1,11 @@
-import blue from "../../assets/hero-images/blue-image.jpg";
+import blue from "/template-images/blue-image.jpg";
 import User from "../icons/user";
 
 import GitHub from "../icons/socials/github";
 import LinkedIn from "../icons/socials/linkedin";
 import { useEffect, useRef } from "react";
 
-import { heroStack } from "../../utils/data-hero";
+import { heroStack } from "../../data/hero";
 import ArrowDownTray from "../icons/arrow-down-tray";
 import { cn } from "../../utils/utils";
 import { useTheme } from "../../context/theme-context";

@@ -39,7 +39,7 @@ const Footer = () => {
   const { theme } = useTheme();
 
   return (
-    <footer className="glass-effect-footer glass-main mx-4 max-w-[1440px] rounded-t-2xl px-6 py-3 backdrop-blur-xl backdrop-saturate-200 2xl:mx-auto">
+    <footer className="glass-effect-footer glass-main mx-2 max-w-[1440px] rounded-t-2xl px-6 py-3 backdrop-blur-xl backdrop-saturate-200 2xl:mx-auto">
       <div className="mt-4 flex flex-col-reverse items-center justify-between gap-6 md:mt-0 md:flex-row">
         <p className="text-center text-lg text-black md:text-left dark:text-white">
           &copy; {year()} Viktor Luka. All rights reserved.

@@ -1,11 +1,11 @@
-import tailwindcss from "../assets/hero-stack/tailwindcss.png";
-import react from "../assets/hero-stack/react.png";
-import bun from "../assets/hero-stack/bun.png";
-import next from "../assets/hero-stack/next-js.png";
-import prizma from "../assets/hero-stack/prisma-orm.png";
-import hono from "../assets/hero-stack/hono.png";
-import webhook from "../assets/hero-stack/webhook.png";
-import upstash from "../assets/hero-stack/upstash.png";
+import tailwindcss from "/hero-stack/tailwindcss.png";
+import react from "/hero-stack/react.png";
+import bun from "/hero-stack/bun.png";
+import next from "/hero-stack/next-js.png";
+import prizma from "/hero-stack/prisma-orm.png";
+import hono from "/hero-stack/hono.png";
+import webhook from "/hero-stack/webhook.png";
+import upstash from "/hero-stack/upstash.png";
 
 export const heroStack = [
   {

@@ -1,4 +1,4 @@
-import { projects } from "../../utils/data-projects";
+import { projects } from "../../data/projects";
 import ProjectItem from "../specials/project-item";
 
 const ProjectsGrid = () => {
@@ -6,14 +6,14 @@ const ProjectsGrid = () => {
     <section className="mx-auto max-w-[1440px] py-16">
       <div className="flex flex-col items-center text-center">
         <ul className="mt-8 flex w-full flex-wrap justify-center gap-8">
-          {projects.map(({ id, name, image, link, description, stack }) => (
+          {projects.map((project) => (
             <ProjectItem
-              key={id}
-              name={name}
-              image={image}
-              link={link}
-              description={description}
-              stack={stack}
+              key={project.id}
+              name={project.name}
+              image={project.image}
+              link={project.link}
+              description={project.description}
+              stack={project.stack}
             />
           ))}
         </ul>

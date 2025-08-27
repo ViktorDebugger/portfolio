@@ -5,8 +5,8 @@ import { useTheme } from "../context/theme-context";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import Bars3 from "./icons/bars3";
 
-import logoWhite from "/logo-white.png?url";
-import logoBlack from "/logo-black.png?url";
+import logoWhite from "/logo/logo-white.png";
+import logoBlack from "/logo/logo-black.png";
 
 const pages = [
   {

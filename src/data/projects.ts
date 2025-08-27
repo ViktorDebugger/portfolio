@@ -1,7 +1,7 @@
-import mauDelivery from "../assets/projects-images/mau-delivery.jpg";
-import deliFood from "../assets/projects-images/deli-food.jpg";
+import mauDelivery from "/projects/mau-delivery.jpg";
+import deliFood from "/projects/deli-food.jpg";
 
-export const learning = [
+export const projects = [
   {
     id: 1,
     name: "MAU Delivery",

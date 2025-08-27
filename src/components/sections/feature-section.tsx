@@ -1,4 +1,4 @@
-import image from "./../../assets/hero-images/red-image.jpg";
+import image from "/template-images/red-image.jpg";
 import Bolt from "../icons/bolt";
 import BookOpen from "../icons/book-open";
 import Check from "../icons/check";
