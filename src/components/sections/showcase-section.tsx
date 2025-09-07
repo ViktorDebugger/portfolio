@@ -1,8 +1,9 @@
 import StackGrid from "../../components/sections/stack-grid";
 import ProjectsGrid from "../../components/sections/projects-grid";
 import CertificatesGrid from "../../components/sections/certificates-grid";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import LearningGrid from "./learning-grid";
+import { motion, useInView } from "motion/react";
 
 const buttons = [
   {
@@ -29,6 +30,11 @@ const buttons = [
 
 const ShowcaseSection = () => {
   const [active, setActive] = useState("stack");
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px 0px -100px 0px",
+  });
 
   const sectionComponents: Record<string, React.ReactNode> = {
     stack: (
@@ -54,13 +60,46 @@ const ShowcaseSection = () => {
   };
 
   return (
-    <section className="mx-auto max-w-[1550px]">
-      <h1 className="animate-gradient gradient-text-blue text-glow-blue mb-6 px-4 text-center text-4xl leading-[1.2] font-bold md:px-8 lg:text-6xl">
-        Portfolio Gallery
-      </h1>
-      <ul className="grid grid-cols-1 gap-2 px-4 sm:grid-cols-2 md:px-8 lg:grid-cols-4 lg:gap-10">
+    <section ref={ref} className="mx-auto max-w-[1550px] min-h-screen">
+      <div className="flex justify-center">
+        <motion.div
+          className="glass-effect glass-main mx-auto mb-6 inline-block rounded-2xl px-6 py-4"
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          animate={
+            isInView
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: 30, scale: 0.9 }
+          }
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <h1 className="animate-gradient gradient-text-blue text-glow-bluetext-center text-3xl leading-[1.2] font-bold md:text-5xl">
+            Portfolio Gallery
+          </h1>
+        </motion.div>
+      </div>
+
+      <motion.ul
+        className="grid grid-cols-1 gap-2 px-4 sm:grid-cols-2 md:px-8 lg:grid-cols-4 lg:gap-10"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+      >
         {buttons.map(({ id, name, state }) => (
-          <li key={id} className="flex justify-center">
+          <motion.li
+            key={id}
+            className="flex justify-center"
+            initial={{ opacity: 0, y: 30, scale: 0.8 }}
+            animate={
+              isInView
+                ? { opacity: 1, y: 0, scale: 1 }
+                : { opacity: 0, y: 30, scale: 0.8 }
+            }
+            transition={{
+              duration: 0.6,
+              delay: 0.6 + id * 0.1,
+              ease: "easeOut",
+            }}
+          >
             <button
               disabled={active === state}
               onClick={() => setActive(state)}
@@ -70,11 +109,18 @@ const ShowcaseSection = () => {
                 {name}
               </span>
             </button>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
 
-      <div className="px-4 md:px-8">{sectionComponents[active]}</div>
+      <motion.div
+        className="px-4 md:px-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+      >
+        {sectionComponents[active]}
+      </motion.div>
     </section>
   );
 };

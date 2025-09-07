@@ -1,9 +1,10 @@
 import ThemeSwitch from "./specials/theme-switch";
 import { useScroll } from "../context/scroll-context";
-import { cn } from "../utils/utils";
+import { cn } from "../tools/utils";
 import { useTheme } from "../context/theme-context";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import Bars3 from "./icons/bars3";
+import { motion } from "motion/react";
 
 import logoWhite from "/logo/logo-white.png";
 import logoBlack from "/logo/logo-black.png";
@@ -36,8 +37,17 @@ const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <header className="fixed! top-0 right-0 left-0 z-30 px-2">
-      <div className="glass-effect-header glass-main backdrop-blur-xl backdrop-saturate-200 mx-auto max-w-[1440px] rounded-b-2xl px-6 py-3">
+    <motion.header
+      className="fixed! top-0 right-0 left-0 z-30 px-2"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+    >
+      <div className="glass-effect-header glass-main mx-auto max-w-[1440px] rounded-b-2xl px-6 py-3 backdrop-blur-xl backdrop-saturate-200">
         <div className="flex w-full items-center justify-between">
           <button
             className="cursor-pointer"
@@ -77,7 +87,7 @@ const Header = () => {
                 </MenuButton>
                 <MenuItems
                   anchor="bottom end"
-                  className="glass-effect glass-main backdrop-blur-xl backdrop-saturate-200 z-20 mt-1 flex h-62 w-52 flex-col gap-4 rounded-2xl p-4 focus:outline-none"
+                  className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 flex-col gap-4 rounded-2xl p-4 backdrop-blur-xl backdrop-saturate-200 focus:outline-none"
                 >
                   {pages.map(({ id, name, section }) => (
                     <MenuItem key={id}>
@@ -99,7 +109,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

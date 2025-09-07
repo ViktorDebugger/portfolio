@@ -1,51 +1,55 @@
 import tailwindcss from "/hero-stack/tailwindcss.png";
 import react from "/hero-stack/react.png";
 import bun from "/hero-stack/bun.png";
-import next from "/hero-stack/next-js.png";
 import prizma from "/hero-stack/prisma-orm.png";
 import hono from "/hero-stack/hono.png";
-import webhook from "/hero-stack/webhook.png";
+import webhookLight from "/hero-stack/webhook-light.png";
+import nextLight from "/hero-stack/next-js-light.png";
+import webhookDark from "/hero-stack/webhook-dark.png";
+import nextDark from "/hero-stack/next-js-dark.png";
 import upstash from "/hero-stack/upstash.png";
 
 export const heroStack = [
   {
     id: 1,
     name: "Tailwind CSS",
-    image: tailwindcss,
+    imageLight: tailwindcss,
   },
   {
     id: 2,
     name: "React",
-    image: react,
+    imageLight: react,
   },
   {
     id: 3,
     name: "Bun",
-    image: bun,
+    imageLight: bun,
   },
   {
     id: 4,
     name: "Next.js",
-    image: next,
+    imageLight: nextLight,
+    imageDark: nextDark,
   },
   {
     id: 5,
     name: "Prizma ORM",
-    image: prizma,
+    imageLight: prizma,
   },
   {
     id: 6,
     name: "Hono",
-    image: hono,
+    imageLight: hono,
   },
   {
     id: 7,
     name: "Webhooks",
-    image: webhook,
+    imageLight: webhookLight,
+    imageDark: webhookDark,
   },
   {
     id: 8,
     name: "Upstash",
-    image: upstash,
+    imageLight: upstash,
   },
 ];

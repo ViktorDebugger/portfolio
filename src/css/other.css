@@ -4,20 +4,17 @@
   position: relative;
 }
 
-@media (max-width: 1280px) {
-  .dark .glass-main {
-    background: rgba(0, 0, 0, 0.4);
-  }
+.dark .glass-main {
+  background-color: rgba(0, 0, 0, 0.6);
+}
 
-  .light .glass-main {
-    background: rgba(255, 255, 255, 0.4);
-  }
+.light .glass-main {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .glass-effect,
 .glass-effect-button {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 

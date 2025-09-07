@@ -4,7 +4,9 @@ import imageTemplate03 from "/template-images/template-image-4.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards, Autoplay } from "swiper/modules";
-import { cn } from "../../utils/utils";
+import { cn } from "../../tools/utils";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 
 const slides = [
   {
@@ -52,9 +54,27 @@ const slides = [
 ];
 
 const Slider = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px 0px -100px 0px",
+  });
+
   return (
-    <section className="flex h-auto w-full items-center justify-center">
-      <div className="relative my-6 flex max-w-[1550px] items-center justify-center">
+    <section
+      ref={ref}
+      className="flex h-auto w-full items-center justify-center"
+    >
+      <motion.div
+        className="relative my-6 flex max-w-[1550px] items-center justify-center"
+        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+        animate={
+          isInView
+            ? { opacity: 1, scale: 1, y: 0 }
+            : { opacity: 0, scale: 0.8, y: 50 }
+        }
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="h-[300px] w-[250px] sm:h-[500px] sm:w-[400px] xl:h-[800px] xl:w-[700px]">
           <Swiper
             effect={"cards"}
@@ -128,7 +148,7 @@ const Slider = () => {
             ))}
           </Swiper>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

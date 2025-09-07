@@ -1,14 +1,14 @@
 import { useTheme } from "../../context/theme-context";
-import { cn } from "../../utils/utils";
+import { cn } from "../../tools/utils";
 import Plus from "../icons/plus";
 
 const Divider = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="2xl:mx-auto mx-5  max-w-full 2xl:max-w-[1440px] py-10 text-black dark:text-white">
+    <div className="mx-5 max-w-full py-10 text-black 2xl:mx-auto 2xl:max-w-[1440px] dark:text-white">
       <div className="flex justify-center">
-        <div className="relative -bottom-[6px] -left-2 md:left-0 size-8 p-2">
+        <div className="relative -bottom-[6px] -left-2 size-8 p-2 md:left-0">
           <Plus className="size-10" />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { cn } from "../../utils/utils";
+import { cn } from "../../tools/utils";
 
 interface BadgeProps {
   children: React.ReactNode;
@@ -66,7 +66,7 @@ const Badge = ({ children, category }: BadgeProps) => {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-md dark:bg-white/40 bg-black/30 px-2 py-1 text-xs md:text-sm font-bold shadow-lg ring-1 ring-inset",
+        "inline-flex items-center rounded-md bg-black/30 px-2 py-1 text-xs font-bold shadow-lg ring-1 ring-inset md:text-sm dark:bg-white/40",
         categoryStyles[category]?.style ?? "",
       )}
     >

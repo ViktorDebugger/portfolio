@@ -1,6 +1,6 @@
 import { useContext, createContext, useEffect } from "react";
 import { useLocalStorage } from "../hooks/use-local-storage";
-import detectDarkTheme from "../utils/detect-dark-theme";
+import detectDarkTheme from "../tools/detect-dark-theme";
 
 interface ThemeContextType {
   theme: string;
@@ -11,16 +11,20 @@ interface ThemeProviderProps {
   children: React.ReactNode;
 }
 
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+export const ThemeContext = createContext<ThemeContextType | undefined>(
+  undefined,
+);
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useLocalStorage("theme", detectDarkTheme());
 
   useEffect(() => {
     if (theme === "dark") {
+      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     }
   }, [theme]);
 

@@ -1,4 +1,5 @@
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import ChatBubble from "./../icons/stack/chat-bubble-left-right.tsx";
 import CircleStack from "./../icons/stack/circle-stack.tsx";
@@ -169,48 +170,67 @@ const CategoriesMenu = ({ category, handler }: CategoriesMenuProps) => {
         <p className="">{category}</p>
         {open ? <Minus className="size-4" /> : <Plus className="size-4" />}
       </button>
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        className="relative z-50"
-      >
-        <div className="fixed inset-0 flex w-screen items-center justify-center gap-4 text-left backdrop-blur-lg">
-          <DialogPanel className="glass-effect glass-main gradient-border-left-blue absolute -bottom-10 mx-4 max-w-5xl rounded-2xl border-l-0 text-black shadow-2xl! shadow-indigo-500 backdrop-blur-xl backdrop-saturate-200 dark:text-white">
-            <div className="absolute top-0 left-0 z-0 h-full w-full bg-black/30 dark:bg-black/50"></div>
-            <div className="relative z-2 flex h-full max-h-[90vh] flex-col">
-              <div className="scrollbar-hide flex-1 overflow-x-hidden overflow-y-auto p-6">
-                <DialogTitle className="text-light-heading-1 dark:text-dark-heading-1 relative mb-8 text-center text-4xl font-bold">
-                  Categories
-                </DialogTitle>
+      <AnimatePresence>
+        {open && (
+          <Dialog
+            static
+            open={open}
+            onClose={() => setOpen(false)}
+            className="relative z-50"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/30 backdrop-blur-2xl"
+            />
+            <div className="fixed inset-0 flex w-screen items-center justify-center gap-4 text-left">
+              <DialogPanel
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="glass-effect glass-main gradient-border-left-blue absolute -bottom-10 mx-4 max-w-5xl rounded-2xl border-l-0 text-black shadow-2xl! shadow-indigo-500 backdrop-blur-xl backdrop-saturate-200 dark:text-white"
+              >
+                <div className="absolute top-0 left-0 z-0 h-full w-full bg-white/30 dark:bg-black/50"></div>
+                <div className="relative z-2 flex h-full max-h-[90vh] flex-col">
+                  <div className="scrollbar-hide flex-1 overflow-x-hidden overflow-y-auto p-6">
+                    <DialogTitle className="text-light-heading-1 dark:text-dark-heading-1 relative mb-8 text-center text-4xl font-bold">
+                      Categories
+                    </DialogTitle>
 
-                <ul className="flex flex-wrap items-center justify-center gap-y-4 md:gap-2">
-                  {categories.map(({ id, name, description, icon: Icon }) => (
-                    <li
-                      key={id}
-                      className="w-[calc(100%-0.5rem)] flex-none sm:w-[calc(50%-0.5rem)] md:w-[calc(33.3%-0.5rem)]"
-                    >
-                      <button
-                        onClick={() => handleCategory(name)}
-                        className="group flex w-full cursor-pointer items-center gap-4 rounded-lg p-2 transition-colors duration-300 ease-in-out hover:text-indigo-600"
-                      >
-                        <div className="rounded-lg">
-                          <Icon className="size-6" />
-                        </div>
-                        <div className="space-y-1 text-left">
-                          <p className="font-bold transition-colors duration-300 ease-in-out">
-                            {name}
-                          </p>
-                          <p className="text-md">{description}</p>
-                        </div>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    <ul className="flex flex-wrap items-center justify-center gap-y-4 md:gap-2">
+                      {categories.map(
+                        ({ id, name, description, icon: Icon }) => (
+                          <li
+                            key={id}
+                            className="w-[calc(100%-0.5rem)] flex-none sm:w-[calc(50%-0.5rem)] md:w-[calc(33.3%-0.5rem)]"
+                          >
+                            <button
+                              onClick={() => handleCategory(name)}
+                              className="group flex w-full cursor-pointer items-center gap-4 rounded-lg p-2 transition-colors duration-300 ease-in-out hover:text-indigo-600"
+                            >
+                              <div className="rounded-lg">
+                                <Icon className="size-6" />
+                              </div>
+                              <div className="space-y-1 text-left">
+                                <p className="font-bold transition-colors duration-300 ease-in-out">
+                                  {name}
+                                </p>
+                                <p className="text-md">{description}</p>
+                              </div>
+                            </button>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </div>
+                </div>
+              </DialogPanel>
             </div>
-          </DialogPanel>
-        </div>
-      </Dialog>
+          </Dialog>
+        )}
+      </AnimatePresence>
     </>
   );
 };

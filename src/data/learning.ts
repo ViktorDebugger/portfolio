@@ -1,11 +1,16 @@
-import templateImage from "/learning/template-image-1.jpg";
+import nextAuth from "/learning/next-auth.jpg";
+import slackClone from "/learning/slack-clone.jpg";
+import jiraClone from "/learning/jira-clone.jpg";
+import youtubeClone from "/learning/youtube-clone.jpg";
+import docsClone from "/learning/docs-clone.jpg";
+import financePlaform from "/learning/finance-platform.jpg";
 
 export const learning = [
   {
     id: 1,
-    name: "NextAuth Authentication System",
-    image: templateImage,
-    link: "https://your-deployment-link.com",
+    name: "Authentication System",
+    image: nextAuth,
+    link: "https://next-auth-cyan-nine.vercel.app",
     description:
       "NextAuth Authentication System is a comprehensive authentication solution built with Next.js 15 and NextAuth v5 that provides secure user authentication and authorization for web applications. The platform features multi-provider authentication including credentials, OAuth providers, and social logins, with advanced security features like two-factor authentication (2FA), email verification, and password reset functionality. Users can register with email verification, manage their profiles with role-based access control (Admin/User roles), and securely authenticate using various methods. The application includes protected routes with middleware, admin dashboard for user management, and a modern UI built with Radix UI components and Tailwind CSS. The system provides real-time session management, JWT token handling, and integrates with PostgreSQL database using Prisma ORM for robust data persistence.",
     stack: [
@@ -26,8 +31,8 @@ export const learning = [
   {
     id: 2,
     name: "Jira Clone",
-    image: templateImage,
-    link: "https://your-jira-clone-deployment-url.com",
+    image: jiraClone,
+    link: "https://jira-clone-eosin-nu.vercel.app",
     description:
       "Jira Clone is a comprehensive project management web application built with Next.js that replicates the core functionality of Jira. The platform features workspace management, project organization, and advanced task management with multiple view modes including Kanban boards, calendar views, and data tables. Users can create and manage workspaces, organize projects within them, and handle tasks with drag-and-drop functionality, priority settings, and detailed task descriptions. The application includes real-time collaboration features, member management with role-based permissions, and comprehensive analytics with charts and progress tracking. Built with modern technologies including Appwrite for backend services, the platform provides a seamless user experience with responsive design, smooth animations, and intuitive navigation between different project views and workspaces.",
     stack: [
@@ -49,8 +54,8 @@ export const learning = [
   {
     id: 3,
     name: "Slack Clone",
-    image: templateImage,
-    link: "https://your-slack-clone-deployment-url.com",
+    image: slackClone,
+    link: "https://slack-clone-seven-psi.vercel.app",
     description:
       "Slack Clone is a modern real-time messaging application built with Next.js that replicates the core functionality of Slack. The platform features workspace management, channel-based communication, direct messaging between members, and real-time message synchronization. Users can create and join workspaces using unique join codes, participate in channel discussions, send direct messages, and react to messages with emojis. The application includes advanced features like message threading, file uploads, emoji reactions, and a responsive sidebar navigation. Built with a modern tech stack including Convex for real-time database functionality, the app provides seamless real-time updates, user authentication, and a clean, intuitive interface that closely mirrors the Slack experience.",
     stack: [
@@ -70,8 +75,8 @@ export const learning = [
   {
     id: 4,
     name: "Docs Clone",
-    image: templateImage,
-    link: "https://your-deployment-link.com",
+    image: docsClone,
+    link: "https://docs-clone-eight-rust.vercel.app",
     description:
       "Docs Clone is a modern collaborative document editor built with Next.js that replicates the functionality of popular document editing platforms like Google Docs. The application features real-time collaborative editing with multiple users, rich text formatting capabilities, and document management functionality. Users can create, edit, and share documents with features including text formatting, tables, images, task lists, and comments. The platform includes user authentication, document templates, search functionality, and real-time presence indicators showing who is currently editing. The editor supports advanced features like font customization, text alignment, highlighting, and responsive design for seamless editing across devices. Built with modern web technologies, it provides a smooth, real-time collaborative experience with live cursors, comments, and document synchronization.",
     stack: [
@@ -93,8 +98,8 @@ export const learning = [
   {
     id: 5,
     name: "Finance Platform",
-    image: templateImage,
-    link: "https://your-deployment-link.com",
+    image: financePlaform,
+    link: "https://finance-platform-ashy.vercel.app",
     description:
       "Finance Platform is a comprehensive personal finance management web application built with Next.js that empowers users to take control of their financial life. The platform features secure user authentication with Clerk, intuitive transaction management with bulk import capabilities via CSV files, and intelligent categorization of expenses and income. Users can create and manage multiple bank accounts, set up custom spending categories, and track their financial data through interactive charts and analytics including spending patterns, income vs expenses, and category breakdowns. The application provides real-time data visualization with Recharts, responsive data tables with advanced filtering and sorting, and a modern dashboard with key financial metrics. Built with a robust tech stack including Drizzle ORM for database management, TanStack Query for efficient data fetching, and a clean component architecture with Radix UI primitives.",
     stack: [
@@ -116,8 +121,8 @@ export const learning = [
   {
     id: 6,
     name: "YouTube Clone",
-    image: templateImage,
-    link: "https://your-youtube-clone-url.com",
+    image: youtubeClone,
+    link: "https://youtube-clone-eight-mocha.vercel.app",
     description:
       "YouTube Clone is a comprehensive video streaming platform built with Next.js that replicates the core functionality of YouTube. The application features user authentication with Clerk, video upload and streaming capabilities powered by Mux, and a full-featured video management system. Users can upload videos with automatic thumbnail generation, create and manage playlists, subscribe to channels, leave comments with reactions, and interact with content through likes and dislikes. The platform includes a sophisticated search system, trending and subscription feeds, video analytics with view tracking, and a complete studio dashboard for content creators. Built with modern architecture including tRPC for type-safe APIs, Drizzle ORM for database management, and UploadThing for file handling, the application provides a seamless YouTube-like experience with responsive design and real-time interactions.",
     stack: [

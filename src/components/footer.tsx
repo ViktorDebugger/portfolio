@@ -3,8 +3,9 @@ import Instagram from "./icons/socials/instagram";
 import LeetCode from "./icons/socials/leetcode";
 import LinkedIn from "./icons/socials/linkedin";
 import Telegram from "./icons/socials/telegram";
-import { cn } from "../utils/utils";
+import { cn } from "../tools/utils";
 import { useTheme } from "../context/theme-context";
+import { motion } from "motion/react";
 
 const icons = [
   {
@@ -46,7 +47,18 @@ const Footer = () => {
         </p>
         <ul className="xs:gap-6 flex gap-4 md:gap-8">
           {icons.map(({ id, link, icon: Icon }) => (
-            <li key={id} className="group">
+            <motion.li
+              key={id}
+              className="group"
+              whileHover={{
+                scale: 1.1,
+                rotate: id % 2 === 0 ? -15 : 15,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+            >
               <a href={link} target="_blank">
                 <Icon
                   className={cn(
@@ -55,7 +67,7 @@ const Footer = () => {
                   )}
                 />
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
