@@ -96,12 +96,12 @@ const Header = () => {
                           animate={{ y: 0, opacity: 1, scale: 1 }}
                           exit={{ y: -20, opacity: 0, scale: 0.95 }}
                           anchor="bottom end"
-                          className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 flex-col gap-4 rounded-2xl p-4 backdrop-blur-xl backdrop-saturate-200 focus:outline-none origin-top"
+                          className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 origin-top flex-col gap-4 rounded-2xl p-4 backdrop-blur-xl backdrop-saturate-200 focus:outline-none"
                         >
                           <motion.div
                             transition={{
                               duration: 0.3,
-                              ease: "easeOut"
+                              ease: "easeOut",
                             }}
                             className="flex h-full w-full flex-col gap-4"
                           >

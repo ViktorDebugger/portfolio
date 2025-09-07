@@ -1,13 +1,32 @@
 import templateImage from "/template-images/template-image-6.jpg";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const StatsSection = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px 0px -100px 0px",
   });
+
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          ),
+      );
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section
@@ -16,9 +35,19 @@ const StatsSection = () => {
     >
       <motion.div
         className="gradient-glow-blue relative mx-4 h-auto max-w-[1550px] overflow-hidden rounded-4xl p-8 md:mx-8 lg:h-[720px]"
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        animate={
+          isMobile
+            ? { opacity: 1, y: 0 }
+            : isInView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 30 }
+        }
+        transition={
+          isMobile
+            ? { duration: 0 }
+            : { duration: 0.8, delay: 0.2, ease: "easeOut" }
+        }
       >
         <div className="absolute inset-0 z-10 h-full w-full bg-gradient-to-b from-indigo-700/30 to-purple-700/30"></div>
         <img
@@ -29,9 +58,19 @@ const StatsSection = () => {
         <div className="relative z-20 flex h-full flex-col justify-center p-0 2xl:p-8">
           <motion.div
             className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={
+              isMobile
+                ? { opacity: 1, y: 0 }
+                : isInView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 30 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.8, delay: 0.2, ease: "easeOut" }
+            }
           >
             <h1 className="xs:text-xl mb-6 text-lg font-bold text-white sm:text-3xl lg:text-5xl 2xl:text-6xl">
               My Experience And Statistics
@@ -44,15 +83,35 @@ const StatsSection = () => {
           </motion.div>
           <motion.ul
             className="relative z-20 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
+            animate={
+              isMobile
+                ? { opacity: 1 }
+                : isInView
+                  ? { opacity: 1 }
+                  : { opacity: 0 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.6, delay: 0.4, ease: "easeOut" }
+            }
           >
             <motion.li
               className="border-l border-gray-300 px-2 py-1 xl:px-6"
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, x: 0 }
+                  : isInView
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -30 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.6, delay: 0.6, ease: "easeOut" }
+              }
             >
               <h2 className="3xl:text-5xl mb-4 text-2xl font-bold text-white lg:text-3xl xl:text-5xl">
                 2
@@ -63,9 +122,19 @@ const StatsSection = () => {
             </motion.li>
             <motion.li
               className="border-l border-gray-300 px-2 py-1 xl:px-6"
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, x: 0 }
+                  : isInView
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -30 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.6, delay: 0.8, ease: "easeOut" }
+              }
             >
               <h2 className="3xl:text-5xl mb-4 text-2xl font-bold text-white lg:text-3xl xl:text-5xl">
                 2
@@ -76,9 +145,19 @@ const StatsSection = () => {
             </motion.li>
             <motion.li
               className="border-l border-gray-300 px-2 py-1 xl:px-6"
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, x: 0 }
+                  : isInView
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -30 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.6, delay: 1.0, ease: "easeOut" }
+              }
             >
               <h2 className="3xl:text-5xl mb-4 text-2xl font-bold text-white lg:text-3xl xl:text-5xl">
                 2
@@ -89,9 +168,19 @@ const StatsSection = () => {
             </motion.li>
             <motion.li
               className="border-l border-gray-300 px-2 py-1 xl:px-6"
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, x: 0 }
+                  : isInView
+                    ? { opacity: 1, x: 0 }
+                    : { opacity: 0, x: -30 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.6, delay: 1.2, ease: "easeOut" }
+              }
             >
               <h2 className="3xl:text-5xl mb-4 text-2xl font-bold text-white lg:text-3xl xl:text-5xl">
                 6

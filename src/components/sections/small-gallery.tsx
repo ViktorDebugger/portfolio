@@ -4,14 +4,33 @@ import image03 from "/template-images/template-image-3.jpg";
 import image04 from "/template-images/template-image-4.jpg";
 import image05 from "/template-images/template-image-5.jpg";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const SmallGallery = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px 0px -100px 0px",
   });
+
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          ),
+      );
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section ref={ref} className="flex h-auto min-h-[800px]">
@@ -19,9 +38,19 @@ const SmallGallery = () => {
         <div className="flex flex-col gap-4">
           <motion.div
             className="glass-effect glass-main z-10 mr-auto mb-6 inline-block rounded-2xl px-6 py-4 backdrop-blur-xl backdrop-saturate-200"
-            initial={{ opacity: 0, y: -30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+            animate={
+              isMobile
+                ? { opacity: 1, y: 0 }
+                : isInView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: -30 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.6, delay: 0.2, ease: "easeOut" }
+            }
           >
             <h1 className="animate-gradient gradient-text-blue text-glow-blue text-3xl leading-[1.2] font-bold md:text-5xl">
               Studying In University
@@ -30,13 +59,27 @@ const SmallGallery = () => {
 
           <motion.div
             className="glass-effect glass-main gradient-border-left-blue z-10 w-full rounded-2xl border-l-0! p-4 backdrop-blur-xl backdrop-saturate-200 lg:p-8 xl:w-2/3"
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.02,
-              transition: { duration: 0.2 },
-            }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            animate={
+              isMobile
+                ? { opacity: 1, x: 0 }
+                : isInView
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: -30 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.6, delay: 0.4, ease: "easeOut" }
+            }
+            whileHover={
+              isMobile
+                ? {}
+                : {
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
+                  }
+            }
           >
             <span className="xs:text-lg space-y-6 text-base text-black lg:text-xl dark:text-white">
               In 2023, I enrolled in the bachelor's program in Computer Science
@@ -48,13 +91,27 @@ const SmallGallery = () => {
 
           <motion.div
             className="glass-effect glass-main gradient-border-left-blue z-10 w-full rounded-2xl border-l-0! p-4 backdrop-blur-xl backdrop-saturate-200 lg:p-8 xl:w-2/3"
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.02,
-              transition: { duration: 0.2 },
-            }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            animate={
+              isMobile
+                ? { opacity: 1, x: 0 }
+                : isInView
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: -30 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.6, delay: 0.6, ease: "easeOut" }
+            }
+            whileHover={
+              isMobile
+                ? {}
+                : {
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
+                  }
+            }
           >
             <span className="xs:text-lg space-y-6 text-base text-black lg:text-xl dark:text-white">
               My studies transitioned to creating functional applications,
@@ -66,13 +123,27 @@ const SmallGallery = () => {
 
           <motion.div
             className="glass-effect glass-main gradient-border-left-blue z-10 w-full rounded-2xl border-l-0! p-4 backdrop-blur-xl backdrop-saturate-200 lg:p-8 xl:w-2/3"
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.02,
-              transition: { duration: 0.2 },
-            }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            animate={
+              isMobile
+                ? { opacity: 1, x: 0 }
+                : isInView
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: -30 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.6, delay: 0.8, ease: "easeOut" }
+            }
+            whileHover={
+              isMobile
+                ? {}
+                : {
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
+                  }
+            }
           >
             <span className="xs:text-lg space-y-6 text-base text-black lg:text-xl dark:text-white">
               I actively participate in university events including educational
@@ -87,16 +158,30 @@ const SmallGallery = () => {
           <div className="absolute top-auto -right-40 grid grid-cols-3 gap-8 xl:-top-40">
             <div className="flex h-full flex-col justify-end gap-8">
               <motion.figure
-                initial={{ opacity: 0, y: 50 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+                initial={
+                  isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                 }
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: -2,
-                  transition: { duration: 0.3 },
-                }}
+                animate={
+                  isMobile
+                    ? { opacity: 1, y: 0 }
+                    : isInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 50 }
+                }
+                transition={
+                  isMobile
+                    ? { duration: 0 }
+                    : { duration: 0.6, delay: 0.2, ease: "easeOut" }
+                }
+                whileHover={
+                  isMobile
+                    ? {}
+                    : {
+                        scale: 1.05,
+                        rotate: -2,
+                        transition: { duration: 0.3 },
+                      }
+                }
               >
                 <img
                   className="gradient-border-blue animate-gradient gradient-glow-blue h-72 w-60 rounded-2xl object-cover p-1!"
@@ -108,16 +193,30 @@ const SmallGallery = () => {
 
             <div className="relative -bottom-40 flex h-full flex-col gap-8">
               <motion.figure
-                initial={{ opacity: 0, y: -50 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }
+                initial={
+                  isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }
                 }
-                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: -2,
-                  transition: { duration: 0.3 },
-                }}
+                animate={
+                  isMobile
+                    ? { opacity: 1, y: 0 }
+                    : isInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: -50 }
+                }
+                transition={
+                  isMobile
+                    ? { duration: 0 }
+                    : { duration: 0.6, delay: 0.3, ease: "easeOut" }
+                }
+                whileHover={
+                  isMobile
+                    ? {}
+                    : {
+                        scale: 1.05,
+                        rotate: -2,
+                        transition: { duration: 0.3 },
+                      }
+                }
               >
                 <img
                   className="gradient-border-blue animate-gradient gradient-glow-blue h-72 w-60 rounded-2xl object-cover p-1!"
@@ -127,16 +226,30 @@ const SmallGallery = () => {
               </motion.figure>
 
               <motion.figure
-                initial={{ opacity: 0, y: 50 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+                initial={
+                  isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                 }
-                transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: -2,
-                  transition: { duration: 0.3 },
-                }}
+                animate={
+                  isMobile
+                    ? { opacity: 1, y: 0 }
+                    : isInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 50 }
+                }
+                transition={
+                  isMobile
+                    ? { duration: 0 }
+                    : { duration: 0.6, delay: 0.4, ease: "easeOut" }
+                }
+                whileHover={
+                  isMobile
+                    ? {}
+                    : {
+                        scale: 1.05,
+                        rotate: -2,
+                        transition: { duration: 0.3 },
+                      }
+                }
               >
                 <img
                   className="gradient-border-blue animate-gradient gradient-glow-blue h-72 w-60 rounded-2xl object-cover p-1!"
@@ -148,16 +261,30 @@ const SmallGallery = () => {
 
             <div className="flex h-full flex-col gap-8">
               <motion.figure
-                initial={{ opacity: 0, y: -50 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }
+                initial={
+                  isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }
                 }
-                transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: -2,
-                  transition: { duration: 0.3 },
-                }}
+                animate={
+                  isMobile
+                    ? { opacity: 1, y: 0 }
+                    : isInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: -50 }
+                }
+                transition={
+                  isMobile
+                    ? { duration: 0 }
+                    : { duration: 0.6, delay: 0.5, ease: "easeOut" }
+                }
+                whileHover={
+                  isMobile
+                    ? {}
+                    : {
+                        scale: 1.05,
+                        rotate: -2,
+                        transition: { duration: 0.3 },
+                      }
+                }
               >
                 <img
                   className="gradient-border-blue animate-gradient gradient-glow-blue h-72 w-60 rounded-2xl object-cover p-1!"
@@ -167,16 +294,30 @@ const SmallGallery = () => {
               </motion.figure>
 
               <motion.figure
-                initial={{ opacity: 0, y: 50 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
+                initial={
+                  isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                 }
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: -2,
-                  transition: { duration: 0.3 },
-                }}
+                animate={
+                  isMobile
+                    ? { opacity: 1, y: 0 }
+                    : isInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 50 }
+                }
+                transition={
+                  isMobile
+                    ? { duration: 0 }
+                    : { duration: 0.6, delay: 0.6, ease: "easeOut" }
+                }
+                whileHover={
+                  isMobile
+                    ? {}
+                    : {
+                        scale: 1.05,
+                        rotate: -2,
+                        transition: { duration: 0.3 },
+                      }
+                }
               >
                 <img
                   className="gradient-border-blue animate-gradient gradient-glow-blue h-72 w-60 rounded-2xl object-cover object-left p-1!"

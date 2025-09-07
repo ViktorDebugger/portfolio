@@ -1,7 +1,7 @@
 import StackGrid from "../../components/sections/stack-grid";
 import ProjectsGrid from "../../components/sections/projects-grid";
 import CertificatesGrid from "../../components/sections/certificates-grid";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import LearningGrid from "./learning-grid";
 import { motion, useInView } from "motion/react";
 
@@ -30,11 +30,30 @@ const buttons = [
 
 const ShowcaseSection = () => {
   const [active, setActive] = useState("stack");
+  const [isMobile, setIsMobile] = useState(false);
   const ref = useRef(null);
+
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px 0px -100px 0px",
   });
+
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          ),
+      );
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const sectionComponents: Record<string, React.ReactNode> = {
     stack: (
@@ -60,17 +79,27 @@ const ShowcaseSection = () => {
   };
 
   return (
-    <section ref={ref} className="mx-auto max-w-[1550px] min-h-screen">
+    <section ref={ref} className="mx-auto min-h-screen max-w-[1550px]">
       <div className="flex justify-center">
         <motion.div
           className="glass-effect glass-main mx-auto mb-6 inline-block rounded-2xl px-6 py-4"
-          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          animate={
-            isInView
+          initial={
+            isMobile
               ? { opacity: 1, y: 0, scale: 1 }
               : { opacity: 0, y: 30, scale: 0.9 }
           }
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          animate={
+            isMobile
+              ? { opacity: 1, y: 0, scale: 1 }
+              : isInView
+                ? { opacity: 1, y: 0, scale: 1 }
+                : { opacity: 0, y: 30, scale: 0.9 }
+          }
+          transition={
+            isMobile
+              ? { duration: 0 }
+              : { duration: 0.8, delay: 0.2, ease: "easeOut" }
+          }
         >
           <h1 className="animate-gradient gradient-text-blue text-glow-bluetext-center text-3xl leading-[1.2] font-bold md:text-5xl">
             Portfolio Gallery
@@ -80,25 +109,41 @@ const ShowcaseSection = () => {
 
       <motion.ul
         className="grid grid-cols-1 gap-2 px-4 sm:grid-cols-2 md:px-8 lg:grid-cols-4 lg:gap-10"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+        initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
+        animate={
+          isMobile ? { opacity: 1 } : isInView ? { opacity: 1 } : { opacity: 0 }
+        }
+        transition={
+          isMobile
+            ? { duration: 0 }
+            : { duration: 0.6, delay: 0.4, ease: "easeOut" }
+        }
       >
         {buttons.map(({ id, name, state }) => (
           <motion.li
             key={id}
             className="flex justify-center"
-            initial={{ opacity: 0, y: 30, scale: 0.8 }}
-            animate={
-              isInView
+            initial={
+              isMobile
                 ? { opacity: 1, y: 0, scale: 1 }
                 : { opacity: 0, y: 30, scale: 0.8 }
             }
-            transition={{
-              duration: 0.6,
-              delay: 0.6 + id * 0.1,
-              ease: "easeOut",
-            }}
+            animate={
+              isMobile
+                ? { opacity: 1, y: 0, scale: 1 }
+                : isInView
+                  ? { opacity: 1, y: 0, scale: 1 }
+                  : { opacity: 0, y: 30, scale: 0.8 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : {
+                    duration: 0.6,
+                    delay: 0.6 + id * 0.1,
+                    ease: "easeOut",
+                  }
+            }
           >
             <button
               disabled={active === state}
@@ -115,9 +160,19 @@ const ShowcaseSection = () => {
 
       <motion.div
         className="px-4 md:px-8"
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+        initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        animate={
+          isMobile
+            ? { opacity: 1, y: 0 }
+            : isInView
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 30 }
+        }
+        transition={
+          isMobile
+            ? { duration: 0 }
+            : { duration: 0.8, delay: 1.0, ease: "easeOut" }
+        }
       >
         {sectionComponents[active]}
       </motion.div>

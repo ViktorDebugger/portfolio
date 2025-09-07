@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards, Autoplay } from "swiper/modules";
 import { cn } from "../../tools/utils";
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const slides = [
   {
@@ -55,10 +55,29 @@ const slides = [
 
 const Slider = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
   const isInView = useInView(ref, {
     once: true,
     margin: "-100px 0px -100px 0px",
   });
+
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          ),
+      );
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section
@@ -67,13 +86,21 @@ const Slider = () => {
     >
       <motion.div
         className="relative my-6 flex max-w-[1550px] items-center justify-center"
-        initial={{ opacity: 0, scale: 0.8, y: 50 }}
-        animate={
-          isInView
+        initial={
+          isMobile
             ? { opacity: 1, scale: 1, y: 0 }
             : { opacity: 0, scale: 0.8, y: 50 }
         }
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        animate={
+          isMobile
+            ? { opacity: 1, scale: 1, y: 0 }
+            : isInView
+              ? { opacity: 1, scale: 1, y: 0 }
+              : { opacity: 0, scale: 0.8, y: 50 }
+        }
+        transition={
+          isMobile ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }
+        }
       >
         <div className="h-[300px] w-[250px] sm:h-[500px] sm:w-[400px] xl:h-[800px] xl:w-[700px]">
           <Swiper
