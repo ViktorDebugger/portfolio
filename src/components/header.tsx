@@ -95,26 +95,30 @@ const Header = () => {
                           initial={{ y: -20, opacity: 0, scale: 0.95 }}
                           animate={{ y: 0, opacity: 1, scale: 1 }}
                           exit={{ y: -20, opacity: 0, scale: 0.95 }}
-                          transition={{
-                            duration: 0.3,
-                            ease: "easeOut",
-                          }}
                           anchor="bottom end"
-                          className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 origin-top flex-col gap-4 rounded-2xl p-4 backdrop-blur-xl backdrop-saturate-200 focus:outline-none"
+                          className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 flex-col gap-4 rounded-2xl p-4 backdrop-blur-xl backdrop-saturate-200 focus:outline-none origin-top"
                         >
-                          {pages.map(({ id, name, section }) => (
-                            <MenuItem key={id}>
-                              <motion.button
-                                className="block rounded-xl px-2 py-1 text-left text-2xl text-black dark:text-white"
-                                onClick={() => scrollToSection(section)}
-                                whileHover={{ scale: 1.05, x: 5 }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ duration: 0.1 }}
-                              >
-                                {name}
-                              </motion.button>
-                            </MenuItem>
-                          ))}
+                          <motion.div
+                            transition={{
+                              duration: 0.3,
+                              ease: "easeOut"
+                            }}
+                            className="flex h-full w-full flex-col gap-4"
+                          >
+                            {pages.map(({ id, name, section }) => (
+                              <MenuItem key={id}>
+                                <motion.button
+                                  className="block rounded-xl px-2 py-1 text-left text-2xl text-black dark:text-white"
+                                  onClick={() => scrollToSection(section)}
+                                  whileHover={{ scale: 1.05, x: 5 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  transition={{ duration: 0.1 }}
+                                >
+                                  {name}
+                                </motion.button>
+                              </MenuItem>
+                            ))}
+                          </motion.div>
                         </MenuItems>
                       )}
                     </AnimatePresence>
