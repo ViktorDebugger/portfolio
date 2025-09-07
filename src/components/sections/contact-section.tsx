@@ -9,7 +9,7 @@ import { z } from "zod";
 import { useState, useTransition, useRef } from "react";
 import { cn } from "../../tools/utils";
 import { useTheme } from "../../context/theme-context";
-import { motion, useInView } from "motion/react";
+import { motion, useInView, AnimatePresence } from "motion/react";
 
 const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY);
 
@@ -47,8 +47,8 @@ const ContactSection = () => {
 
   const sendEmail = async (data: ContactFormData) => {
     await resend.emails.send({
-      from: data.email,
-      to: "viktor.luka.dev@gmail.com",
+      from: "mail@viktor-luka.uk",
+      to: data.email,
       subject: `New contact form submission from ${data.firstName} ${data.lastName}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -251,27 +251,57 @@ const ContactSection = () => {
               )}
             </div>
             <div className="flex w-full flex-col items-center justify-end gap-4 sm:flex-row">
-              {error && (
-                <div className="mb-2 w-full flex-1 rounded-md bg-rose-500/50 p-1 text-center text-lg text-rose-700">
-                  {error}
-                </div>
-              )}
-              {success && (
-                <div className="mb-2 w-full flex-1 rounded-md bg-emerald-500/50 p-1 text-center text-lg text-emerald-700">
-                  {success}
-                </div>
-              )}
-              <button
+              <AnimatePresence mode="wait">
+                {error && (
+                  <motion.div
+                    key="error"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="w-full flex-1 rounded-md bg-rose-500/30 p-3 text-center text-lg text-black dark:text-white"
+                  >
+                    {error}
+                  </motion.div>
+                )}
+                {success && (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="text-emerald- w-full flex-1 rounded-md bg-emerald-500/30 p-3 text-center text-lg text-black dark:text-white"
+                  >
+                    {success}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <motion.button
                 type="submit"
                 disabled={isPending}
                 className={cn(
                   "button-colors-red flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg px-8 py-3 sm:w-auto",
                   theme,
                 )}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
               >
-                <Envelope className="size-6" />
-                <p className="text-lg font-semibold">Send message</p>
-              </button>
+                <motion.div
+                  animate={isPending ? { rotate: 360 } : { rotate: 0 }}
+                  transition={{
+                    duration: 1,
+                    repeat: isPending ? Infinity : 0,
+                    ease: "linear",
+                  }}
+                >
+                  <Envelope className="size-6" />
+                </motion.div>
+                <p className="text-lg font-semibold">
+                  {isPending ? "Sending..." : "Send message"}
+                </p>
+              </motion.button>
             </div>
           </form>
         </motion.div>

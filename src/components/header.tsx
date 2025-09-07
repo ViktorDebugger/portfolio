@@ -4,7 +4,7 @@ import { cn } from "../tools/utils";
 import { useTheme } from "../context/theme-context";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import Bars3 from "./icons/bars3";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 import logoWhite from "/logo/logo-white.png";
 import logoBlack from "/logo/logo-black.png";
@@ -82,24 +82,44 @@ const Header = () => {
           <div className="flex flex-row-reverse items-center gap-8">
             <nav className="block md:hidden">
               <Menu>
-                <MenuButton>
-                  <Bars3 className="relative top-1 size-8 cursor-pointer text-black focus:outline-none md:size-10 dark:text-white" />
-                </MenuButton>
-                <MenuItems
-                  anchor="bottom end"
-                  className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 flex-col gap-4 rounded-2xl p-4 backdrop-blur-xl backdrop-saturate-200 focus:outline-none"
-                >
-                  {pages.map(({ id, name, section }) => (
-                    <MenuItem key={id}>
-                      <button
-                        className="block rounded-xl px-2 py-1 text-left text-2xl text-black dark:text-white"
-                        onClick={() => scrollToSection(section)}
-                      >
-                        {name}
-                      </button>
-                    </MenuItem>
-                  ))}
-                </MenuItems>
+                {({ open }) => (
+                  <>
+                    <MenuButton>
+                      <Bars3 className="relative top-1 size-8 cursor-pointer text-black focus:outline-none md:size-10 dark:text-white" />
+                    </MenuButton>
+                    <AnimatePresence>
+                      {open && (
+                        <MenuItems
+                          static
+                          as={motion.div}
+                          initial={{ y: -20, opacity: 0, scale: 0.95 }}
+                          animate={{ y: 0, opacity: 1, scale: 1 }}
+                          exit={{ y: -20, opacity: 0, scale: 0.95 }}
+                          transition={{
+                            duration: 0.3,
+                            ease: "easeOut",
+                          }}
+                          anchor="bottom end"
+                          className="glass-effect glass-main z-20 mt-1 flex h-62 w-52 origin-top flex-col gap-4 rounded-2xl p-4 backdrop-blur-xl backdrop-saturate-200 focus:outline-none"
+                        >
+                          {pages.map(({ id, name, section }) => (
+                            <MenuItem key={id}>
+                              <motion.button
+                                className="block rounded-xl px-2 py-1 text-left text-2xl text-black dark:text-white"
+                                onClick={() => scrollToSection(section)}
+                                whileHover={{ scale: 1.05, x: 5 }}
+                                whileTap={{ scale: 0.95 }}
+                                transition={{ duration: 0.1 }}
+                              >
+                                {name}
+                              </motion.button>
+                            </MenuItem>
+                          ))}
+                        </MenuItems>
+                      )}
+                    </AnimatePresence>
+                  </>
+                )}
               </Menu>
             </nav>
 
