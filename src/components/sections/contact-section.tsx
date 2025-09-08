@@ -117,7 +117,7 @@ const ContactSection = () => {
                       : { duration: 0.4, delay: 0.8, ease: "easeOut" }
                   }
                 >
-                  <MapPin className="size-8 text-rose-500 shrink-0" />
+                  <MapPin className="size-8 shrink-0 text-rose-500" />
                   <p className="text-base sm:text-lg">Ukraine, Lviv</p>
                 </motion.li>
                 <motion.li
@@ -138,10 +138,10 @@ const ContactSection = () => {
                       : { duration: 0.4, delay: 1.0, ease: "easeOut" }
                   }
                 >
-                  <Phone className="size-8 transition-colors duration-200 group-hover:text-rose-500 shrink-0" />
+                  <Phone className="size-8 shrink-0 transition-colors duration-200 group-hover:text-rose-500" />
                   <a
                     href="tel:+15552345678"
-                    className="text-base sm:text-lg transition-colors duration-200 group-hover:text-rose-500"
+                    className="text-base transition-colors duration-200 group-hover:text-rose-500 sm:text-lg"
                   >
                     +1 (555) 234-5678
                   </a>
@@ -164,10 +164,10 @@ const ContactSection = () => {
                       : { duration: 0.4, delay: 1.2, ease: "easeOut" }
                   }
                 >
-                  <Envelope className="size-8 transition-colors duration-200 group-hover:text-rose-500 shrink-0" />
+                  <Envelope className="size-8 shrink-0 transition-colors duration-200 group-hover:text-rose-500" />
                   <a
                     href="mailto:viktor.luka.dev@gmail.com"
-                    className="text-base sm:text-lg transition-colors duration-200 group-hover:text-rose-500"
+                    className="text-base transition-colors duration-200 group-hover:text-rose-500 sm:text-lg"
                   >
                     viktor.luka.dev@gmail.com
                   </a>
@@ -193,7 +193,7 @@ const ContactSection = () => {
             }
           >
             <div className="gradient-glow-red glass-effect glass-main gradient-border-left-red h-full rounded-2xl border-l-0 p-8 backdrop-blur-xl backdrop-saturate-200">
-              <h3 className="mb-6 text-xl sm:text-2xl font-bold text-black dark:text-white">
+              <h3 className="mb-6 text-xl font-bold text-black sm:text-2xl dark:text-white">
                 Let's Work Together
               </h3>
               <p className="mb-6 text-lg text-black dark:text-white">

@@ -184,17 +184,37 @@ const BentoSection = () => {
           >
             <motion.h3
               className="text-2xl font-bold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: 1.2, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, y: 0 }
+                  : isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.4, delay: 1.2, ease: "easeOut" }
+              }
             >
               Tutorials and real projects
             </motion.h3>
             <motion.p
               className="text-base sm:text-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: 1.4, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, y: 0 }
+                  : isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.4, delay: 1.4, ease: "easeOut" }
+              }
             >
               I actively use tutorials based on real projects, which gives me
               the opportunity to see the practical application of technologies
@@ -206,27 +226,61 @@ const BentoSection = () => {
 
           <motion.div
             className="glass-effect glass-main gradient-border-left-blue col-span-1 row-span-1 row-start-3 flex flex-col gap-5 rounded-xl rounded-tr-xl border-l-0 p-8 text-black backdrop-blur-xl backdrop-saturate-200 md:row-start-2 md:hidden xl:col-start-3 xl:row-start-1 xl:rounded-tr-4xl dark:text-white"
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.02,
-              transition: { duration: 0.2 },
-            }}
+            initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            animate={
+              isMobile
+                ? { opacity: 1, x: 0 }
+                : isInView
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: 30 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.6, delay: 1.0, ease: "easeOut" }
+            }
+            whileHover={
+              isMobile
+                ? {}
+                : {
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
+                  }
+            }
           >
             <motion.h3
               className="text-2xl font-bold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: 1.2, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, y: 0 }
+                  : isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.4, delay: 1.2, ease: "easeOut" }
+              }
             >
               Tutorials and real projects
             </motion.h3>
             <motion.p
               className="text-base sm:text-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: 1.4, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, y: 0 }
+                  : isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.4, delay: 1.4, ease: "easeOut" }
+              }
             >
               I actively use tutorials based on real projects, which gives me
               the opportunity to see the practical application of technologies
@@ -238,27 +292,61 @@ const BentoSection = () => {
 
           <motion.div
             className="glass-effect glass-main gradient-border-left-blue col-span-1 col-start-1 flex flex-col gap-5 rounded-xl rounded-br-4xl rounded-bl-4xl border-l-0 p-8 text-black backdrop-blur-xl backdrop-saturate-200 md:col-span-2 xl:col-start-2 xl:rounded-bl-xl dark:text-white"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.02,
-              transition: { duration: 0.2 },
-            }}
+            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={
+              isMobile
+                ? { opacity: 1, y: 0 }
+                : isInView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 30 }
+            }
+            transition={
+              isMobile
+                ? { duration: 0 }
+                : { duration: 0.6, delay: 1.2, ease: "easeOut" }
+            }
+            whileHover={
+              isMobile
+                ? {}
+                : {
+                    scale: 1.02,
+                    transition: { duration: 0.2 },
+                  }
+            }
           >
             <motion.h3
               className="text-2xl font-bold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: 1.4, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, y: 0 }
+                  : isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.4, delay: 1.4, ease: "easeOut" }
+              }
             >
               Artificial Intelligence
             </motion.h3>
             <motion.p
               className="text-base sm:text-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.4, delay: 1.6, ease: "easeOut" }}
+              initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isMobile
+                  ? { opacity: 1, y: 0 }
+                  : isInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 20 }
+              }
+              transition={
+                isMobile
+                  ? { duration: 0 }
+                  : { duration: 0.4, delay: 1.6, ease: "easeOut" }
+              }
             >
               I use AI in my teaching, particularly the Cursor environment,
               setting up context to get relevant data which makes teaching more
