@@ -17,7 +17,7 @@ const ContactSection = () => {
   return (
     <section
       ref={ref}
-      className="flex h-auto w-full items-center justify-center"
+      className="flex h-auto w-full items-center justify-center mb-14"
     >
       <motion.div
         className="glass-effect glass-main 3xl:mx-0 mx-5 max-w-[1550px] rounded-2xl p-16 px-4 backdrop-blur-xl backdrop-saturate-200 sm:px-8 2xl:px-16"
