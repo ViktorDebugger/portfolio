@@ -17,7 +17,7 @@ const ContactSection = () => {
   return (
     <section
       ref={ref}
-      className="flex h-auto w-full items-center justify-center mb-14"
+      className="mb-14 flex h-auto w-full items-center justify-center"
     >
       <motion.div
         className="glass-effect glass-main 3xl:mx-0 mx-5 max-w-[1550px] rounded-2xl p-16 px-4 backdrop-blur-xl backdrop-saturate-200 sm:px-8 2xl:px-16"
@@ -117,8 +117,8 @@ const ContactSection = () => {
                       : { duration: 0.4, delay: 0.8, ease: "easeOut" }
                   }
                 >
-                  <MapPin className="size-8 text-rose-500" />
-                  <p className="text-xl">Ukraine, Lviv</p>
+                  <MapPin className="size-8 text-rose-500 shrink-0" />
+                  <p className="text-base sm:text-lg">Ukraine, Lviv</p>
                 </motion.li>
                 <motion.li
                   className="group flex items-center gap-4"
@@ -138,10 +138,10 @@ const ContactSection = () => {
                       : { duration: 0.4, delay: 1.0, ease: "easeOut" }
                   }
                 >
-                  <Phone className="size-8 transition-colors duration-200 group-hover:text-rose-500" />
+                  <Phone className="size-8 transition-colors duration-200 group-hover:text-rose-500 shrink-0" />
                   <a
                     href="tel:+15552345678"
-                    className="text-xl transition-colors duration-200 group-hover:text-rose-500"
+                    className="text-base sm:text-lg transition-colors duration-200 group-hover:text-rose-500"
                   >
                     +1 (555) 234-5678
                   </a>
@@ -164,10 +164,10 @@ const ContactSection = () => {
                       : { duration: 0.4, delay: 1.2, ease: "easeOut" }
                   }
                 >
-                  <Envelope className="size-8 transition-colors duration-200 group-hover:text-rose-500" />
+                  <Envelope className="size-8 transition-colors duration-200 group-hover:text-rose-500 shrink-0" />
                   <a
                     href="mailto:viktor.luka.dev@gmail.com"
-                    className="text-xl transition-colors duration-200 group-hover:text-rose-500"
+                    className="text-base sm:text-lg transition-colors duration-200 group-hover:text-rose-500"
                   >
                     viktor.luka.dev@gmail.com
                   </a>
@@ -193,7 +193,7 @@ const ContactSection = () => {
             }
           >
             <div className="gradient-glow-red glass-effect glass-main gradient-border-left-red h-full rounded-2xl border-l-0 p-8 backdrop-blur-xl backdrop-saturate-200">
-              <h3 className="mb-6 text-2xl font-bold text-black dark:text-white">
+              <h3 className="mb-6 text-xl sm:text-2xl font-bold text-black dark:text-white">
                 Let's Work Together
               </h3>
               <p className="mb-6 text-lg text-black dark:text-white">
