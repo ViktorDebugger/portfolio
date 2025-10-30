@@ -5,7 +5,6 @@ import ChatBubble from "./../icons/stack/chat-bubble-left-right.tsx";
 import CircleStack from "./../icons/stack/circle-stack.tsx";
 import Cloud from "./../icons/stack/cloud.tsx";
 import CodeBracket from "./../icons/stack/code-bracket.tsx";
-import Cog6Tooth from "../icons/stack/cog-6-tooth.tsx";
 import Cube from "./../icons/stack/cube.tsx";
 import Photo from "./../icons/stack/photo.tsx";
 import ServerStack from "./../icons/stack/server-stack.tsx";
@@ -18,11 +17,8 @@ import Squares2X2 from "./../icons/squares2x2.tsx";
 import Plus from "../icons/plus.tsx";
 import Minus from "../icons/minus.tsx";
 import { useState } from "react";
-import BookOpen from "../icons/stack/book-open.tsx";
 import Bolt from "../icons/stack/bolt.tsx";
 import InformationCircle from "../icons/stack/information-circle.tsx";
-import BriefCase from "../icons/stack/brief-case.tsx";
-import Eye from "../icons/stack/eye.tsx";
 
 interface Category {
   id: number;
