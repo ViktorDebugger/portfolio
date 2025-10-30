@@ -214,7 +214,7 @@ const HeroSection = () => {
                 <p className="text-md font-semibold lg:text-lg">About Me</p>
               </motion.button>
               <motion.a
-                href={`${import.meta.env.BASE_URL}Luka-Viktor.pdf`}
+                href={`${import.meta.env.BASE_URL}/Luka-Viktor.pdf`}
                 download="Luka-Viktor.pdf"
                 className={cn(
                   "button-colors-blue flex w-full sm:w-auto justify-center items-center gap-2 rounded-lg px-4 py-2 lg:px-8 lg:py-3",
