@@ -9,8 +9,6 @@ import { useInView } from "framer-motion";
 const StackGrid = () => {
   const [category, setCategory] = useState("All");
   const [list, setList] = useState(stack);
-  const [showAll, setShowAll] = useState(false);
-  const startItems = 12;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
@@ -36,7 +34,7 @@ const StackGrid = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.2,
         ease: "easeOut",
       },
     },
@@ -44,16 +42,12 @@ const StackGrid = () => {
 
   const handleFilter = (name: string) => {
     setCategory(name);
-    setShowAll(false);
     let newList = stack;
     if (name !== "All") {
       newList = newList.filter(({ categories }) => categories.includes(name));
     }
     setList(newList);
   };
-
-  const displayedItems = showAll ? list : list.slice(0, startItems);
-  const hasMoreItems = list.length > startItems;
 
   return (
     <section ref={ref} className="mx-auto max-w-[1440px] py-16">
@@ -66,7 +60,7 @@ const StackGrid = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {displayedItems.map((item) => (
+          {list.map((item) => (
             <motion.div
               key={item.id}
               variants={itemVariants}
@@ -84,19 +78,6 @@ const StackGrid = () => {
             </motion.div>
           ))}
         </motion.ul>
-
-        {hasMoreItems && (
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="glass-effect-button glass-main mt-8 flex cursor-pointer items-center gap-2 rounded-2xl border-l-4! border-l-indigo-600! p-4 text-black shadow-2xl! shadow-indigo-900/80 backdrop-blur-xl backdrop-saturate-200 transition-all duration-300 ease-in-out hover:scale-105 dark:text-white"
-          >
-            <span className="text-lg font-semibold">
-              {showAll
-                ? "Show Less"
-                : `Show More (${list.length - startItems})`}
-            </span>
-          </button>
-        )}
       </div>
     </section>
   );

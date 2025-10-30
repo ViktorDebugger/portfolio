@@ -75,12 +75,6 @@ export const categories: Category[] = [
     icon: Sparkles,
   },
   {
-    id: 8,
-    name: "State Management",
-    description: "Application state solutions",
-    icon: Cog6Tooth,
-  },
-  {
     id: 9,
     name: "Databases",
     description: "Data storage technologies",
@@ -127,25 +121,7 @@ export const categories: Category[] = [
     name: "Forms",
     description: "Form handling and validation libraries",
     icon: InformationCircle,
-  },
-  {
-    id: 17,
-    name: "Content Management",
-    description: "CMS and content management systems",
-    icon: BookOpen,
-  },
-  {
-    id: 18,
-    name: "Media",
-    description: "Media processing and streaming tools",
-    icon: Eye,
-  },
-  {
-    id: 19,
-    name: "JavaScript Libraries",
-    description: "Utility and helper JavaScript libraries",
-    icon: BriefCase,
-  },
+  }
 ];
 
 interface CategoriesMenuProps {

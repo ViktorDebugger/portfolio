@@ -11,16 +11,13 @@ import html from "/stack/html.png";
 import javascript from "/stack/javascript.png";
 import liquid from "/stack/liquid.png";
 import lucide from "/stack/lucide.png";
-import mongodb from "/stack/mongodb.png";
 import motion from "/stack/motion.png";
-import nest from "/stack/nest-js.png";
 import next from "/stack/next-js.png";
 import node from "/stack/node-js.png";
 import postgresql from "/stack/postgresql.png";
 import prisma from "/stack/prisma-orm.png";
 import radixui from "/stack/radix-ui.png";
 import react from "/stack/react.png";
-import redux from "/stack/redux-js.png";
 import resend from "/stack/resend.png";
 import shadcnui from "/stack/shadcn-ui.png";
 import shopify from "/stack/shopify.png";
@@ -31,31 +28,17 @@ import typescript from "/stack/typescript.png";
 import vite from "/stack/vite.png";
 import sass from "/stack/sass.png";
 import express from "/stack/express-js.png";
-import eslint from "/stack/eslint.png";
 import bun from "/stack/bun.png";
 import vercel from "/stack/vercel.png";
 import zod from "/stack/zod.png";
-import zustand from "/stack/zustand.png";
 import upstash from "/stack/upstash.png";
 import uploadthing from "/stack/uploadthing.png";
 import unsplash from "/stack/unsplash.png";
-import trpc from "/stack/trpc.png";
-import tiptap from "/stack/tiptap.png";
-import tanstack from "/stack/tanstack.png";
-import stripe from "/stack/stripe.png";
-import stream from "/stack/stream.png";
 import reactHookForm from "/stack/react-hook-form.png";
-import payload from "/stack/payload.png";
-import nuqs from "/stack/nuqs.png";
 import neon from "/stack/neon.png";
-import mux from "/stack/mux.png";
-import lodash from "/stack/lodash.png";
-import jotai from "/stack/jotai.png";
-import liveblocks from "/stack/liveblocks.png";
 import convex from "/stack/convex.png";
 import appwrite from "/stack/appwrite.png";
 import drizzle from "/stack/drizzle.png";
-import ngrok from "/stack/ngrok.png";
 import webhook from "/stack/webhook.png";
 import hono from "/stack/hono.png";
 
@@ -218,26 +201,6 @@ export const stack = [
       "Event-driven architecture",
       "Middleware development",
       "Database integration",
-    ],
-  },
-  {
-    id: 9,
-    name: "Nest.js",
-    image: nest,
-    categories: ["Backend"],
-    learningLevel: 2,
-    documentation: "https://nestjs.com/",
-    description:
-      "NestJS is an elegant framework for Node.js that uses decorators and TypeScript. I create scalable server applications with clean architecture and dependency injection. I use modular structure, middleware, guards and interceptors for robust APIs. NestJS provides enterprise-level quality for my backend code.",
-    skills: [
-      "Dependency injection",
-      "Decorators & metadata",
-      "Modular architecture",
-      "Guards & interceptors",
-      "Pipes & validation",
-      "Database integration",
-      "Authentication & authorization",
-      "Testing strategies",
     ],
   },
   {
@@ -418,46 +381,6 @@ export const stack = [
       "Performance optimization",
       "Custom navigation",
       "Event handling",
-    ],
-  },
-  {
-    id: 19,
-    name: "Redux",
-    image: redux,
-    categories: ["State Management"],
-    learningLevel: 3,
-    documentation: "https://redux.js.org/",
-    description:
-      "Redux provides predictable state management for JavaScript applications through unidirectional data flow. I use Redux Toolkit to simplify boilerplate code and better developer experience. I create scalable architectures with clear action and reducer logic. Redux is especially useful for complex applications with multi-component state.",
-    skills: [
-      "Redux Toolkit (RTK)",
-      "Action & reducer patterns",
-      "Middleware development",
-      "Async thunks",
-      "State normalization",
-      "DevTools integration",
-      "Performance optimization",
-      "Testing strategies",
-    ],
-  },
-  {
-    id: 20,
-    name: "MongoDB",
-    image: mongodb,
-    categories: ["Databases"],
-    learningLevel: 2,
-    documentation: "https://www.mongodb.com/docs/",
-    description:
-      "MongoDB is a NoSQL database that I use for flexible and scalable data storage. I work with document-oriented data model through Mongoose ODM. I create efficient schemas, indexes and aggregation pipelines for optimal performance. MongoDB is perfect for rapid prototyping and applications with dynamic data structures.",
-    skills: [
-      "Document-based modeling",
-      "Mongoose ODM",
-      "Aggregation pipelines",
-      "Index optimization",
-      "Schema design",
-      "Query optimization",
-      "Replica sets",
-      "Performance tuning",
     ],
   },
   {
@@ -721,26 +644,6 @@ export const stack = [
     ],
   },
   {
-    id: 34,
-    name: "ESLint",
-    image: eslint,
-    categories: ["Development Tools"],
-    learningLevel: 2,
-    documentation: "https://eslint.org/docs/latest/",
-    description:
-      "ESLint is a static code analysis tool for identifying and reporting patterns in JavaScript and TypeScript code. I use ESLint to maintain code quality, enforce coding standards, and catch potential bugs before they reach production. With custom rules and configurations, ESLint helps maintain consistent code style across team projects. It's essential for professional development workflows.",
-    skills: [
-      "Code quality enforcement",
-      "Custom rule configuration",
-      "Team coding standards",
-      "Integration with IDEs",
-      "Automated code fixing",
-      "TypeScript support",
-      "Plugin ecosystem",
-      "CI/CD integration",
-    ],
-  },
-  {
     id: 35,
     name: "Bun",
     image: bun,
@@ -798,26 +701,6 @@ export const stack = [
       "Error handling strategies",
       "Runtime type checking",
       "Data transformation",
-    ],
-  },
-  {
-    id: 38,
-    name: "Zustand",
-    image: zustand,
-    categories: ["State Management"],
-    learningLevel: 3,
-    documentation: "https://zustand-demo.pmnd.rs/",
-    description:
-      "Zustand is a lightweight state management library for React with a minimal boilerplate approach. I use it for simple and efficient state management without the complexity of Redux. Zustand provides a clean API for creating stores with TypeScript support and excellent developer experience. It's perfect for projects that need global state without over-engineering.",
-    skills: [
-      "Lightweight state stores",
-      "TypeScript integration",
-      "Minimal boilerplate",
-      "Immer integration",
-      "Persist middleware",
-      "Devtools support",
-      "Async actions",
-      "Store composition",
     ],
   },
   {
@@ -881,106 +764,6 @@ export const stack = [
     ],
   },
   {
-    id: 42,
-    name: "tRPC",
-    image: trpc,
-    categories: ["Backend", "Development Tools"],
-    learningLevel: 3,
-    documentation: "https://trpc.io/docs",
-    description:
-      "tRPC enables end-to-end type safety for APIs with TypeScript, eliminating the need for code generation. I use tRPC to create fully type-safe APIs between frontend and backend with excellent developer experience. It provides real-time subscriptions, middleware support, and seamless React integration. tRPC ensures API contracts are always in sync between client and server.",
-    skills: [
-      "End-to-end type safety",
-      "API route creation",
-      "React Query integration",
-      "Middleware implementation",
-      "Real-time subscriptions",
-      "Error handling patterns",
-      "Authentication integration",
-      "Performance optimization",
-    ],
-  },
-  {
-    id: 43,
-    name: "Tiptap",
-    image: tiptap,
-    categories: ["UI Libraries"],
-    learningLevel: 2,
-    documentation: "https://tiptap.dev/docs",
-    description:
-      "Tiptap is a headless rich-text editor framework built on ProseMirror with Vue.js and React support. I use it to create custom WYSIWYG editors with extensible functionality and modern UI components. Tiptap provides collaborative editing, real-time synchronization, and extensive customization options. It's perfect for creating content management systems and collaborative writing tools.",
-    skills: [
-      "Rich text editing",
-      "Custom editor extensions",
-      "Collaborative editing",
-      "Real-time synchronization",
-      "Custom UI components",
-      "Content serialization",
-      "Plugin development",
-      "Performance optimization",
-    ],
-  },
-  {
-    id: 44,
-    name: "TanStack Query",
-    image: tanstack,
-    categories: ["State Management", "Development Tools"],
-    learningLevel: 2,
-    documentation: "https://tanstack.com/query/latest",
-    description:
-      "TanStack Query (formerly React Query) is a powerful data-fetching library that manages server state with caching, synchronization, and background updates. I use it for efficient API data management, optimistic updates, and offline support. It provides automatic background refetching, stale-while-revalidate patterns, and excellent DevTools for debugging data flow.",
-    skills: [
-      "Server state management",
-      "Caching strategies",
-      "Background synchronization",
-      "Optimistic updates",
-      "Infinite queries",
-      "Mutation handling",
-      "Offline support",
-      "Performance optimization",
-    ],
-  },
-  {
-    id: 45,
-    name: "Stripe",
-    image: stripe,
-    categories: ["Backend Services", "E-commerce"],
-    learningLevel: 3,
-    documentation: "https://stripe.com/docs",
-    description:
-      "Stripe is a comprehensive payment processing platform that I integrate for handling online payments, subscriptions, and financial transactions. I use Stripe APIs for secure payment flows, webhook handling, and subscription management. The platform provides excellent developer tools, testing environments, and compliance features for building robust payment systems.",
-    skills: [
-      "Payment processing integration",
-      "Subscription management",
-      "Webhook implementation",
-      "Security best practices",
-      "PCI compliance",
-      "Payment flow optimization",
-      "Multi-currency support",
-      "Analytics & reporting",
-    ],
-  },
-  {
-    id: 46,
-    name: "Stream",
-    image: stream,
-    categories: ["Backend Services", "Communication"],
-    learningLevel: 2,
-    documentation: "https://getstream.io/docs/",
-    description:
-      "Stream provides scalable APIs for building activity feeds, chat applications, and video calling features. I use Stream for creating social features like news feeds, real-time messaging, and user interactions. The platform offers React components, real-time synchronization, and moderation tools. Stream handles the complexity of real-time features while maintaining performance at scale.",
-    skills: [
-      "Activity feed implementation",
-      "Real-time chat systems",
-      "Video calling integration",
-      "React component library",
-      "Real-time synchronization",
-      "Moderation & content filtering",
-      "Scalable architecture",
-      "Performance optimization",
-    ],
-  },
-  {
     id: 47,
     name: "React Hook Form",
     image: reactHookForm,
@@ -1001,46 +784,6 @@ export const stack = [
     ],
   },
   {
-    id: 48,
-    name: "Payload CMS",
-    image: payload,
-    categories: ["Backend", "Content Management"],
-    learningLevel: 2,
-    documentation: "https://payloadcms.com/docs",
-    description:
-      "Payload is a headless CMS and application framework built with Node.js and TypeScript. I use Payload for creating custom admin panels, content management systems, and APIs with type safety. It provides authentication, file uploads, and GraphQL/REST APIs out of the box. Payload offers the flexibility of custom development with the convenience of a CMS.",
-    skills: [
-      "Headless CMS development",
-      "Custom admin panels",
-      "TypeScript configuration",
-      "Authentication systems",
-      "File management",
-      "GraphQL & REST APIs",
-      "Custom field types",
-      "Access control patterns",
-    ],
-  },
-  {
-    id: 49,
-    name: "nuqs",
-    image: nuqs,
-    categories: ["State Management", "React Ecosystem"],
-    learningLevel: 2,
-    documentation: "https://nuqs.47ng.com/",
-    description:
-      "nuqs is a type-safe library for managing URL search parameters as state in Next.js applications. I use it for creating shareable URLs, maintaining filter states, and browser navigation handling. It provides React hooks for URL state synchronization with TypeScript support and excellent developer experience. nuqs makes URL state management elegant and predictable.",
-    skills: [
-      "URL state management",
-      "Type-safe search params",
-      "React hooks integration",
-      "Browser navigation",
-      "State synchronization",
-      "Next.js optimization",
-      "Shareable URLs",
-      "History management",
-    ],
-  },
-  {
     id: 50,
     name: "Neon",
     image: neon,
@@ -1058,86 +801,6 @@ export const stack = [
       "Performance optimization",
       "Cost optimization",
       "Migration strategies",
-    ],
-  },
-  {
-    id: 51,
-    name: "Mux",
-    image: mux,
-    categories: ["Backend Services", "Media"],
-    learningLevel: 2,
-    documentation: "https://docs.mux.com/",
-    description:
-      "Mux provides APIs for video streaming, encoding, and analytics that I integrate for building video-centric applications. I use Mux for video upload, processing, and delivery with adaptive streaming and global CDN. The platform offers real-time analytics, video security, and player components. Mux handles video infrastructure complexity while providing excellent viewer experiences.",
-    skills: [
-      "Video streaming integration",
-      "Upload & encoding workflows",
-      "Adaptive bitrate streaming",
-      "Video analytics",
-      "Player customization",
-      "Security & DRM",
-      "Global CDN optimization",
-      "Real-time monitoring",
-    ],
-  },
-  {
-    id: 52,
-    name: "Lodash",
-    image: lodash,
-    categories: ["Development Tools", "JavaScript Libraries"],
-    learningLevel: 2,
-    documentation: "https://lodash.com/docs",
-    description:
-      "Lodash is a modern JavaScript utility library providing consistent, modular, and performant functions for common programming tasks. I use Lodash for data manipulation, array operations, object transformations, and functional programming patterns. It offers tree-shaking support, TypeScript definitions, and battle-tested utility functions that improve code reliability and readability.",
-    skills: [
-      "Data manipulation utilities",
-      "Array & object operations",
-      "Functional programming patterns",
-      "Performance optimization",
-      "Tree-shaking integration",
-      "TypeScript support",
-      "Debouncing & throttling",
-      "Deep cloning & comparison",
-    ],
-  },
-  {
-    id: 53,
-    name: "Jotai",
-    image: jotai,
-    categories: ["State Management"],
-    learningLevel: 2,
-    documentation: "https://jotai.org/docs/introduction",
-    description:
-      "Jotai is a primitive and flexible state management library for React based on atomic approach. I use Jotai for bottom-up state management with excellent TypeScript support and minimal boilerplate. It provides fine-grained reactivity, async support, and composable atoms for complex state logic. Jotai eliminates prop drilling while maintaining predictable state updates.",
-    skills: [
-      "Atomic state management",
-      "Bottom-up architecture",
-      "Fine-grained reactivity",
-      "Async atom handling",
-      "State composition",
-      "TypeScript integration",
-      "Performance optimization",
-      "Derivation patterns",
-    ],
-  },
-  {
-    id: 54,
-    name: "Liveblocks",
-    image: liveblocks,
-    categories: ["Backend Services", "APIs & Services"],
-    learningLevel: 2,
-    documentation: "https://liveblocks.io/docs",
-    description:
-      "Liveblocks provides real-time collaboration APIs and React hooks for building collaborative applications like documents, whiteboards, and design tools. I use Liveblocks for presence awareness, live cursors, and collaborative editing features. It offers conflict-free data structures, offline support, and seamless synchronization. Liveblocks makes building multiplayer experiences straightforward and reliable.",
-    skills: [
-      "Real-time collaboration",
-      "Presence awareness",
-      "Conflict-free data structures",
-      "Live cursors & selection",
-      "Collaborative editing",
-      "Offline synchronization",
-      "React integration",
-      "Performance optimization",
     ],
   },
   {
@@ -1198,26 +861,6 @@ export const stack = [
       "Multi-database support",
       "TypeScript integration",
       "Performance optimization",
-    ],
-  },
-  {
-    id: 58,
-    name: "ngrok",
-    image: ngrok,
-    categories: ["Development Tools", "Backend Services"],
-    learningLevel: 2,
-    documentation: "https://ngrok.com/docs",
-    description:
-      "ngrok is a secure tunneling service that exposes local servers to the internet for testing webhooks, APIs, and mobile applications. I use ngrok for local development when working with third-party services that require public URLs. It provides HTTPS tunnels, custom domains, and traffic inspection tools. ngrok is essential for testing webhook integrations and sharing local development environments.",
-    skills: [
-      "Local tunnel creation",
-      "Webhook testing & debugging",
-      "HTTPS tunnel management",
-      "Traffic inspection & analysis",
-      "Custom domain configuration",
-      "API endpoint exposure",
-      "Mobile app testing",
-      "Third-party integration testing",
     ],
   },
   {
