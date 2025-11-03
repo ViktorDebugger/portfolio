@@ -137,10 +137,10 @@ const StatsSection = () => {
               }
             >
               <h2 className="3xl:text-5xl mb-4 text-2xl font-bold text-white lg:text-3xl xl:text-5xl">
-                2
+                4
               </h2>
               <p className="text-base text-gray-200 md:text-lg lg:text-xl 2xl:text-2xl">
-                Created projects
+                Projects completed at work
               </p>
             </motion.li>
             <motion.li
@@ -160,7 +160,7 @@ const StatsSection = () => {
               }
             >
               <h2 className="3xl:text-5xl mb-4 text-2xl font-bold text-white lg:text-3xl xl:text-5xl">
-                2
+                4
               </h2>
               <p className="text-base text-gray-200 md:text-lg lg:text-xl 2xl:text-2xl">
                 Months of commercial experience in web development
