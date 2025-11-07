@@ -34,7 +34,7 @@ const StackGrid = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.05,
         ease: "easeOut",
       },
     },

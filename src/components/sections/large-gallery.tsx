@@ -55,7 +55,7 @@ const LargeGallery = () => {
             }
           >
             <h1 className="animate-gradient gradient-text-blue text-glow-blue text-3xl leading-[1.2] font-bold md:text-5xl">
-              My Work
+              My Previous Work
             </h1>
           </motion.div>
 
@@ -84,10 +84,7 @@ const LargeGallery = () => {
             }
           >
             <span className="space-y-6 text-xl text-black dark:text-white">
-              Since the beginning of the summer of 2025, I have been working at
-              Hallwil, where I develop online stores for customers. This is my
-              first job, which has given me practical experience in commercial
-              activities and taught me how to work effectively in a team.
+            I worked in Hallwil from summer to fall 2025, where I developed online stores for clients. This was my first job, which gave me practical experience in commercial activities and taught me how to work effectively in a team.
             </span>
           </motion.div>
 
@@ -148,10 +145,7 @@ const LargeGallery = () => {
             }
           >
             <span className="space-y-6 text-xl text-black dark:text-white">
-              Working with developers, project managers, designers, testers and
-              team leaders has significantly improved my communication skills. I
-              am not shy about asking for help in difficult situations, which
-              helps me find solutions faster and maintain team efficiency.
+            Working with developers, project managers, designers, testers, and team leaders has significantly improved my communication skills. I wasn't afraid to ask for help in difficult situations, which helps me find solutions faster and maintain the team's efficiency.
             </span>
           </motion.div>
         </div>

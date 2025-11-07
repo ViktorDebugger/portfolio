@@ -102,7 +102,7 @@ const Slider = () => {
           isMobile ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }
         }
       >
-        <div className="h-[300px] w-[250px] sm:h-[500px] sm:w-[400px] xl:h-[800px] xl:w-[700px]">
+        <div className="h-[300px] w-[250px] sm:h-[300px] sm:w-[200px] xl:h-[600px] xl:w-[500px]">
           <Swiper
             effect={"cards"}
             grabCursor={true}
@@ -123,7 +123,7 @@ const Slider = () => {
               <SwiperSlide key={id}>
                 <div
                   className={cn(
-                    "relative h-[300px] w-[250px] overflow-hidden rounded-xl after:absolute after:inset-0 after:z-10 after:bg-gradient-to-tr after:opacity-50 sm:h-[500px] sm:w-[400px] xl:h-[800px] xl:w-[700px]",
+                    "relative h-[300px] w-[250px] overflow-hidden rounded-xl after:absolute after:inset-0 after:z-10 after:bg-gradient-to-tr after:opacity-50 sm:h-[300px] sm:w-[200px] xl:h-[600px] xl:w-[500px]",
                     id % 2
                       ? "after:from-indigo-500 after:via-transparent after:to-purple-500"
                       : "after:from-red-500 after:via-transparent after:to-rose-500",
@@ -136,10 +136,10 @@ const Slider = () => {
                   />
 
                   <div className="relative z-20 flex h-full flex-col justify-end rounded-2xl p-6 text-white backdrop-blur-sm">
-                    <h1 className="xs:text-2xl mb-2 text-lg font-bold md:text-3xl">
+                    <h1 className="xs:text-2xl mb-2 text-lg font-bold lg:text-3xl">
                       {title}
                     </h1>
-                    <p className="xs:text-xl text-xs leading-relaxed xl:text-2xl">
+                    <p className="xs:text-xl text-xs leading-relaxed lg:text-2xl">
                       {description}
                     </p>
                   </div>
@@ -150,7 +150,7 @@ const Slider = () => {
               <SwiperSlide key={id}>
                 <div
                   className={cn(
-                    "relative h-[300px] w-[250px] overflow-hidden rounded-xl after:absolute after:inset-0 after:z-10 after:bg-gradient-to-tr after:opacity-50 sm:h-[500px] sm:w-[400px] xl:h-[800px] xl:w-[700px]",
+                    "relative h-[300px] w-[250px] overflow-hidden rounded-xl after:absolute after:inset-0 after:z-10 after:bg-gradient-to-tr after:opacity-50 sm:h-[300px] sm:w-[200px] xl:h-[600px] xl:w-[500px]",
                     id % 2
                       ? "after:from-indigo-500 after:via-transparent after:to-purple-500"
                       : "after:from-red-500 after:via-transparent after:to-rose-500",
@@ -163,10 +163,10 @@ const Slider = () => {
                   />
 
                   <div className="relative z-20 flex h-full flex-col justify-end rounded-2xl p-6 text-white backdrop-blur-sm">
-                    <h1 className="xs:text-2xl mb-2 text-lg font-bold md:text-3xl">
+                    <h1 className="xs:text-2xl mb-2 text-lg font-bold lg:text-3xl">
                       {title}
                     </h1>
-                    <p className="xs:text-xl text-xs leading-relaxed xl:text-2xl">
+                    <p className="xs:text-xl text-xs leading-relaxed lg:text-2xl">
                       {description}
                     </p>
                   </div>

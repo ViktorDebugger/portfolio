@@ -2,7 +2,6 @@ import StackGrid from "../../components/sections/stack-grid";
 import ProjectsGrid from "../../components/sections/projects-grid";
 import CertificatesGrid from "../../components/sections/certificates-grid";
 import { useState, useRef, useEffect } from "react";
-import LearningGrid from "./learning-grid";
 import { motion, useInView } from "motion/react";
 
 const buttons = [
@@ -20,12 +19,7 @@ const buttons = [
     id: 3,
     name: "Certificates",
     state: "certificates",
-  },
-  {
-    id: 4,
-    name: "Learning",
-    state: "learning",
-  },
+  }
 ];
 
 const ShowcaseSection = () => {
@@ -38,7 +32,6 @@ const ShowcaseSection = () => {
     margin: "-100px 0px -100px 0px",
   });
 
-  // Detect mobile devices
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(
@@ -64,11 +57,6 @@ const ShowcaseSection = () => {
     projects: (
       <div>
         <ProjectsGrid />
-      </div>
-    ),
-    learning: (
-      <div>
-        <LearningGrid />
       </div>
     ),
     certificates: (
@@ -108,7 +96,7 @@ const ShowcaseSection = () => {
       </div>
 
       <motion.ul
-        className="grid grid-cols-1 gap-2 px-4 sm:grid-cols-2 md:px-8 lg:grid-cols-4 lg:gap-10"
+        className="grid grid-cols-1 gap-2 px-4 md:px-8 sm:grid-cols-3 lg:gap-10"
         initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
         animate={
           isMobile ? { opacity: 1 } : isInView ? { opacity: 1 } : { opacity: 0 }
